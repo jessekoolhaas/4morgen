@@ -1,0 +1,59 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="bannerwinkel" style="background-image:url(site/image/contact.jpg)">
+      <!-- <div class="bannerwinkeltext">
+        <p class="text-center winkelmenutext">Wat geweldig dat niemand ook maar een moment hoeft te wachten met het <b>verbeteren van de wereld</b></p>
+      </div> -->
+    </div>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Contact</h2>
+    </div>
+
+    <div class="col-md-8">
+      <div class="alert alert-dismissible alert-success" ng-show="vergetenError">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h4>Bedankt voor uw bericht we nemen zo spoedig mogelijk contact met u op</h4>
+      </div>
+
+      <form ng-submit="submit()">
+        <div class="form-group">
+          <label class="control-label" for="inputDefault">Voornaam</label>
+          <input type="text" class="form-control" id="inputDefault" ng-model="naam">
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="inputDefault">E-mail</label>
+          <input type="text" class="form-control" id="inputDefault" ng-model="mail">
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="inputDefault">Onderwerp</label>
+          <input type="text" class="form-control" id="inputDefault" ng-model="onderwerp">
+        </div>
+
+        <div class="form-group">
+          <label for="textArea" class=" control-label">Bericht</label>
+          <div>
+            <textarea class="form-control" rows="3" id="textArea" ng-model="bericht"></textarea>
+            <!-- <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span> -->
+          </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary wachtwoordvergetenbutton">Verzenden</button>
+            <!-- <button type="submit" class="btn btn-success" ng-click="logoutSubmit()">uitloggen</button> -->
+        </div>
+      </form>
+    </div>
+
+<div ng-include="'site/view/contact/gegevens.html'"></div>
+
+  </div>
+</div>
+<div ng-include="'site/footer.html'"></div>

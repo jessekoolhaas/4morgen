@@ -1,0 +1,41 @@
+
+
+
+<div class="container">
+
+  <div class="col-xs-12">
+    <div class="text-center">
+      <span class="glyphicon glyphicon-pencil loginheader groen"></span>
+    </div>
+  </div>
+  <div class="row wachtwoordvergeten">
+    <div class="col-md-12">
+      <form name="wachtwoordvergetenform" ng-submit="vergeten()" novalidate >
+        <legend>Wachtwoord vergeten</legend>
+        <p class="waarom4morgentext">
+          Weet je het wachtwoord niet meer? Vul hieronder je e-mailadres in. We sturen dan binnen enkele minuten een e-mail waarmee een nieuw wachtwoord kan worden aangemaakt.
+        </p>
+
+        <div class="alert alert-dismissible alert-success" ng-hide="succesverstuurd">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <span class="waarom4morgentext">Er is een mail met een link naar uw mail gestuurd</span>
+        </div>
+
+        <div class="alert alert-dismissible alert-danger" ng-hide="geenmatch">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <span class="waarom4morgentext">Deze email is niet bekent bij ons</span>
+        </div>
+
+        <div class="form-group ">
+          <label class=" control-label">E-mail</label>
+          <input type="email" name="email" class="form-control" ng-model="vergeten.email" required>
+        </div>
+
+        <div class="form-group">
+              <button type="submit" class="btn btn-success btn-lg" ng-disabled="wachtwoordvergetenform.$invalid">Verzenden</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

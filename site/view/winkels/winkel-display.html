@@ -1,0 +1,195 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="bannerwinkel" style="background-image:url(site/image/bannerwinkeloverzicht.png)">
+      <!-- <div class="bannerwinkeltext">
+        <p class="text-center winkelmenutext">Met jouw aankoop kun je bijvoorbeeld een kind aan circa <b>100 dagen drinkwater</b> helpen</p>
+      </div> -->
+    </div>
+
+  </div>
+</div>
+<div class="container">
+  <div class="row winkel" ng-show="winkels">
+
+    <div class="col-md-3">
+
+      <div class="img-holder-display">
+        <div class="toevoegenfav klikding" ng-click="Winkeltoevoegen(winkeldisplay.Id,winkeldisplay.Name)">
+          <img src="site/image/hearthfavlef.png" alt="" />
+        </div>
+        <img ng-src="{{winkeldisplay.ExternalImageUrl}}" alt="{{x.Name}}" />
+      </div>
+      <a ng-cloak ng-show="winkelNuIngeloged" href="https://api.4morgen.org/{{ winkeldisplay.ExternalClickUrl }}" class="btn btn-success btn-lg btn-block" target="_blank">Winkel nu <span class="glyphicon glyphicon-share-alt"></span></a>
+      <button ng-cloak type="button" class="btn btn-success btn-block btn-lg" ng-click="gaNaarWinkel(winkeldisplay.Id)" ng-show="winkelNuNietIngeloged"> Winkel nu <span class="glyphicon glyphicon-share-alt"></span></button>
+     <!-- <p ng-click="Winkeltoevoegen(winkeldisplay.Id,winkeldisplay.Name)" class="waarom4morgentext klikding text-center"><span class="glyphicon glyphicon-heart-empty orange"></span> Voeg toe aan favoriete</p> -->
+    </div>
+
+    <div class="col-md-5 col-sm-6">
+      <h1 class="orange waarom4morgen">{{winkeldisplay.Name}}</h1>
+           <span ng-bind-html="trustedHtml" class="winkelmeertext"></span>
+
+    </div>
+
+    <div class="col-md-4 col-sm-6 ">
+      <h1 class="orange waarom4morgen">Hoe duurzaam is deze winkel?</h1>
+      <img class="rank klikding"src="site/image/arrowrankabrand.png" class="rank" alt="" ng-click="gotorankabrand()"/>
+    </div>
+
+  </div>
+
+  <div class="row gerelateerd" ng-show="winkels">
+    <h1 class="orange waarom4morgen">Winkel ook eens bij ...</h1>
+    <div class="col-lg-2 col-md-4 col-sm-6" ng-repeat="winkels in relatedwinkels ">
+      <a ng-href="/winkels/{{winkels.Id}}">
+        <div class="img-holder-display" >
+          <img ng-src="{{winkels.ExternalImageUrl}}" alt="{{winkels.Name}}" />
+        </div>
+      </a>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <div ng-show="errorMessageWinkel">
+    <div class="alert alert-dismissible alert-warning">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <h4>Warning!</h4>
+    <p>Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, <a href="#" class="alert-link">vel scelerisque nisl consectetur et</a>.</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal-backdrop" style="display: block;" ng-show="showModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" ng-click="showModal=false">&times;</button>
+        <h4 class="modal-title">Let op! Je verlaat 4MORGEN zonder ingelogd te zijn.</h4>
+      </div>
+      <div class="modal-body">
+        <p>Hierdoor zullen donaties over eventuele aankopen naar het goede doel van de maand gaan. Wil je zelf jouw favoriete doelen selecteren? Registreer je dan bovenaan deze website en je krijgt een eigen 4MORGEN account waarmee je kunt direct kunt inloggen.
+        </p><p>
+          Goede doelen steunen zonder dat het iets kost en blijven genieten van alle online aanbiedingen en kortingen, dat wil toch iedereen! Wie steun jij? Heb je nog geen account, dan kun je jezelf in slechts een paar stappen registreren.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="showModal=false">Sluiten</button>
+        <button type="button" class="btn btn-info" ng-click="DoorgaanZonderInlog(winkeldisplay.Id)">Toch doorgaan</button>
+        <button type="button" class="btn btn-primary" ng-click="showModalInloggen()">Inloggen</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" style="display: block;" ng-show="showModalvoordoorgaan">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="btn btn-success btn-lg btn-block" ng-click="DoorgaanZonderInlog(winkeldisplay.Id)">Klik hier om door tegaan</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal-backdrop" style="display: block;" ng-show="inlogModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" ng-click="inlogModal=false">&times;</button>
+        <h4 class="modal-title">Inloggen</h4>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-dismissible alert-danger" ng-show="loginError">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <h4>De door jouw ingevoerde gegevens zijn niet juist.</h4>
+          <p>Mocht je jouw e-mailadres niet meer weten, neem dan gerust contact met ons op. Mocht je jouw wachtwoord zijn vergeten, dan kun je deze onderaan opnieuw instellen.</p>
+        </div>
+        <div class="alert alert-dismissible alert-info" ng-show="vergetenError">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <h4>Om deze organisatie als favoriet op te nemen, moet je eerst ingelogd zijn</h4>
+        </div>
+
+    <form class="form-horizontal">
+      <fieldset>
+        <div class="col-xs-12">
+        <div class="form-group has-feedback">
+          <label  class="control-label">E-mail</label>
+            <input type="text" class="form-control" placeholder="E-mail" autocomplete="off" ng-model="voornaam">
+            <i class="form-control-feedback glyphicon glyphicon-user"></i>
+        </div>
+        <div class="form-group has-feedback">
+          <label for="inputPassword" class="control-label">Wachtwoord</label>
+            <input type="password" class="form-control"  placeholder="wachtwoord" autocomplete="off" ng-model="wachtwoord">
+            <i class="form-control-feedback glyphicon glyphicon-lock"></i>
+        </div>
+        </div>
+      </fieldset>
+    </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button"style="float:left;" class="btn btn-danger" ng-click="inlogModal=false">Annuleren</button>
+        <button type="button" class="btn btn-default" ng-click="inlogModal=false" ui-sref="registratie">Registreren</button>
+        <button type="button" class="btn btn-primary" ng-click="loginSubmit(winkeldisplay.Id)">Inloggen</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" style="display: block;" ng-show="inlogModaltoevoegen">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" ng-click="inlogModaltoevoegen=false">&times;</button>
+        <h4 class="modal-title">Inloggen</h4>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-dismissible alert-danger" ng-show="loginError">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <h4>De door jouw ingevoerde gegevens zijn niet juist.</h4>
+          <p>Mocht je jouw e-mailadres niet meer weten, neem dan gerust contact met ons op. Mocht je jouw wachtwoord zijn vergeten, dan kun je deze onderaan opnieuw instellen.</p>
+        </div>
+        <div class="alert alert-dismissible alert-info" ng-show="vergetenError">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <h4>Om deze organisatie als favoriet op te nemen, moet je eerst ingelogd zijn</h4>
+        </div>
+
+    <form class="form-horizontal">
+      <fieldset>
+        <div class="col-xs-12">
+        <div class="form-group has-feedback">
+          <label  class="control-label">E-mail</label>
+            <input type="text" class="form-control" placeholder="E-mail" autocomplete="off" ng-model="voornaam">
+            <i class="form-control-feedback glyphicon glyphicon-user"></i>
+        </div>
+        <div class="form-group has-feedback">
+          <label for="inputPassword" class="control-label">Wachtwoord</label>
+            <input type="password" class="form-control"  placeholder="wachtwoord" autocomplete="off" ng-model="wachtwoord">
+            <i class="form-control-feedback glyphicon glyphicon-lock"></i>
+        </div>
+        </div>
+      </fieldset>
+    </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button"style="float:left;" class="btn btn-danger" ng-click="inlogModaltoevoegen=false">Annuleren</button>
+        <button type="button" class="btn btn-default" ng-click="inlogModaltoevoegen=false" ui-sref="registratie">Registreren</button>
+        <button type="button" class="btn btn-primary" ng-click="loginSubmit2(winkeldisplay.Id)">Inloggen</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+  <div ng-include="'site/footer.html'"></div>

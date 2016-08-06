@@ -1,0 +1,35 @@
+
+
+<div class="row">
+  <div class="col-xs-12">
+            <h1 class="orange waarom4morgen mijn4morgentitle"><b>Donaties</b></h1>
+  </div>
+
+<div class="col-xs-12">
+<table class="table table-striped table-hover winkelmenutext">
+  <thead>
+    <tr>
+      <th>Datum</th>
+      <th>Winkel</th>
+      <th>Goede doelen</th>
+      <th>Donatie</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="x in donatietable">
+      <td>{{x.Date |cmdate:'dd/MM/yyyy'}}</td>
+      <td>{{x.ItemName}}</td>
+      <td>{{x.Charities}}</td>
+      <td>&euro; {{x.Donation | number:2}}</td>
+      <td>
+        <span ng-if="x.Status == '0'">Open</span>
+        <span ng-if="x.Status == '1'">Goedgekeurd</span>
+        <span ng-if="x.Status == '2'">Afgekeurd</span>
+        <span ng-if="x.Status == '3'">Ontvangen</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>

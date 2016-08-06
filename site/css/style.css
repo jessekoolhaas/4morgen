@@ -1,0 +1,536 @@
+.groen {
+  color: #70d871;
+}
+.bgroen {
+  background-color: #70d871;
+}
+.orange {
+    color: #f6a868;
+}
+.wit {
+  color: white;
+}
+.text12 {
+  font-size: 12px;
+}
+.nopadding {
+   padding: 0px 4px !important;
+   margin: 0 !important;
+}
+
+body {
+  font-family: 'Dosis', sans-serif;
+}
+
+
+
+.img-holder img{
+  width: 100px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+
+}
+.img-holder-display img{
+  width: 150px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+
+}
+.img-holder{
+  height: 200px;
+}
+.img-holder-display{
+  height: 152px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 26px;
+  margin-bottom: 10px;
+}
+.singelwinkel{
+  margin-bottom: 30px;
+  /*border: 0.5px solid #f6a868;*/
+}
+/*.singelwinkel:nth-child(odd){
+  background-color: #aaaaaa;
+}
+.singelwinkel:nth-child(even){
+  background-color: #bada55;
+}*/
+.singelwinkelborder {
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 3px;
+      height: 230px;
+
+}
+.modal-backdrop {
+bottom: 0;
+position: fixed;
+background-color:rgba(0,0,0,0.5);
+}
+
+
+
+/*LOGIN!!!*/
+.loginheader {
+  font-size: 40px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.headersearch {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.image{
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+}
+.nieuwstext{
+  padding-left:15px;
+  padding-right: 15px;
+}
+.leesmeer {
+  padding-bottom: 15px;
+}
+.wachtwoordvergetenbutton {
+  margin-bottom: 15px;
+}
+
+.registatiebutton {
+  margin-bottom: 15px;
+}
+.topnieuws {
+  padding-top: 15px;
+}
+.textnieuws{
+  padding-bottom: 15px;
+  font-size: 12px;
+}
+.btn-facebook{
+  background-color: #3b5998;
+  border-color: #3b5998;
+  color: white;
+}
+.btn-facebook:hover {
+  background-color: #293e6a;
+  color: white;
+}
+
+
+/*FRONTPAGE!!*/
+.frontpagebanner {
+  height: 300px;
+  overflow: hidden;
+}
+.frontpagebanner img {
+  height: 300px;
+}
+.bannerwinkel{
+      width: 100%;
+       height: 100px;
+       display:inline-block;
+       vertical-align: top;
+       background-size:cover;
+       background-position:35% 50%;
+   }
+
+   .bannericons {
+     width: 100%;
+      min-height: 300px;
+      display:inline-block;
+      vertical-align: top;
+      background-size:cover;
+      background-position:35% 50%;
+
+   }
+   .bannerwinkeltext {
+     background-color: rgba(112, 216, 113, 0.9);
+     height: 30px;
+     line-height: 30px;
+     margin-top: 70px;
+     color: white;
+
+   }
+   .bannernieuwstext {
+     background-color: rgba(112, 216, 113, 0.9);
+     height: 30px;
+     line-height: 30px;
+     margin-top: 170px;
+     color: white;
+
+   }
+   .bannernieuws {
+     width: 100%;
+      height: 200px;
+      display:inline-block;
+      vertical-align: top;
+      background-size:cover;
+      background-position:35% 50%;
+   }
+.ruimtenieuws {
+  padding-bottom: 15px;
+}
+
+.nummer2{
+      width: 100%;
+       height: 300px;
+       display:inline-block;
+       vertical-align: top;
+       background-size:cover;
+       background-position:35% 50%;
+   }
+   .bannerheader {
+     font-size: 15px;
+     color: #70d871;
+   }
+   .bannertext {
+     font-size: 12px;
+     color: white;
+   }
+   .nummers {
+    background-color: #70d871;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 32px;
+    border-radius: 50%;
+    /*margin-left: 20px;*/
+    color: white;
+   }
+  .nummertext {
+    font-size: 12px;
+    color: white;
+  }
+  .winkelmeer {
+    height: 50px;
+        margin-top: 20px;
+    /*border-bottom: 1px solid black;*/
+  }
+  .winkelmeerruimteonderkant {
+    margin-bottom: 20px;
+  }
+.winkelmeertext {
+  font-size: 12px;
+    margin-top: 7px;
+}
+
+  .blokje {
+    height: 100%;
+    width: 100%;
+  }
+  .blokje img {
+    height: 50px;
+    margin: 0 auto;
+    filter: gray; /* IE6-9 */
+    filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
+    -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+
+  }
+  .waarom4morgen {
+    font-size: 16px;
+    color: #f6a868;
+    margin-top: 13px;
+  }
+  .video {
+    width: 100%;
+    /*height: 300px;*/
+    margin-bottom: 15px;
+    margin-top: 0px;
+
+  }
+  .balkjelaaste100 {
+    width: 100%;
+    background-color: #f6a868;
+
+  }
+  .balkjelaaste100 p {
+
+  }
+  .nieuwsbriefholder {
+    background-color: #f6a868;
+  }
+  .nieuwsbrief {
+
+  }
+  .nieuwsbriefinput {
+    max-width: 320px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+  }
+  .nieuwsbriefheader {
+    font-size: 16px;
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  .nieuwsbrieftext {
+    margin-bottom: 20px;
+    color: white;
+    font-size: 12px;
+  }
+  .footer {
+    font-size: 12px;
+  margin-bottom: 20px;
+  }
+  .footershadow  {
+    -webkit-box-shadow: 0 4px 14px -9px black;
+    	   -moz-box-shadow: 0 4px 14px -9px black;
+    	        box-shadow: 0 4px 14px -9px black;
+}
+  }
+  .footerheader {
+    font-size: 12px;
+    color: #f6a868;
+    font-weight: bold;
+  }
+  .footer div {
+    height: 150px;
+  }
+  .footerspace {
+    margin-left: 15px;
+  }
+  .donatieblak {
+margin-bottom: 0px;
+font-size: 12px;
+color: white;
+padding-top: 7px;
+padding-bottom: 7px;
+
+  }
+  .navigatie {
+    font-size: 15px;
+  }
+  .streepje {
+    border-right: 1px solid white;
+
+  }
+  .bovennavigatie {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .bovennavigatie img {
+  height: 30px;
+  }
+  .inloggen {
+        vertical-align: middle;
+        line-height: 30px;
+        margin-bottom: 0px;
+        font-size: 12px;
+        margin-left: -30px;
+  }
+  .zoekglyp {
+    margin: 3px 0px;
+  }
+  .geenruimte {
+    margin-bottom: 0px;
+  }
+  .ruimtetop {
+    margin-top: 8px;
+  }
+  .winkelmenutext {
+    font-size: 12px;
+  }
+  .verwijderfav {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 15px;
+    z-index: 10;
+  }
+  .verwijderfav img {
+    height: 100%;
+    width: 100%;
+  }
+.toevoegenfav {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 16px;
+  z-index: 10;
+}
+.toevoegenfav img {
+  height: 100%;
+  width: 100%;
+}
+.naamwinkel {
+  height: 50px;
+}
+.klikding {
+  cursor: pointer;
+}
+.test {
+  margin-top: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  margin-bottom: 20px;
+  -webkit-box-shadow: 2px 2px 8px -6px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 2px 8px -6px rgba(0,0,0,0.75);
+box-shadow: 2px 2px 8px -6px rgba(0,0,0,0.75);
+
+}
+.toevoegenfavsingel {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 0px;
+  z-index: 10;
+}
+.toevoegenfavsingel img{
+  height: 100%;
+  width: 100%;
+}
+.waarom4morgenblokje {
+  margin-bottom: 40px;
+}
+.navbar-4morgen {
+background-color: #656565;
+color: white;
+}
+.voorwaarden h3 {
+  font-weight: bold;
+}
+.winkel {
+  margin-top: 20px;
+}
+.gerelateerd {
+  margin-bottom: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+.rankabrand {
+  line-height: 2;
+}
+.mijn4morgendonaties {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.mijn4morgendonaties p {
+  margin-top: 14px;
+  padding-bottom: 14px;
+}
+.mijnformorgendontatiebedrag {
+  font-size: 14px;
+}
+.mijn4morgenheader {
+  margin-bottom: 20px;
+}
+.mijn4morgentitle {
+  margin-bottom: 30px;
+}
+.mijn4morgenfav {
+margin-top: 0px;
+margin-bottom: 0px;
+}
+.delijn {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 20px;
+}
+.profiel {
+  margin-top: 15px;
+}
+.onsverhaal {
+  margin-top: 90px;
+  margin-bottom: 40px;
+}
+.onsverhaaltext {
+  margin-bottom: 90px;
+}
+.overonsgroen {
+  background-color: #
+}
+.wit2 {
+  color: white;
+}
+  .footerimage {
+    width: 100px;
+  }
+.loginvoorwaarden {
+  margin-top: 20px;
+}
+.overzichtruimte {
+margin-top: 17px;
+}
+.rank {
+
+  max-width: 300px;
+  width: 100%;
+}
+.iconblok {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.icons {
+  width: 100px;
+  display: block;
+  margin: 0px auto;
+  margin-top: 25px;
+}
+.icontext {
+  font-size: 16px;
+}
+.contactgegevens {
+  padding-top:20px;
+}
+.maps{
+  width: 100%;
+  height: 200px;
+}
+.maps iframe {
+  margin-top: 20px;
+  width: 100%;
+  width: 100%;
+}
+.gegevensblok {
+  background-color: #656565;
+  margin-bottom: 20px;
+}
+.dropdown-menu > li > a {
+  font-size: 15px;
+}
+.profielpicholder {
+  height: 200px;
+  /*background-color: green;*/
+
+}
+.profielpicholder img {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  height: 100%;
+}
+.cookies {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+.wachtwoordvergeten {
+margin-top:20px;
+}
+.wachtwoordvergetenlogin{
+  vertical-align: middle;
+  margin-left: 20px;
+}
+/* Important part */
+.modal-dialog2{
+    overflow-y: initial !important
+}
+.modal-body2{
+    height: 70%;
+    overflow-y: auto;
+}

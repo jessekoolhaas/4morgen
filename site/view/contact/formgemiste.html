@@ -1,0 +1,88 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="bannerwinkel" style="background-image:url(site/image/gemistedo.jpg)">
+      <!-- <div class="bannerwinkeltext">
+        <p class="text-center winkelmenutext">Wat geweldig dat niemand ook maar een moment hoeft te wachten met het <b>verbeteren van de wereld</b></p>
+      </div> -->
+    </div>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Gemiste donatie</h2>
+
+    </div>
+
+    <div class="col-md-8">
+      <div class="alert alert-dismissible alert-success" ng-show="vergetenError">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h4>Bedankt voor uw bericht we nemen zo spoedig mogelijk contact met u op</h4>
+      </div>
+
+      <form ng-submit="submitformDonatie()" name="formDonatie" novalidate>
+        <!-- <div class="form-group">
+          <label class="control-label" for="inputDefault">Voornaam</label>
+          <input type="text" class="form-control" id="inputDefault" ng-model="naam">
+        </div> -->
+
+        <div class="form-group" ng-class="{ 'has-error' : formDonatie.mail.$invalid && !formDonatie.mail.$pristine }">
+          <label class="control-label">E-mail</label>
+          <input type="email" class="form-control" name="mail" ng-model="donatie.mail" required>
+          <p ng-show="formDonatie.mail.$invalid && !formDonatie.mail.$pristine" class="help-block">Voer een geldig e-mailadres in</p>
+
+        </div>
+
+        <!-- <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+          <label class="col-xs-12 control-label">E-mailadres <span>*</span></label>
+          <div class="col-xs-12">
+            <input type="email" name="email" class="form-control" ng-model="user.email" required>
+            <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Voer een geldig e-mailadres in</p>
+
+          </div>
+        </div> -->
+
+        <!-- <div class="form-group">
+          <label class="control-label" for="inputDefault">Onderwerp</label>
+          <input type="text" class="form-control" id="inputDefault" ng-model="onderwerp">
+        </div> -->
+
+        <div class="form-group">
+          <label class="control-label">Ordernummer</label>
+          <input type="text" class="form-control" ng-model="donatie.Ordernummer" required>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="inputDefault">Aankoopbedrag (excl. btw)</label>
+          <input type="text" class="form-control" ng-model="donatie.Aankoopbedrag" required>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="inputDefault">Aankoopdatum</label>
+          <input type="date" class="form-control"name="datum" ng-model="donatie.Aankoopdatum" placeholder="mm-dd-jjjj" required>
+        </div>
+
+
+
+        <div class="form-group">
+          <label for="textArea" class=" control-label">Bericht</label>
+          <div>
+            <textarea class="form-control" rows="3" id="textArea" ng-model="donatie.bericht"></textarea>
+            <!-- <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span> -->
+          </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" ng-disabled="formDonatie.$invalid">Verzenden</button>
+            <!-- <button type="submit" class="btn btn-success" ng-click="logoutSubmit()">uitloggen</button> -->
+        </div>
+      </form>
+    </div>
+    <div ng-include="'site/view/contact/gegevens.html'"></div>
+
+
+  </div>
+</div>
+<div ng-include="'site/footer.html'"></div>

@@ -1,0 +1,90 @@
+<div class="container">
+  <div class="row" ng-hide="winkelsGedeelte">
+    <div class="col-xs-12">
+      <h1 class="orange waarom4morgen mijn4morgentitle"><b>Winkels</b></h1>
+      <div class="row">
+        <div class="col-md-3 col-xs-6 col-lg-2 singelwinkel" ng-repeat = "x in resultaatWinkels" >
+          <div class="singelwinkelborder klikding ">
+            <div class="toevoegenfav" ng-click="ToevoegenAan(x.Id,2)">
+              <img src="site/image/hearthfavlef.png" alt="" />
+            </div>
+            <div class="img-holder"ng-click="goto2(x.Id)">
+              <img ng-src="{{x.ExternalImageUrl}}" alt="{{x.Name}}"  />
+            </div>
+            <p ng-if="x.CommissionUnit == 'percentage'" class=" text-center">Maximum van {{x.Commission}}&#37;</p>
+            <p ng-if="x.CommissionUnit == 'fixed'" class=" text-center">Maximum van &euro;{{x.Commission}}</p>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="row" ng-hide="charitiesGedeelte">
+    <div class="col-xs-12">
+      <h1 class="orange waarom4morgen mijn4morgentitle"><b>Goede doelen</b></h1>
+      <div class="row">
+        <div class="col-md-3 col-xs-6 col-lg-2 singelwinkel" ng-repeat = "x in resultaatDoelen" >
+          <div class="singelwinkelborder klikding" >
+            <div class="toevoegenfav" ng-click="ToevoegenAan(x.Id,1)">
+              <img src="site/image/hearthfavlef.png" alt="" />
+            </div>
+            <div class="img-holder" ng-click="goto(x.Id)">
+              <img ng-src="{{x.ImageUrl}}" alt="{{x.Name}}"  />
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+</div>
+
+<div class="modal-backdrop" style="display: block;" ng-show="inlogModalGoedeDoelen">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" ng-click="inlogModalGoedeDoelen=false">&times;</button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-dismissible alert-danger" ng-show="loginError">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <h4>De door jouw ingevoerde gegevens zijn niet juist.</h4>
+          <p>Mocht je jouw e-mailadres niet meer weten, neem dan gerust contact met ons op. Mocht je jouw wachtwoord zijn vergeten, dan kun je deze onderaan opnieuw instellen.</p>
+        </div>
+        <div class="alert alert-dismissible alert-info" ng-show="vergetenError">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <h4>U moet eerst inloggen</h4>
+        </div>
+
+    <form class="form-horizontal">
+      <fieldset>
+        <div class="col-xs-12">
+        <div class="form-group has-feedback">
+          <label  class="control-label">Email</label>
+            <input type="text" class="form-control" placeholder="voornaam" autocomplete="off" ng-model="voornaam">
+            <i class="form-control-feedback glyphicon glyphicon-user"></i>
+        </div>
+        <div class="form-group has-feedback">
+          <label for="inputPassword" class="control-label">Password</label>
+            <input type="password" class="form-control"  placeholder="wachtwoord" autocomplete="off" ng-model="wachtwoord">
+            <i class="form-control-feedback glyphicon glyphicon-lock"></i>
+        </div>
+        </div>
+      </fieldset>
+    </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button"style="float:left;" class="btn btn-danger" ng-click="inlogModalGoedeDoelen=false">Cancel</button>
+        <button type="button" class="btn btn-default" ng-click="inlogModalGoedeDoelen=false" ui-sref="registratie">Resigteren</button>
+        <button type="button" class="btn btn-primary" ng-click="loginSubmit(charitieName)">Inloggen</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div ng-include="'site/footer.html'"></div>

@@ -1,0 +1,112 @@
+/*Dit is nodig voor he navigatie goed te laten werken!*/
+@media only screen and (max-width:768px){
+    .dropdown-menu{
+        display: block;
+        position: static;
+        background-color:transparent;
+        border:0 none;
+        box-shadow:none;
+        margin-top:0;
+        position:static;
+        width:100%;
+    }
+    .navbar-nav .dropdown-menu > li > a,
+    .navbar-nav .dropdown-menu .dropdown-header {
+        padding:5px 15px 5px 25px;
+    }
+    .navbar-nav .dropdown-menu > li > a{
+        line-height:20px;
+    }
+    .navbar-default .navbar-nav .dropdown-menu > li > a{
+        color:#777;
+    }
+}
+
+
+@media (min-width: 768px){
+  .textnieuws{
+    font-size: 14px;
+  }
+.inloggen {
+  margin-left: 0px;
+  font-size: 15px;
+}
+.winkelmenutext {
+  font-size: 15px;
+}
+label {
+  font-size: 15px;
+}
+.donatieblak {
+  /*font-size: 25px;*/
+}
+.mijnformorgendontatiebedrag {
+  19px;
+}
+.bannerwinkel {
+  height: 200px;
+}
+.bannerwinkeltext {
+  height: 40px;
+  line-height: 40px;
+  margin-top: 160px;
+
+}
+.img-holder img {
+  width: 150px;
+}
+.sidebar-nav {
+    padding: 9px 0;
+}
+
+.dropdown-menu .sub-menu {
+    left: 100%;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    margin-top: -1px;
+}
+
+.dropdown-menu li:hover .sub-menu {
+    visibility: visible;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.nav-tabs .dropdown-menu, .nav-pills .dropdown-menu, .navbar .dropdown-menu {
+    margin-top: 0;
+}
+
+.navbar .sub-menu:before {
+    border-bottom: 7px solid transparent;
+    border-left: none;
+    border-right: 7px solid rgba(0, 0, 0, 0.2);
+    border-top: 7px solid transparent;
+    left: -7px;
+    top: 10px;
+}
+.navbar .sub-menu:after {
+    border-top: 6px solid transparent;
+    border-left: none;
+    border-right: 6px solid #fff;
+    border-bottom: 6px solid transparent;
+    left: 10px;
+    top: 11px;
+    left: -6px;
+}
+.contactgegevens {
+  padding-top: 0px;
+}
+.nummers {
+  margin-left: 20px;
+}
+.icons {
+  width: 160px;
+  margin-top: 0px;
+}
+.footer div {
+  height: 200px;
+}
+}

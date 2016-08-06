@@ -1,0 +1,103 @@
+
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="bannerwinkel" ng-show="$state.includes('dashboard.overzicht')" style="background-image:url(site/image/overzichtsbanner.png)">
+
+      <div class="bannerwinkeltext">
+        <p class="text-center winkelmenutext">Wat geweldig dat niemand ook maar een moment hoeft te wachten met het <b>verbeteren van de wereld</b></p>
+
+      </div>
+    </div>
+
+    <div class="bannerwinkel" ng-show="$state.includes('dashboard.profiel')" style="background-image:url(site/image/bannerpassport.jpg)">
+
+      <div class="bannerwinkeltext">
+        <p class="text-center winkelmenutext">Wat geweldig dat niemand ook maar een moment hoeft te wachten met het <b>verbeteren van de wereld</b></p>
+
+      </div>
+    </div>
+
+    <div class="bannerwinkel" ng-show="$state.includes('dashboard.donaties')" style="background-image:url(site/image/donatie2banner.png)">
+
+      <div class="bannerwinkeltext">
+        <p class="text-center winkelmenutext">Wat geweldig dat niemand ook maar een moment hoeft te wachten met het <b>verbeteren van de wereld</b></p>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row winkel">
+
+    <div class="col-md-3">
+      <h1 class="orange waarom4morgen mijn4morgentitle"><b>Mijn 4MORGEN</b></h1>
+      <div class="list-group winkelmenutext">
+        <a class="list-group-item" ui-sref="dashboard.overzicht" ui-sref-active="active">Overzicht</a>
+        <a class="list-group-item" ui-sref="dashboard.profiel" ui-sref-active="active">Profiel</a>
+        <a class="list-group-item" ui-sref="dashboard.donaties" ui-sref-active="active">Donaties</a>
+        <a class="list-group-item klikding" ng-click="logoutSubmit()" >Uitloggen</a>
+
+      </div>
+
+      <h1 class="orange waarom4morgen mijn4morgentitle"><b>Jaaropgave</b></h1>
+      <p>Download hier jouw jaaropgaven van de afgelopen jaren </p>
+      <div class="list-group winkelmenutext">
+        <a class="list-group-item" ng-repeat="x in jaren" ng-click="jaaropgavedownloaden(x)">{{x}}</a>
+      </div>
+    </div>
+    <h1 >{{x}}</h1>
+    <p class="jaaropgave"></p>
+
+    <div class="col-md-9">
+
+      <div ui-view></div>
+
+
+    </div>
+
+    <!-- <button type="submit" class="btn btn-success" ">uitloggen</button>
+    <table class="table table-striped table-hover ">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>goededoel</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="x in MijnFavCharities"]>
+        <td>1</td>
+        <td>{{x.Name}}</td>
+        <td><button type="button" name="button" class="btn btn-primary btn-block" ng-click="verwijderenFav(x.Id)">verwijderen aan Fav</button></td>
+        <td><button type="button" name="button" class="btn btn-Info btn-block" href="{{x.ExternalUrl}}" target="_blank">Bezoek de website</button></td>
+
+      </tr>
+
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Winkels</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tr ng-repeat="x in MijnFavShops"]>
+        <td>1</td>
+        <td>{{x.Name}}</td>
+        <td><button type="button" name="button" class="btn btn-primary btn-block" ng-click="verwijderenFavwinkel(x.Id)">verwijderen aan Fav</button></td>
+        <td><button type="button" name="button" class="btn btn-Info btn-block" href="{{x.ExternalUrl}}" target="_blank">Start met winkelen</button></td>
+      </tr>
+
+      </tbody>
+    </table>
+
+  </div> -->
+  </div>
+
+</div>
+<div ng-include="'site/footer.html'"></div>

@@ -1,0 +1,139 @@
+ <div class="container">
+   <div ng-show="errorMessageWinkel">
+     <div class="alert alert-dismissible alert-warning">
+     <button type="button" class="close" data-dismiss="alert">&times;</button>
+     <h4>Warning!</h4>
+     <p>Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, <a href="#" class="alert-link">vel scelerisque nisl consectetur et</a>.</p>
+   </div>
+   </div>
+ </div>
+
+ <div ng-hide="errorMessageWinkel">
+   <div class="container-fluid">
+   <div class="row">
+     <div class="bannerwinkel"   ng-style="{'background-image': 'url(' + goededoeldisplay.LargeImageUrl + ')'}">
+
+
+       <div class="bannerwinkeltext">
+         <p class="text-center winkelmenutext">Wat geweldig dat niemand ook maar een moment hoeft te wachten met het <b>verbeteren van de wereld</b></p>
+
+       </div>
+     </div>
+
+   </div>
+ </div>
+
+ <div class="container">
+ <div class="col-xs-12">
+   <div class="text-center">
+     <span class="glyphicon glyphicon-pencil loginheader groen"></span>
+   </div>
+ </div>
+
+ <form name="userForm" ng-submit="submitForm()" novalidate >
+   <div class="col-xs-12">
+   <legend>Registreer je hier voor gratis doneren aan {{goededoeldisplay.Name}}</legend>
+ </div>
+
+
+  <!-- voornaam -->
+   <div class="form-group" ng-class="{ 'has-error' : userForm.voornaam.$invalid && !userForm.voornaam.$pristine }">
+     <label class="col-xs-12 control-label">Voornaam <span>*</span></label>
+     <div class="col-xs-12">
+       <input type="text" name="voornaam" class="form-control" ng-model="user.voornaam" required>
+       <p ng-show="userForm.voornaam.$invalid && !userForm.voornaam.$pristine" class="help-block">vul je voornaam in.</p>
+     </div>
+   </div>
+           <!-- tussenvoegsel -->
+   <div class="form-group">
+     <label class="col-xs-12 control-label">Tussenvoegsel</label>
+     <div class="col-xs-12">
+       <input type="text" name="tussenvoegsel" class="form-control" ng-model="user.tussenvoegsel">
+     </div>
+   </div>
+
+   <!-- achternaam -->
+   <div class="form-group" ng-class="{ 'has-error' : userForm.achternaam.$invalid && !userForm.achternaam.$pristine }">
+     <label class="col-xs-12 control-label">Achternaam <span>*</span></label>
+     <div class="col-xs-12">
+       <input type="text" name="achternaam" class="form-control" ng-model="user.achternaam" required>
+       <p ng-show="userForm.achternaam.$invalid && !userForm.achternaam.$pristine" class="help-block">vul je achternaam in.</p>
+     </div>
+   </div>
+
+ <!-- E-mailadres -->
+   <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+     <label class="col-xs-12 control-label">E-mailadres <span>*</span></label>
+     <div class="col-xs-12">
+       <input type="email" name="email" class="form-control" ng-model="user.email" required>
+       <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Voer een geldig e-mailadres in</p>
+
+     </div>
+   </div>
+
+ <!-- Wachtwoord -->
+   <div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine  }">
+     <label class="col-xs-12 control-label">Wachtwoord <span>*</span></label>
+     <div class="col-xs-12">
+       <input type="password" class="form-control"id="password" name="password" ng-model="user.password" ng-minlength="8" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required  />
+       <p ng-show="userForm.password.$error.required && userForm.password.$dirty" class="help-block">vul je wachtwoord in.</p>
+       <p ng-show="!userForm.password.$error.required && (userForm.password.$error.minlength || userForm.password.$error.maxlength) && userForm.password.$dirty" class="help-block">Wachtwoord moet minimaal 8 karakters bevatten.</p>
+       <p ng-show="!userForm.password.$error.required && !userForm.password.$error.minlength && !userForm.password.$error.maxlength && userForm.password.$error.pattern && userForm.password.$dirty" class="help-block">Je wachtwoord moet tenminste 1 hoofdletter en 1 nummer bevatten</p>
+     </div>
+   </div>
+
+
+
+ <!-- wachtwoord herhaling -->
+   <div class="form-group" ng-class="{ 'has-error' : userForm.herpassword.$invalid && !userForm.herpassword.$pristine || !userForm.password_c.$error.required && userForm.password_c.$error.noMatch && userForm.password.$dirty || userForm.password_c.$error.required && userForm.password_c.$dirty}">
+     <label class="col-xs-12 control-label">Herhaal wachtwoord <span>*</span></label>
+     <div class="col-xs-12">
+       <input ng-disabled="userForm.password.$invalid" type="password" id="password_c" name="password_c" ng-model="user.password_c" class="form-control" valid-password-c required  />
+       <p  class="help-block" ng-show="userForm.password_c.$error.required && userForm.password_c.$dirty">Please confirm your password.</p>
+       <p class="help-block" ng-show="!userForm.password_c.$error.required && userForm.password_c.$error.noMatch && userForm.password.$dirty">Passwords do not match.</p>
+     </div>
+   </div>
+
+ <!-- voorwaarden -->
+   <div class="form-group">
+     <label class="col-xs-12 control-label loginvoorwaarden">Algemene voorwaarden</label>
+       <div class="col-xs-12">
+         <div class="checkbox">
+           <label>
+             <input type="checkbox" name="voorwaarden" ng-model="user.voorwaarden" ng-init="user.voorwaarden=false"required > Ik ga akkoord met de gebruikersvoorwaarden van 4MORGEN
+           </label>
+         </div>
+       </div>
+   </div>
+
+ <!-- Nieuwsbrief -->
+   <div class="form-group">
+     <label class="col-xs-12 control-label">Nieuwsbrief</label>
+       <div class="col-xs-12">
+         <div class="checkbox">
+           <label>
+             <input type="checkbox" name="nieuwsbrief" ng-model="user.nieuwsbrief" ng-init="user.nieuwsbrief=true"> Ik wil me inschrijven voor de 4MORGEN nieuwsbrief. Wist je dat inschrijven voor de nieuwsbrief zo'n 35% meer donaties genereert?
+           </label>
+         </div>
+       </div>
+   </div>
+
+
+
+
+   <!-- submitbutton -->
+   <div class="form-group">
+     <div class="col-xs-12">
+         <button type="submit" class="btn btn-success btn-block registatiebutton" ng-disabled="userForm.$invalid">Verstuur</button>
+    </div>
+   </div>
+
+
+
+
+ </form>
+ </div>
+
+
+</div>
+<div ng-include="'site/footer.html'"></div>

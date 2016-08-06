@@ -1,0 +1,96 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="bannerwinkel" style="background-image:url(site/image/bannergoededoelen.png)">
+      <div class="bannerwinkeltext">
+        <p class="text-center winkelmenutext">Wat geweldig dat niemand ook maar een moment hoeft te wachten met het <b>verbeteren van de wereld</b></p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="row overzichtruimte">
+    <div class="col-md-3">
+
+    <h1 class="orange waarom4morgen mijn4morgentitle"><b>Categorie&euml;n</b></h1>
+      <div class="list-group">
+        <a ng-class="{'active' : category.Id == selectedCategoryId}" ng-repeat="category in categories" heading="Mode" ng-click="selectCategory(category)" class="list-group-item winkelmenutext">{{category.Name}}</a>
+      </div>
+<!--
+      <ul class="nav nav-tabs" ng-class="{'nav-stacked': vertical, 'nav-justified': justified}">
+        <li ng-class="{'active' : category.Id == selectedCategoryId}" ng-repeat="category in categories" heading="Mode" ng-click="selectCategory(category)" class="ng-isolate-scope">
+          <a ng-click="select()" tab-heading-transclude="" class="ng-binding">{{category.Name}}</a>
+        </li>
+      </ul> -->
+    </div>
+
+
+    <div class="col-md-9">
+      <h1 class="orange waarom4morgen mijn4morgentitle"><b>Overzicht</b></h1>
+      <div class="row">
+        <div class=" col-sm-4 col-md-3 col-xs-6 singelwinkel" ng-repeat = "x in items" >
+          <div class="singelwinkelborder  klikding">
+            <div class="toevoegenfav" ng-click="ToevoegenAanFav(x.Id,x.Name)">
+              <img src="site/image/hearthfavlef.png" alt="" />
+            </div>
+            <div class="img-holder" ng-click="goto(x.Id)">
+              <img ng-src="{{x.ImageUrl}}" alt="{{x.Name}}"  />
+            </div>
+            <p class="text-center">{{x.Name}}</p>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal-backdrop" style="display: block;" ng-show="inlogModalGoedeDoelen">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" ng-click="inlogModalGoedeDoelen=false">&times;</button>
+        <h4 class="modal-title">Inloggen</h4>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-dismissible alert-danger" ng-show="loginError">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <h4>De door jouw ingevoerde gegevens zijn niet juist.</h4>
+          <p>Mocht je jouw e-mailadres niet meer weten, neem dan gerust contact met ons op. Mocht je jouw wachtwoord zijn vergeten, dan kun je deze onderaan opnieuw instellen.</p>
+        </div>
+        <div class="alert alert-dismissible alert-info" ng-show="vergetenError">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <h4>Om deze organisatie als favoriet op te nemen, moet je eerst ingelogd zijn</h4>
+        </div>
+
+    <form class="form-horizontal">
+      <fieldset>
+        <div class="col-xs-12">
+        <div class="form-group has-feedback">
+          <label  class="control-label">E-mail</label>
+            <input type="text" class="form-control" placeholder="E-mail" autocomplete="off" ng-model="voornaam">
+            <i class="form-control-feedback glyphicon glyphicon-user"></i>
+        </div>
+        <div class="form-group has-feedback">
+          <label for="inputPassword" class="control-label">Wachtwoord</label>
+            <input type="password" class="form-control"  placeholder="wachtwoord" autocomplete="off" ng-model="wachtwoord">
+            <i class="form-control-feedback glyphicon glyphicon-lock"></i>
+        </div>
+        </div>
+      </fieldset>
+    </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button"style="float:left;" class="btn btn-danger" ng-click="inlogModalGoedeDoelen=false">Annuleren</button>
+        <button type="button" class="btn btn-default" ng-click="inlogModalGoedeDoelen=false" ui-sref="registratie">Registreren</button>
+        <button type="button" class="btn btn-primary" ng-click="loginSubmit(charitieName)">Inloggen</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div ng-include="'site/footer.html'"></div>

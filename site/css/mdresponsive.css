@@ -1,0 +1,104 @@
+@media (min-width: 992px){
+  .blokje img {
+    height: 70px;
+  }
+  .winkelmeer {
+    height: 70px;
+
+  }
+  .bannerwinkel {
+    height: 300px;
+  }
+  .bannerwinkeltext {
+    height: 50px;
+    line-height: 50px;
+    margin-top: 250px;
+
+  }
+
+  .winkelmeertext {
+    font-size: 19px;
+    margin-top: 12px;
+  }
+  label {
+    font-size: 19px;
+  }
+  .bannerheader {
+    font-size: 34px;
+  }
+  .bannertext {
+    font-size: 19px;
+  }
+  .nummer2 {
+    height: 500px;
+  }
+  .nummertext {
+    font-size: 19px;
+  }
+  .nummers {
+    font-size: 19px;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+  }
+  .waarom4morgen {
+    font-size: 30px;
+
+  }
+  .waarom4morgentext {
+    font-size: 19px;
+  }
+  .video {
+    margin-top: -41px;
+    height: 300px;
+  }
+  .donatieblak {
+    font-size: 20px;
+  }
+  .nieuwsbriefheader {
+    font-size: 30px;
+  }
+  .nieuwsbrieftext {
+    font-size: 19px;
+  }
+  .footer {
+    font-size: 19px;
+      margin-top: 40px;
+  }
+  .footerheader {
+    font-size: 22px;
+  }
+  .navigatie {
+    font-size: 19px;
+  }
+  .bovennavigatie img {
+  height: 60px;
+  }
+  .inloggen {
+        line-height: 60px;
+        margin-bottom: 0px;
+        font-size: 19px;
+  }
+  .winkelmenutext {
+    font-size: 19px;
+  }
+  .mijnformorgendontatiebedrag {
+    font-size: 30px;
+  }
+  .img-holder img {
+    width: 148px;
+  }
+  .footerimage {
+    width: 150px;
+  }
+  .icons{
+width: 200px;
+  }
+
+  .icontext {
+    font-size: 24px;
+  }
+  .dropdown-menu > li > a {
+    font-size: 19px;
+  }
+}
