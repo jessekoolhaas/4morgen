@@ -1,5 +1,6 @@
 myapp.controller('regiaandoelCtl', function ( $scope,$stateParams,$http,$location,$window,$sce ){
 
+$scope.registratieSucces = false;
   $scope.currentGoededoel = $stateParams.goeddoel;
   console.log($scope.currentGoededoel);
 
@@ -49,7 +50,8 @@ myapp.controller('regiaandoelCtl', function ( $scope,$stateParams,$http,$locatio
         headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             }).then(function successCallback(response) {
               console.log(response.status);
-              $location.path("/dashboard")
+              
+              $scope.registratieSucces = true;
 
             }, function errorCallback(response) {
                 console.log(response.status);

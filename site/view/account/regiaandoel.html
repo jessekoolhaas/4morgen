@@ -32,8 +32,14 @@
 
  <form name="userForm" ng-submit="submitForm()" novalidate >
    <div class="col-xs-12">
-   <legend>Registreer je hier voor gratis doneren aan {{goededoeldisplay.Name}}</legend>
- </div>
+     <legend>Registreer je hier voor gratis doneren aan {{goededoeldisplay.Name}}</legend>
+   </div>
+   <div class="col-xs-12">
+     <div class="alert alert-success" ng-show="registratieSucces" >
+       <h4>Er is een mail naar deze e-mail adres gestuurd</h4>
+       <p>In deze mail zit een link om uw account te registreren</p>
+     </div>
+   </div>
 
 
   <!-- voornaam -->

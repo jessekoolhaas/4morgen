@@ -179,7 +179,6 @@ window.fbAsyncInit = function() {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" aria-hidden="true" ng-click="adblokker=false">&times;</button>
-
         </div>
         <div class="modal-body modal-body2">
           <p>
@@ -198,10 +197,6 @@ window.fbAsyncInit = function() {
                 <li>Hiermee schakel je AdBlock voor deze website uit.</li>
               </ul>
             </div>
-
-
-
-
             <div class="col-md-4">
               <div class="img-holder">
                 <img src="site/image/adblok/adblok2.png" alt="">
@@ -213,7 +208,6 @@ window.fbAsyncInit = function() {
                 <li>Wanneer je daar op klikt, schakel je AdBlock Plus voor deze website uit.</li>
               </ul>
             </div>
-
             <div class="col-md-4">
               <div class="img-holder">
                 <img src="site/image/adblok/adblok3.png" alt="">
@@ -225,11 +219,7 @@ window.fbAsyncInit = function() {
                 <li>Hiermee zet je AdBlock Pro voor deze website uit.</li>
               </ul>
             </div>
-
-
-
           </div>
-
         </div>
         <div class="modal-footer">
           <button type="button"style="float:left;" class="btn btn-danger" ng-click="adblokker=false">Annuleren</button>
@@ -237,6 +227,53 @@ window.fbAsyncInit = function() {
       </div>
     </div>
   </div>
+
+
+  <!-- <div class="modal-backdrop" style="display: block;" ng-show="feedback">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" aria-hidden="true" ng-click="feedback=false">&times;</button>
+          <h4 class="modal-title"><b>Jouw mening telt</b></h4>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-dismissible alert-danger" ng-show="feedbackError">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <h4>De door jouw ingevoerde gegevens zijn niet juist.</h4>
+            <p>Controleer de email die je hebt ingevuld</p>
+          </div>
+          <div class="alert alert-dismissible alert-info" ng-show="feedbackSuccess">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <h4>Bedankt voor jouw feedback</h4>
+          </div>
+<p class="waarom4morgentext">We zijn benieuwd wat je van onze website vindt. Kun je vinden wat je zoekt? Zijn er dingen die niet goed werken? Heb je suggesties of verbeterpunten? Alle feedback is welkom.</p>
+      <form class="form-horizontal">
+        <fieldset>
+          <div class="col-xs-12">
+
+            <div class="form-group">
+              <label for="textArea" class=" control-label ">Feedback</label>
+              <div>
+                <textarea class="form-control" rows="5" id="textArea" ng-model="feedbackBericht" placeholder="Feedback..."></textarea>
+
+              </div>
+            </div>
+            <div class="form-group">
+              <label  class="control-label">E-mail</label>
+                <input type="mail" class="form-control" placeholder="E-mail" autocomplete="off" ng-model="FeedbackMail">
+
+            </div>
+          </div>
+        </fieldset>
+      </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button"style="float:left;" class="btn btn-danger" ng-click="feedback=false">Annuleren</button>
+          <button type="button" class="btn btn-primary" ng-click="feedbackForm()">verzenden</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
 
         <div ui-view autoscroll="true"></div>
 

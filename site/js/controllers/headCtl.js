@@ -1,5 +1,6 @@
 myapp.controller('headCtl', ['$scope', '$http','$location','$cookies','$timeout', function ($scope, $http, $location,$cookies,$timeout) {
 
+$scope.feedback = true;
 $scope.iscookie = true;
 var cookieAccept = $cookies.cookieAccept;
 var adBlok = $cookies.adBlok;
@@ -9,15 +10,13 @@ if (cookieAccept == undefined) {
   $scope.iscookie = false;
 }
 
+$scope.urlFeedback = "https://api.4morgen.org/v1/mail/contact";
 $scope.auth = "https://api.4morgen.org/v1/authentication";
 $scope.userlog = false;
 $scope.getCategories = function () {
     $http.get($scope.auth)
         .success(function (data, status, headers, config) {
           $scope.userlog = true;
-
-
-
         })
         .error(function (data, status, headers, config) {
           $scope.userlog = false;
@@ -25,6 +24,42 @@ $scope.getCategories = function () {
 
 
 }
+
+$scope.feedbackForm = function() {
+  var voornaam = "-";
+  var mail = $scope.FeedbackMail;
+  var onderwerp = "Feedback";
+  var bericht = $scope.feedbackBericht;
+  var postObject = new Object();
+  postObject.Email = mail;
+  postObject.Name = voornaam;
+  postObject.Subject = onderwerp;
+  postObject.Message = bericht;
+  postObject.CopyToSelf = false;
+
+  console.log(postObject);
+
+  //
+  $http({
+    method: 'POST',
+    url: $scope.urlFeedback,
+    data:  postObject,
+    headers: [{'Content-Type': 'application/json'}]
+        }).then(function successCallback(response) {
+          console.log(response.status);
+          $scope.FeedbackMail ='';
+          $scope.feedbackBericht='';
+          $scope.feedbackSuccess = true;
+          $timeout(function () {
+            $scope.feedback = false;
+          }, 2000);
+
+        }, function errorCallback(response) {
+            console.log(response.status);
+            $scope.feedbackError = true;
+
+        });
+};
 
 
 
