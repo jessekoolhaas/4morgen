@@ -34,6 +34,7 @@ $scope.errorMessageWinkel = false;
               $scope.winkeltext = data.Description;
               $scope.trustedHtml = $sce.trustAsHtml($scope.winkeltext);
               $scope.CommissionUnit = data.CommissionUnit;
+              $scope.post();
 
 
 
@@ -122,5 +123,42 @@ $scope.errorMessageWinkel = false;
 
                   });
           };
+
+$scope.posts = [];
+$scope.post = function(){
+  console.log($scope.goededoeldisplay.Name);
+  var beschrijving = "Ik doneer gratis aan "+$scope.goededoeldisplay.Name+" door online te shoppen via 4MORGEN. Doe jij ook mee?"
+  $scope.posts = [{
+
+                  name            :$scope.goededoeldisplay.Name,
+                  url             :url,
+                  image           :$scope.goededoeldisplay.ImageUrl,
+                  // caption         :" Dit is de caption1",
+                  description     :beschrijving,
+                  message         :"Asdmessage message message message asdasd"
+                }];
+                return
+}
+
+
+
+            $scope.share = function(post){
+              console.log(post);
+              console.log(post[0].title);
+              var PostToWall = post[0];
+              console.log(url);
+
+
+              FB.ui(
+              {
+                  method: 'feed',
+                  name: PostToWall.name,
+                  link: PostToWall.url,
+                  picture: PostToWall.image,
+                  caption: PostToWall.caption,
+                  description: PostToWall.description,
+                  message: PostToWall.message
+              });
+            };
 
 });
