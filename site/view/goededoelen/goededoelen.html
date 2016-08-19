@@ -42,6 +42,12 @@
           </div>
         </div>
       </div>
+      <div class="row">
+        <ul class="pager groen">
+          <li ng-class="{ 'disabled': vorige}" ng-click="vorige || setPagePre(1)"><a >Vorige</a></li>
+          <li ng-class="{ 'disabled': volgende}" ng-click="volgende || setPageNext(1)"><a >Volgende</a></li>
+        </ul>
+      </div>
 
 
     </div>

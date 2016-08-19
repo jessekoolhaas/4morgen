@@ -40,6 +40,21 @@ myapp.controller('goededoelenCategorie', ['$scope', '$http','$location','$timeou
           console.log('Page changed to: ' + $scope.currentPage);
       };
 
+      $scope.goToTop = function(){
+          $("html, body").animate({ scrollTop: 0 }, 200);
+      }
+      $scope.setPageNext = function (pageNo) {
+          $scope.currentPage = $scope.currentPage + pageNo;
+          $scope.selectCategory($scope.categories2);
+          $scope.goToTop();
+      };
+
+      $scope.setPagePre = function (pageNo) {
+          $scope.currentPage = $scope.currentPage - pageNo;
+          $scope.selectCategory($scope.categories2);
+          $scope.goToTop();
+      };
+
       $scope.getCategories = function () {
           $http.get($scope.getCategoriesUrl)
               .success(function (data, status, headers, config) {
@@ -58,7 +73,14 @@ myapp.controller('goededoelenCategorie', ['$scope', '$http','$location','$timeou
 
       }
       $scope.selectCategory = function(category){
+        $scope.categories2 = category;
         $scope.selectedCategoryId = category.Id;
+        if ($scope.currentPage == 1) {
+          $scope.vorige = true;
+        }
+        else {
+          $scope.vorige = false;
+        }
 
         var url = $scope.getItemsUrl
             .replace("{categoryIds}", $scope.selectedCategoryId)
@@ -76,6 +98,14 @@ myapp.controller('goededoelenCategorie', ['$scope', '$http','$location','$timeou
                     $scope.pager_totalItems = data.TotalCount;
                 }
                 $scope.items = data.Result;
+
+                $scope.totaalaantalopvraag = $scope.items.length;
+                if ($scope.totaalaantalopvraag === $scope.itemsPerPage) {
+                  $scope.volgende = false;
+
+                }else {
+                  $scope.volgende = true;
+                }
 
             })
             .error(function (data, status, headers, config) {
