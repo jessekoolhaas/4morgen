@@ -534,3 +534,8 @@ margin-top:20px;
     height: 70%;
     overflow-y: auto;
 }
+.blokje img:hover {
+  filter:none;; /* IE6-9 */
+  filter: grayscale(0); /* Microsoft Edge and Firefox 35+ */
+  -webkit-filter: grayscale(0); /* Google Chrome, Safari 6+ & Opera 15+ */
+}
