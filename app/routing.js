@@ -131,6 +131,14 @@ myapp.config(['$urlRouterProvider', '$stateProvider','$locationProvider','$httpP
           url: "/nieuwsbrief",
           templateUrl:"/site/view/overig/nieuwsbrief.html",
         })
+        .state ('dierenbescherming', {
+          url: "/dierenbescherming",
+          templateUrl: "/site/frontpage.html",
+          controller: function($state){
+            // $state.go('goededoelen-display({goededoel: '1001'})');
+            $state.go('goededoelen-display', { goededoel: '1016' });
+          }
+        })
         .state ('accountConfirm', {
           url: "/confirm/:token",
           templateUrl:"/site/view/account/accountConfirm.html",
