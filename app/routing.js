@@ -131,12 +131,16 @@ myapp.config(['$urlRouterProvider', '$stateProvider','$locationProvider','$httpP
           url: "/nieuwsbrief",
           templateUrl:"/site/view/overig/nieuwsbrief.html",
         })
+        .state ('404zoeken', {
+          url: "/404zoeken",
+          templateUrl:"/site/view/overig/404zoeken.html",
+        })
         .state ('dierenbescherming', {
           url: "/dierenbescherming",
           templateUrl: "/site/frontpage.html",
           controller: function($state){
             // $state.go('goededoelen-display({goededoel: '1001'})');
-            $state.go('goededoelen-display', { goededoel: '1016' });
+            $state.go('registratiegoeddoel', { goeddoel: '1016' });
           }
         })
         .state ('accountConfirm', {

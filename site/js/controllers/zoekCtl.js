@@ -1,4 +1,4 @@
-myapp.controller('zoekCtl', function ($scope,$http,$stateParams,$location ){
+myapp.controller('zoekCtl', function ($scope,$http,$stateParams,$location,$state ){
 
   $scope.goto = function(Id) {
 
@@ -17,6 +17,7 @@ $scope.inlogModalGoedeDoelen = false;
 $scope.winkelsGedeelte = true;
 $scope.charitiesGedeelte = true;
   $scope.zoekquery = $stateParams.zoek;
+
 
 
   var test = $scope.zoekquery;
@@ -43,6 +44,10 @@ var urlzoek = $scope.zoeken.replace("{search}",test)
           if ($scope.resultaatWinkels != 0) {
 
             $scope.winkelsGedeelte = false;
+          }
+          if ($scope.resultaatWinkels == 0 && $scope.resultaatDoelen == 0) {
+            console.log("bijde result is 0");
+            $scope.geenresult = true;
           }
 
         }, function errorCallback(response) {
@@ -140,7 +145,7 @@ var urlzoek = $scope.zoeken.replace("{search}",test)
 
 
                         }, function errorCallback(response) {
-                          
+
                           $scope.loginError = true;
                           $scope.vergetenError = false;
 
