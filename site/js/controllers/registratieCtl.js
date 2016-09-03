@@ -22,7 +22,7 @@ $scope.submitForm = function() {
   postObjectprofiel.Email = email;
   postObjectprofiel.Password = wachtwoord;
   postObjectprofiel.RepeatPassword = wachtwoord;
-  postObjectprofiel.Newsletter = Newsletter;
+  postObjectprofiel.Newsletter = nieuwsbrief;
 
   console.log(postObjectprofiel);
 
