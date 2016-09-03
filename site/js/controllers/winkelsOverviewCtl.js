@@ -3,12 +3,12 @@ myapp.controller('winkelCategorie', ['$scope', '$http','$location','$anchorScrol
   $scope.totalCount = true;
 
 
-  $scope.Toevoegen = "https://api.4morgen.org/v1/currentuser/favoriteshops";
-  $scope.apiLogin   = "https://api.4morgen.org/v1/authentication/login";
+      $scope.Toevoegen                      = $rootScope.winkelToevoegenFav;
+      $scope.apiLogin                       = $rootScope.authLogin;
       /* API Urls */
-      $scope.getCategoriesUrl = 'https://api.4morgen.org/v1/categories';
-      $scope.getSubCategoriesUrl = 'https://api.4morgen.org/v1/category/{categoryId}/subcategories';
-      $scope.getItemsUrl = "https://api.4morgen.org/v1/category/{categoryId}/subcategories/{subcategoryIds}/items?orderBy={orderBy}&skip={skip}&top={top}&includeCount={includeCount}";
+      $scope.getCategoriesUrl               = $rootScope.winkelCategorie;
+      $scope.getSubCategoriesUrl            = $rootScope.winkelSubCategorie;
+      $scope.getItemsUrl                    = $rootScope.winkelItems;
 
       $scope.categoriesLoading = false;
       $scope.subCategoriesLoading = false;
