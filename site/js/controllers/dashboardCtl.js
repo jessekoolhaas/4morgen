@@ -1,4 +1,4 @@
-myapp.controller('dashboardCtl', ['$scope', '$http','$location','$window','$state','$rootScope' function ($scope, $http, $location,$window,$state,$rootScope) {
+myapp.controller('dashboardCtl', ['$scope', '$http','$location','$window','$state','$rootScope', function ($scope, $http, $location,$window,$state,$rootScope) {
 
 
   $scope.$state = $state;
