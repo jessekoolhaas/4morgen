@@ -52,7 +52,7 @@
 
 <!-- Als er geen resultaat is -->
 
-  <div ng-show="errorMessageWinkel" ng-cloak ng-show="showModalvoordoorgaan">
+  <div ng-show="errorMessageWinkel" >
     <div class="alert alert-dismissible alert-warning">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <h4>Warning!</h4>
@@ -89,7 +89,7 @@
 <!-- END: Eerste model als je niet bent ingelogd -->
 
 <!-- inloggen succes -->
-<div class="modal-backdrop" style="display: block;">
+<div class="modal-backdrop" style="display: block;" ng-show="showModalvoordoorgaan" ng-cloak>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
