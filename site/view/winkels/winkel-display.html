@@ -98,6 +98,26 @@
     </div>
   </div>
 </div>
+
+<div class="modal-backdrop" style="display: block;" ng-show="inlogModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" ng-click="inlogModal=false">&times;</button>
+        <h4 class="modal-title">Inloggen</h4>
+      </div>
+      <div class="modal-body">
+        <p>Jouw inlog is succesvol</p>
+        <button type="button" class="btn btn-success btn-lg btn-block" ng-click="doorNaarWinkel(winkeldisplay.Id)">Klik hier om door tegaan</button>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button"style="float:left;" class="btn btn-danger" ng-click="inlogModal=false">Annuleren</button>
+        <button type="button" class="btn btn-default" ng-click="inlogModal=false" ui-sref="registratie">Registreren</button>
+        <button type="button" class="btn btn-primary" ng-click="loginSubmit(winkeldisplay.Id)">Inloggen</button>
+      </div> -->
+    </div>
+  </div>
+</div>
 <!-- END: inloggen succes -->
 
 
