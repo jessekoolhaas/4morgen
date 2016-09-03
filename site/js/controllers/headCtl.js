@@ -10,7 +10,7 @@ if (cookieAccept == undefined) {
   $scope.iscookie = false;
 }
 
-$scope.urlFeedback = "https://api.4morgen.org/v1/mail/contact";
+$scope.urlFeedback = $rootScope.Contact;
 $scope.auth = $rootScope.auth;
 $scope.userlog = false;
 $scope.getCategories = function () {

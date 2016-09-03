@@ -1,7 +1,7 @@
 
-  myapp.controller('profielCtl', ['$scope', '$http','$location', function ($scope, $http, $location) {
-    $scope.currentuserProfiel = "https://api.4morgen.org/v1/currentuser/profile";
-    $scope.apiRegisteren = "https://api.4morgen.org/v1/currentuser/profile";
+  myapp.controller('profielCtl', ['$scope', '$http','$location','$rootScope', function ($scope, $http, $location,$rootScope) {
+    $scope.currentuserProfiel     = $rootScope.accountProfiel;
+    $scope.apiRegisteren          = $rootScope.accountProfiel;
     $scope.wachtwoorden = false;
     $scope.Goedgekeurd = false;
     $scope.afgekeurd = false;

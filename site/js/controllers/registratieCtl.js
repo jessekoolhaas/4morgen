@@ -1,11 +1,11 @@
-myapp.controller('registratieCtl', ['$scope', '$http','$location','$cookies','$cookieStore', function ($scope, $http, $location,$cookies,$cookieStore) {
+myapp.controller('registratieCtl', ['$scope', '$http','$location','$cookies','$cookieStore', '$rootScope',function ($scope, $http, $location,$cookies,$cookieStore,$rootScope) {
 
 
 
 
 $scope.registratieSucces = false;
 $scope.submitForm = function() {
-  $scope.apiRegisteren = "https://api.4morgen.org/v1/account";
+  $scope.apiRegisteren = $rootScope.Registratie;
   voornaam = $scope.user.voornaam;
   tussenvoegsel = $scope.user.tussenvoegsel;
   achternaam = $scope.user.achternaam;

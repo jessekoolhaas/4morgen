@@ -1,4 +1,4 @@
-myapp.controller('zoekCtl', function ($scope,$http,$stateParams,$location,$state ){
+myapp.controller('zoekCtl', function ($scope,$http,$stateParams,$location,$state ,$rootScope){
 
   $scope.goto = function(Id) {
 
@@ -10,20 +10,22 @@ myapp.controller('zoekCtl', function ($scope,$http,$stateParams,$location,$state
   };
 // STATUS 1 == GOEDE doelen
 // STATUS 2 == WINKELS
-$scope.ToevoegenCharitie = "https://api.4morgen.org/v1/currentuser/favoritecharities";
-$scope.ToevoegenWinkels = "https://api.4morgen.org/v1/currentuser/favoriteshops";
-  $scope.apiLogin   = "https://api.4morgen.org/v1/authentication/login";
+$scope.ToevoegenCharitie                = $rootScope.goededoelenToevoegenFav;
+$scope.ToevoegenWinkels                 = $rootScope.winkelToevoegenFav;
+$scope.apiLogin                         = $rootScope.authLogin;
+$scope.zoeken                           = $rootScope.zoeken;
+
 $scope.inlogModalGoedeDoelen = false;
 $scope.winkelsGedeelte = true;
 $scope.charitiesGedeelte = true;
-  $scope.zoekquery = $stateParams.zoek;
+$scope.zoekquery = $stateParams.zoek;
 
 
 
   var test = $scope.zoekquery;
 
 
-$scope.zoeken = "https://api.4morgen.org/v1/search/{search}"
+
 var urlzoek = $scope.zoeken.replace("{search}",test)
 
   $http({
