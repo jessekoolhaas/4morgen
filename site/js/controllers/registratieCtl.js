@@ -3,6 +3,7 @@ myapp.controller('registratieCtl', ['$scope', '$http','$location','$cookies','$c
 
 
   $scope.apiRegisteren = $rootScope.Registratie;
+  console.log($rootScope.Registratie);
 $scope.registratieSucces = false;
 $scope.submitForm = function() {
 
@@ -15,7 +16,7 @@ $scope.submitForm = function() {
   voorwaarden = $scope.user.voorwaarden;
   // nieuwsbrief = $scope.user.nieuwsbrief;
 
-  var postObjectprofiel = new Object();
+  var registratie = new Object();
   postObjectprofiel.FirstName = voornaam;
   postObjectprofiel.MiddleName = tussenvoegsel;
   postObjectprofiel.LastName = achternaam;
@@ -24,14 +25,14 @@ $scope.submitForm = function() {
   postObjectprofiel.RepeatPassword = wachtwoord;
   // postObjectprofiel.Newsletter = nieuwsbrief;
 
-  console.log(postObjectprofiel);
+  console.log(registratie);
 
 
 
 $http({
   method: 'POST',
   url: $scope.apiRegisteren,
-  data: postObjectprofiel,
+  data: registratie,
   headers: {'Content-Type': 'application/json'}
       }).then(function successCallback(response) {
         console.log(response.status);
