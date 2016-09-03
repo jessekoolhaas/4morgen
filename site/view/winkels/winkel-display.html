@@ -52,7 +52,7 @@
 
 <!-- Als er geen resultaat is -->
 
-  <div ng-show="errorMessageWinkel">
+  <div ng-show="errorMessageWinkel" ng-show="showModalvoordoorgaan">
     <div class="alert alert-dismissible alert-warning">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <h4>Warning!</h4>
@@ -86,6 +86,9 @@
   </div>
 </div>
 
+<!-- END: Eerste model als je niet bent ingelogd -->
+
+<!-- inloggen succes -->
 <div class="modal-backdrop" style="display: block;">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -95,8 +98,10 @@
     </div>
   </div>
 </div>
+<!-- END: inloggen succes -->
 
 
+<!-- Login model om door naar de winkel te gaan -->
 <div class="modal-backdrop" style="display: block;" ng-show="inlogModal">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -141,6 +146,11 @@
   </div>
 </div>
 
+<!-- END: Login model om door naar de winkel te gaan -->
+
+
+<!-- inlog model om aan fav toe te voegen -->
+
 <div class="modal-backdrop" style="display: block;" ng-show="inlogModaltoevoegen">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -184,6 +194,7 @@
     </div>
   </div>
 </div>
+<!-- END: inlog model om aan fav toe te voegen -->
 
 
 
