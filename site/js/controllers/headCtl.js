@@ -11,7 +11,7 @@ if (cookieAccept == undefined) {
 }
 
 $scope.urlFeedback = "https://api.4morgen.org/v1/mail/contact";
-$scope.auth = "https://api.4morgen.org/v1/authentication";
+$scope.auth = $rootScope.auth;
 $scope.userlog = false;
 $scope.getCategories = function () {
     $http.get($scope.auth)
