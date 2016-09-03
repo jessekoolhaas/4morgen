@@ -1,4 +1,4 @@
-myapp.controller('headCtl', ['$scope', '$http','$location','$cookies','$timeout', function ($scope, $http, $location,$cookies,$timeout) {
+myapp.controller('headCtl', ['$scope', '$http','$location','$cookies','$timeout','$rootScope', function ($scope, $http, $location,$cookies,$timeout,$rootScope) {
 
 $scope.feedback = true;
 $scope.iscookie = true;
