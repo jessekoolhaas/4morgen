@@ -2,10 +2,10 @@ myapp.controller('registratieCtl', ['$scope', '$http','$location','$cookies','$c
 
 
 
-
+  $scope.apiRegisteren = $rootScope.Registratie;
 $scope.registratieSucces = false;
 $scope.submitForm = function() {
-  $scope.apiRegisteren = $rootScope.Registratie;
+
   voornaam = $scope.user.voornaam;
   tussenvoegsel = $scope.user.tussenvoegsel;
   achternaam = $scope.user.achternaam;
