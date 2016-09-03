@@ -4,7 +4,7 @@ myapp.controller('dashboardCtl', ['$scope', '$http','$location','$window','$stat
   $scope.$state = $state;
 
 
-$scope.auth                     = rootScope.auth;
+$scope.auth                     = $rootScope.auth;
 $scope.apiLogout                = $rootScope.authLogout;
 
 $scope.currentDonation          = $rootScope.donatieJaar;
