@@ -118,7 +118,7 @@ $scope.benIkIngeloged = function() {
                   }).then(function successCallback(response) {
 
                     $scope.inlogModal = false;
-                    $scope.doorNaarWinkel(winkelId);
+                    $scope.showModalvoordoorgaan = true;
 
 
                   }, function errorCallback(response) {
