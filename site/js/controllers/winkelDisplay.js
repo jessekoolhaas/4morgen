@@ -134,6 +134,8 @@ $scope.benIkIngeloged = function() {
                 var url = $scope.redirect.replace("{winkelId}", winkelId);
                   var newWindow = window.open();
                   newWindow.location = url;
+                  $scope.inlogModal = false;
+                  $scope.showModalvoordoorgaan = false;
           };
 
 
