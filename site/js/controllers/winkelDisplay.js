@@ -1,4 +1,4 @@
-myapp.controller('winkelDisplay', function ( $scope,$stateParams,$http, $location, $window, $timeout,$sce){
+myapp.controller('winkelDisplay', function ( $scope,$stateParams,$http, $location, $window, $timeout,$sce,$rootScope){
 
 $scope.currentWinkel = $stateParams.winkel;
 
@@ -6,19 +6,20 @@ $scope.currentWinkel = $stateParams.winkel;
 
 $scope.loginError = false;
 
-$scope.apiLogin   = "https://api.4morgen.org/v1/authentication/login";
-$scope.apiLogout  = "https://api.4morgen.org/v1/authentication/logoff";
-$scope.Toevoegen = "https://api.4morgen.org/v1/currentuser/favoriteshops";
+$scope.apiLogin             = $rootScope.authLogin;
+$scope.Toevoegen            = $rootScope.winkelToevoegenFav;
+
+$scope.getWinkelUrl         = $rootScope.winkelDisplay;
+$scope.related              = $rootScope.winkelRelated;
+$scope.auth                 = $rootScope.auth;
+$scope.redirect             = $rootScope.winkelRedirect;
 
 $scope.showModal = false;
 $scope.inlogModal = false;
 $scope.inlogModaltoevoegen = false;
 
 
-$scope.getWinkelUrl = "https://api.4morgen.org/v1/shop/{shopId}";
-$scope.related = "https://api.4morgen.org/v1/shop/{shopId}/related";
-$scope.auth = "https://api.4morgen.org/v1/authentication";
-$scope.redirect = "https://api.4morgen.org/v1/tracking/redirect/{winkelId}";
+
 
 $scope.errorMessageWinkel = false;
 $scope.winkels = true;
