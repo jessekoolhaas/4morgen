@@ -48,16 +48,9 @@
     </div>
   </div>
 
-  <img src="site/image/loader/ajax-loader.gif" alt="">
 
 
-
-
-
-
-
-
-
+<!-- Als er geen resultaat is -->
 
   <div ng-show="errorMessageWinkel">
     <div class="alert alert-dismissible alert-warning">
@@ -66,9 +59,12 @@
     <p>Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, <a href="#" class="alert-link">vel scelerisque nisl consectetur et</a>.</p>
     </div>
   </div>
+<!-- END: Als er geen resultaat is -->
+
 </div>
 
 
+<!-- Eerste model als je niet bent ingelogd -->
 <div class="modal-backdrop" style="display: block;" ng-show="showModal">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -90,7 +86,7 @@
   </div>
 </div>
 
-<div class="modal-backdrop" style="display: block;" ng-show="showModalvoordoorgaan">
+<div class="modal-backdrop" style="display: block;">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
