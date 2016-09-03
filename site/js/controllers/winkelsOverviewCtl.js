@@ -1,4 +1,4 @@
-myapp.controller('winkelCategorie', ['$scope', '$http','$location','$anchorScroll', function ($scope, $http,$location,$anchorScroll) {
+myapp.controller('winkelCategorie', ['$scope', '$http','$location','$anchorScroll','$rootscope', function ($scope, $http,$location,$anchorScroll,$rootScope) {
 
   $scope.totalCount = true;
 
