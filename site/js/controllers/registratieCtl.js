@@ -15,19 +15,22 @@ $scope.submitForm = function() {
   voorwaarden = $scope.user.voorwaarden;
   nieuwsbrief = $scope.user.nieuwsbrief;
 
+  var postObjectprofiel = new Object();
+  postObjectprofiel.FirstName = voornaam;
+  postObjectprofiel.MiddleName = tussenvoegsel;
+  postObjectprofiel.LastName = achternaam;
+  postObjectprofiel.Email = email;
+  postObjectprofiel.Password = wachtwoord;
+  postObjectprofiel.RepeatPassword = wachtwoord;
+  postObjectprofiel.Newsletter = Newsletter;
+
 
 
 $http({
   method: 'POST',
   url: $scope.apiRegisteren,
-  data:   'FirstName=' + voornaam +
-          '&MiddleName=' + tussenvoegsel +
-          '&LastName=' + achternaam +
-          '&Email=' + email +
-          '&Password=' + wachtwoord +
-          '&RepeatPassword=' + wachtwoord +
-          '&Newsletter=' + nieuwsbrief,
-  headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+  data: postObjectprofiel,
+  headers: {'Content-Type': 'application/json'}
       }).then(function successCallback(response) {
         console.log(response.status);
         $scope.registratieSucces = true;
