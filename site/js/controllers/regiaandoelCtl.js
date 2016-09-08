@@ -1,10 +1,10 @@
-myapp.controller('regiaandoelCtl', function ( $scope,$stateParams,$http,$location,$window,$sce ){
+myapp.controller('regiaandoelCtl', function ( $scope,$stateParams,$http,$location,$window,$sce ,$rootScope){
 
 $scope.registratieSucces = false;
   $scope.currentGoededoel = $stateParams.goeddoel;
   console.log($scope.currentGoededoel);
 
-  $scope.getWinkelUrl = "https://api.4morgen.org/v1/charity/{charityId}";
+  $scope.getWinkelUrl = $rootScope.goededoelenDisplay;
 
   $scope.errorMessageWinkel = false;
 
@@ -23,7 +23,7 @@ $scope.registratieSucces = false;
 
 
       $scope.submitForm = function() {
-        $scope.apiRegisteren = "https://api.4morgen.org/v1/account";
+        $scope.apiRegisteren = $rootScope.Registratie;
         voornaam = $scope.user.voornaam;
         tussenvoegsel = $scope.user.tussenvoegsel;
         achternaam = $scope.user.achternaam;
@@ -50,7 +50,7 @@ $scope.registratieSucces = false;
         headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             }).then(function successCallback(response) {
               console.log(response.status);
-              
+
               $scope.registratieSucces = true;
 
             }, function errorCallback(response) {

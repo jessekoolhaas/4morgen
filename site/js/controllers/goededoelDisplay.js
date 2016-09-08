@@ -1,16 +1,15 @@
-myapp.controller('goededoelenDisplay', function ( $scope,$stateParams,$http,$location,$window,$sce ){
+myapp.controller('goededoelenDisplay', function ( $scope,$stateParams,$http,$location,$window,$sce,$rootScope ){
 
 
 
-  $scope.currentWinkel = $stateParams.goededoel;
-  $scope.apiLogin   = "https://api.4morgen.org/v1/authentication/login";
-  $scope.Toevoegen = "https://api.4morgen.org/v1/currentuser/favoritecharities";
-  $scope.verwijderen = "https://api.4morgen.org/v1/currentuser/favoritecharities";
+  $scope.currentWinkel        = $stateParams.goededoel;
+  $scope.apiLogin             = $rootScope.authLogin;
+  $scope.Toevoegen            = $rootScope.goededoelenToevoegenFav;
+  $scope.verwijderen          = $rootScope.goededoelenToevoegenFav;
 
-$scope.getWinkelUrl = "https://api.4morgen.org/v1/charity/{charityId}";
-$scope.auth = "https://api.4morgen.org/v1/authentication";
-$scope.redirect = "https://api.4morgen.org/v1/tracking/redirect/{winkelId}";
-$scope.relatedGoededoelen = "https://api.4morgen.org/v1/charity/{charityId}/related";
+$scope.getWinkelUrl           = $rootScope.goededoelenDisplay;
+$scope.auth                   = $rootScope.auth;
+$scope.relatedGoededoelen     = $rootScope.goededoelenRelated;
 
 $scope.errorMessageWinkel = false;
 

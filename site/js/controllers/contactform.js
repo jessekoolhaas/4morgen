@@ -1,6 +1,6 @@
-myapp.controller('contact',['$scope','$window','$http' ,function ($scope,$window,$http){
+myapp.controller('contact',['$scope','$window','$http' ,'$rootScope',function ($scope,$window,$http,$rootScope){
 $scope.vergetenError = false
-$scope.urlmail = "https://api.4morgen.org/v1/mail/contact";
+$scope.urlmail = $rootScope.Contact;
 
 $scope.submitformDonatie = function() {
   var voornaam ="Testerino";
