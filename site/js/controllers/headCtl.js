@@ -1,4 +1,4 @@
-myapp.controller('headCtl', ['$scope', '$http','$location','$cookies','$timeout', function ($scope, $http, $location,$cookies,$timeout) {
+myapp.controller('headCtl', ['$scope', '$http','$location','$cookies','$timeout','$rootScope', function ($scope, $http, $location,$cookies,$timeout,$rootScope) {
 
 $scope.feedback = true;
 $scope.iscookie = true;
@@ -10,8 +10,8 @@ if (cookieAccept == undefined) {
   $scope.iscookie = false;
 }
 
-$scope.urlFeedback = "https://api.4morgen.org/v1/mail/contact";
-$scope.auth = "https://api.4morgen.org/v1/authentication";
+$scope.urlFeedback = $rootScope.Contact;
+$scope.auth = $rootScope.auth;
 $scope.userlog = false;
 $scope.getCategories = function () {
     $http.get($scope.auth)

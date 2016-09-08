@@ -1,9 +1,9 @@
-myapp.controller('wachtwoordvergetenCtl', function ( $scope,$http,$location,$window,$stateParams,$sce,$timeout){
+myapp.controller('wachtwoordvergetenCtl', function ( $scope,$http,$location,$window,$stateParams,$sce,$timeout,$rootScope){
 
-$scope.resetten = "https://api.4morgen.org/v1/account/password/reset";
-$scope.instellenurl = "https://api.4morgen.org/v1/account/password/{token}";
-$scope.succesverstuurd = true;
-$scope.geenmatch = true;
+$scope.resetten                 = $rootScope.wachtwoordReset;
+$scope.instellenurl             = $rootScope.nieuwWachtwoordInstellen;
+$scope.succesverstuurd          = true;
+$scope.geenmatch                = true;
 $scope.wachtwoordInstellenSuccess = true;
 $scope.wachtwoordInstellen = false;
 

@@ -1,15 +1,12 @@
-myapp.controller('goededoelenCategorie', ['$scope', '$http','$location','$timeout', function ($scope, $http,$location,$timeout) {
+myapp.controller('goededoelenCategorie', ['$scope', '$http','$location','$timeout','$rootScope', function ($scope, $http,$location,$timeout,$rootScope) {
 
 
 
-    $scope.Toevoegen = "https://api.4morgen.org/v1/currentuser/favoritecharities";
-    $scope.verwijderen = "https://api.4morgen.org/v1/currentuser/favoritecharities";
-    $scope.apiLogin   = "https://api.4morgen.org/v1/authentication/login";
-
-      /* API Urls */
-      $scope.getCategoriesUrl = 'https://api.4morgen.org/v1/charities/categories';
-      $scope.getSubCategoriesUrl = 'https://api.4morgen.org/v1/category/{categoryId}/subcategories';
-      $scope.getItemsUrl = "https://api.4morgen.org/v1/categories/{categoryIds}/charities?skip={skip}&top={top}&includeCount={includeCount}";
+      $scope.Toevoegen              = $rootScope.goededoelenToevoegenFav;
+      $scope.verwijderen            = $rootScope.goededoelenToevoegenFav;
+      $scope.apiLogin               = $rootScope.authLogin
+      $scope.getCategoriesUrl       = $rootScope.goededoelenCategorie;
+      $scope.getItemsUrl            = $rootScope.goededoelenItems;
 
       $scope.categoriesLoading = false;
       $scope.subCategoriesLoading = false;

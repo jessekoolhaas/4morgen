@@ -1,11 +1,12 @@
-myapp.controller('registratieCtl', ['$scope', '$http','$location','$cookies','$cookieStore', function ($scope, $http, $location,$cookies,$cookieStore) {
+myapp.controller('registratieCtl', ['$scope', '$http','$location','$cookies','$cookieStore', '$rootScope',function ($scope, $http, $location,$cookies,$cookieStore,$rootScope) {
 
 
 
-
+  $scope.apiRegisteren = $rootScope.Registratie;
+  console.log($rootScope.Registratie);
 $scope.registratieSucces = false;
 $scope.submitForm = function() {
-  $scope.apiRegisteren = "https://api.4morgen.org/v1/account";
+
   voornaam = $scope.user.voornaam;
   tussenvoegsel = $scope.user.tussenvoegsel;
   achternaam = $scope.user.achternaam;
@@ -13,21 +14,26 @@ $scope.submitForm = function() {
   wachtwoord = $scope.user.password;
   herwachtwoord = $scope.user.password_c;
   voorwaarden = $scope.user.voorwaarden;
-  nieuwsbrief = $scope.user.nieuwsbrief;
+  // nieuwsbrief = $scope.user.nieuwsbrief;
+
+  var registratie = new Object();
+  postObjectprofiel.FirstName = voornaam;
+  postObjectprofiel.MiddleName = tussenvoegsel;
+  postObjectprofiel.LastName = achternaam;
+  postObjectprofiel.Email = email;
+  postObjectprofiel.Password = wachtwoord;
+  postObjectprofiel.RepeatPassword = wachtwoord;
+  // postObjectprofiel.Newsletter = nieuwsbrief;
+
+  console.log(registratie);
 
 
 
 $http({
   method: 'POST',
   url: $scope.apiRegisteren,
-  data:   'FirstName=' + voornaam +
-          '&MiddleName=' + tussenvoegsel +
-          '&LastName=' + achternaam +
-          '&Email=' + email +
-          '&Password=' + wachtwoord +
-          '&RepeatPassword=' + wachtwoord +
-          '&Newsletter=' + nieuwsbrief,
-  headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+  data: registratie,
+  headers: {'Content-Type': 'application/json'}
       }).then(function successCallback(response) {
         console.log(response.status);
         $scope.registratieSucces = true;

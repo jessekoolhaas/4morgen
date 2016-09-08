@@ -1,6 +1,6 @@
-  myapp.controller('accountConfirmCtl', ['$scope', '$http','$location','$cookies','$cookieStore','$state','$window','$stateParams', function ($scope, $http, $location,$cookies,$cookieStore,$state,$window,$stateParams) {
+  myapp.controller('accountConfirmCtl', ['$scope', '$http','$location','$cookies','$cookieStore','$state','$window','$stateParams', '$rootScope',function ($scope, $http, $location,$cookies,$cookieStore,$state,$window,$stateParams,$rootScope) {
 
-    $scope.confirmAccountUrl = "https://api.4morgen.org/v1/account/confirm/{token}";
+    $scope.confirmAccountUrl = $rootScope.wachtwoordBevestigen;
 
 $scope.zoekquery = $stateParams.token;
 var test = $scope.zoekquery

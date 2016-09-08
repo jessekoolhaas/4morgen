@@ -148,6 +148,10 @@ myapp.config(['$urlRouterProvider', '$stateProvider','$locationProvider','$httpP
           templateUrl:"/site/view/account/accountConfirm.html",
           controller:"accountConfirmCtl"
         })
+        .state('voorjebuurt', {
+            url: "/voorjebuurt",
+            templateUrl: "/site/view/overig/voorjebuurt.html"
+        })
 
 
 }]);
