@@ -1,15 +1,15 @@
-myapp.controller('dashboardCtl', ['$scope', '$http','$location','$window','$state', function ($scope, $http, $location,$window,$state) {
+myapp.controller('dashboardCtl', ['$scope', '$http','$location','$window','$state','$rootScope', function ($scope, $http, $location,$window,$state,$rootScope) {
 
 
   $scope.$state = $state;
 
 
-$scope.auth = "https://api.4morgen.org/v1/authentication";
-$scope.apiLogout  = "https://api.4morgen.org/v1/authentication/logoff";
+$scope.auth                     = $rootScope.auth;
+$scope.apiLogout                = $rootScope.authLogout;
 
-$scope.currentDonation  = "https://api.4morgen.org/v1/donations/currentuser/yearly";
-$scope.TotaalDonatiesutl  = "https://api.4morgen.org/v1/donations/currentuser?skip={skip}&top={top}&orderby={orderby}&includeCount={includeCount}";
-$scope.jaaropgave = "https://api.4morgen.org/v1/donations/report/annualstatement/{year}"
+$scope.currentDonation          = $rootScope.donatieJaar;
+$scope.TotaalDonatiesutl        = $rootScope.donatieLijst;
+$scope.jaaropgave               = $rootScope.jaarOpgave;
 
 $scope.skip = 0;
 $scope.topj = 50;
@@ -22,9 +22,9 @@ $scope.order = "Date";
 
 
 
-$scope.favoriteCharities = "https://api.4morgen.org/v1/currentuser/favoritecharities";
-$scope.favoriteShops = "https://api.4morgen.org/v1/currentuser/favoriteshops";
-$scope.verwijderen = "https://api.4morgen.org/v1/currentuser/favoritecharities";
+$scope.favoriteCharities        = $rootScope.goededoelenToevoegenFav;
+$scope.favoriteShops            = $rootScope.winkelToevoegenFav;
+$scope.verwijderen              = $rootScope.goededoelenToevoegenFav;
 
 
 $scope.hoverIn = function(){

@@ -1,10 +1,10 @@
-myapp.controller('loginCtl', ['$scope', '$http','$location','$cookies','$cookieStore','$state','$window', function ($scope, $http, $location,$cookies,$cookieStore,$state,$window) {
+myapp.controller('loginCtl', ['$scope', '$http','$location','$cookies','$cookieStore','$state','$window','$rootScope', function ($scope, $http, $location,$cookies,$cookieStore,$state,$window,$rootScope) {
 
   $scope.loginError = false;
 
-  $scope.apiLogin   = "https://api.4morgen.org/v1/authentication/login";
-  $scope.apiLogout  = "https://api.4morgen.org/v1/authentication/logoff";
-  $scope.facebooklogin = "https://api.4morgen.org/v1/authentication/social/facebook?returnUrlSuccess={returnUrlSuccess}&returnUrlFailure={returnUrlFailure}";
+  $scope.apiLogin           = $rootScope.authLogin;
+  $scope.apiLogout          = $rootScope.authLogout;
+  $scope.facebooklogin      = $rootScope.facebookLogin;
 
   $scope.loginSubmit = function(){
       $scope.loginError = false;
@@ -47,8 +47,8 @@ myapp.controller('loginCtl', ['$scope', '$http','$location','$cookies','$cookieS
   $scope.facebook = function(){
     console.log("asdkahshd ahsjdas");
     var urlFacebook = $scope.facebooklogin
-    .replace("{returnUrlSuccess}", "https://qa.4morgen.org/dashboard/overzicht")
-    .replace("{returnUrlFailure}", "https://qa.4morgen.org/");
+    .replace("{returnUrlSuccess}", $rootScope.fbSucces)
+    .replace("{returnUrlFailure}", $rootScope.fbFailure);
     console.log(urlFacebook);
     $window.location = urlFacebook, "_blank";
   }
