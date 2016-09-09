@@ -130,6 +130,7 @@ myapp.controller('goededoelenCategorie', ['$scope', '$http','$location','$timeou
 
       $scope.toevoegen = function(charitieId,charitieName){
         $scope.datatsad = charitieId;
+
         $http({
           method: 'PUT',
           url: $scope.Toevoegen,
