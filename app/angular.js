@@ -13,14 +13,14 @@ var myapp = angular.module('myapp',
      myapp.run(function ($rootScope) {
        var api = "https://api.4morgen.org/"; //todo: make this configurable regardless of version control (or auto-detecting?)
 
+
          // Inlog
          $rootScope.auth                    = api + "v1/authentication";
          $rootScope.authLogin               = api + "v1/authentication/login";
          $rootScope.authLogout              = api + "v1/authentication/logoff";
          $rootScope.facebookLogin           = api + "v1/authentication/social/facebook?returnUrlSuccess={returnUrlSuccess}&returnUrlFailure={returnUrlFailure}";
-         $rootScope.fbSucces                = api + "dashboard/overzicht";
-         $rootScope.fbFailure               = api ;
-
+         $rootScope.fbSucces                =  "https://www.4morgen.org/dashboard/overzicht";
+         $rootScope.fbFailure               =   "https://www.4morgen.org";
          // Account
          $rootScope.wachtwoordReset         = api + "v1/account/password/reset";
          $rootScope.nieuwWachtwoordInstellen = api + "v1/account/password/{token}";
@@ -40,7 +40,8 @@ var myapp = angular.module('myapp',
 
          // dashboard
          $rootScope.donatieJaar             = api + "v1/donations/currentuser/yearly";
-         $rootScope.donatieLijst            = api + "https://api.4morgen.org/v1/donations/currentuser?skip={skip}&top={top}&orderby={orderby}&includeCount={includeCount}";
+         $rootScope.donatieLijst            = api + "v1/donations/currentuser?skip={skip}&top={top}&orderby={orderby}&includeCount={includeCount}";
+
          $rootScope.jaarOpgave              = api + "v1/donations/report/annualstatement/{year}";
 
          // Goede doelen
