@@ -7,6 +7,7 @@ myapp.controller('goededoelenCategorie', ['$scope', '$http','$location','$timeou
       $scope.apiLogin               = $rootScope.authLogin
       $scope.getCategoriesUrl       = $rootScope.goededoelenCategorie;
       $scope.getItemsUrl            = $rootScope.goededoelenItems;
+      console.log($scope.Toevoegen);
 
       $scope.categoriesLoading = false;
       $scope.subCategoriesLoading = false;
