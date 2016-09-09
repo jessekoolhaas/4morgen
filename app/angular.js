@@ -18,7 +18,7 @@ var myapp = angular.module('myapp',
          $rootScope.authLogin               = api + "v1/authentication/login";
          $rootScope.authLogout              = api + "v1/authentication/logoff";
          $rootScope.facebookLogin           = api + "v1/authentication/social/facebook?returnUrlSuccess={returnUrlSuccess}&returnUrlFailure={returnUrlFailure}";
-         $rootScope.fbSucces                = api + "dashboard/overzicht";
+         $rootScope.fbSucces                = api + "https://4morgen.org/dashboard/overzicht";
          $rootScope.fbFailure               = api ;
 
          // Account
