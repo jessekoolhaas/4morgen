@@ -54,7 +54,10 @@ $scope.benIkIngeloged = function() {
               $scope.winkeldisplay = data;
               $scope.CommissionUnit = data.CommissionUnit;
               $scope.winkeltext = data.Description;
+              
+              console.log($scope.winkeltext);
               $scope.trustedHtml = $sce.trustAsHtml($scope.winkeltext);
+              console.log($scope.trustedHtml);
           })
           .error(function (data, status, headers, config) {
             $scope.errorMessageWinkel = true;
@@ -100,8 +103,9 @@ $scope.benIkIngeloged = function() {
           }
 
 
-
+console.log("asdhk asjdkjahsd kasjkdhaksjdh kjsahdkjhas kdjhsa k");
           $scope.loginSubmit = function(winkelId){
+            console.log("asdhk asjdkjahsd kasjkdhaksjdh kjsahdkjhas kdjhsa k");
             var voornaam = $scope.voornaam
             var wachtwoord = $scope.wachtwoord
             var Objectprofiel = new Object();
@@ -119,6 +123,13 @@ $scope.benIkIngeloged = function() {
 
                     $scope.inlogModal = false;
                     $scope.showModalvoordoorgaan = true;
+                    $scope.getrekt = function(){
+                      console.log("TESADASDASDAS");
+                            return true;
+                            }
+                            $scope.$on('inlogEvent', function(e) {
+                            $scope.$parent.userlog = ( $scope.getrekt())
+                            });
 
 
                   }, function errorCallback(response) {

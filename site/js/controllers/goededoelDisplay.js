@@ -30,9 +30,35 @@ $scope.errorMessageWinkel = false;
       $http.get(url)
           .success(function (data, status, headers, config) {
               $scope.goededoeldisplay = data;
+              console.log(data);
+
+              $scope.video = data.VideoUrl;
+              console.log($scope.video);
+              console.log("dit is de $scope.video");
+              $scope.currentProjectUrl = $sce.trustAsResourceUrl($scope.video);
+              console.log($scope.currentProjectUrl);
+              console.log("dit is de $scope.currentProjectUrl");
+              // var url = $scope.currentProjectUrl.replace("watch?v=", "v/");
+              // console.log(url);
+              // console.log("dit is de url");
+              // var url = $scope.currentProjectUrl;
+              // console.log(url);
+              // $scope.currentProjectUrl = url.
+              // console.log($scope.currentProjectUrl);
+
+
+
+              // Winkeltext
               $scope.winkeltext = data.Description;
               $scope.trustedHtml = $sce.trustAsHtml($scope.winkeltext);
               $scope.CommissionUnit = data.CommissionUnit;
+
+              // adress text
+              $scope.Address = data.Address;
+              console.log($scope.Address);
+              $scope.TrustedAdress = $sce.trustAsHtml($scope.Address);
+
+
               $scope.post();
 
 
