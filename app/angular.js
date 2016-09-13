@@ -40,7 +40,7 @@ var myapp = angular.module('myapp',
 
          // dashboard
          $rootScope.donatieJaar             = api + "v1/donations/currentuser/yearly";
-         $rootScope.donatieLijst            = api + "https://api.4morgen.org/v1/donations/currentuser?skip={skip}&top={top}&orderby={orderby}&includeCount={includeCount}";
+         $rootScope.donatieLijst            = api + "v1/donations/currentuser?skip={skip}&top={top}&orderby={orderby}&includeCount={includeCount}";
          $rootScope.jaarOpgave              = api + "v1/donations/report/annualstatement/{year}";
 
          // Goede doelen
