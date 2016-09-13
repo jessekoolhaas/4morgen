@@ -17,12 +17,12 @@ $scope.submitForm = function() {
   // nieuwsbrief = $scope.user.nieuwsbrief;
 
   var registratie = new Object();
-  postObjectprofiel.FirstName = voornaam;
-  postObjectprofiel.MiddleName = tussenvoegsel;
-  postObjectprofiel.LastName = achternaam;
-  postObjectprofiel.Email = email;
-  postObjectprofiel.Password = wachtwoord;
-  postObjectprofiel.RepeatPassword = wachtwoord;
+  registratie.FirstName = voornaam;
+  registratie.MiddleName = tussenvoegsel;
+  registratie.LastName = achternaam;
+  registratie.Email = email;
+  registratie.Password = wachtwoord;
+  registratie.RepeatPassword = wachtwoord;
   // postObjectprofiel.Newsletter = nieuwsbrief;
 
   console.log(registratie);
