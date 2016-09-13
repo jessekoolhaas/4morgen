@@ -1,4 +1,7 @@
 
-.htaccess
 
-web.config
+site/js/controllers/goededoelDisplay.js
+
+
+site/view/goededoelen/goededoel-display.html
+
