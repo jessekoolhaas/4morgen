@@ -11,7 +11,7 @@ var myapp = angular.module('myapp',
      );
 
      myapp.run(function ($rootScope) {
-       var api = "https://api-test.4morgen.org/"; //todo: make this configurable regardless of version control (or auto-detecting?)
+       var api = "https://api.4morgen.org/"; //todo: make this configurable regardless of version control (or auto-detecting?)
 
          // Inlog
          $rootScope.auth                    = api + "v1/authentication";
