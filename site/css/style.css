@@ -21,6 +21,10 @@
 body {
   font-family: 'Dosis', sans-serif;
 }
+.reset {
+  padding-left: 0px;
+  padding-right: 0px;
+}
 
 
 
@@ -551,20 +555,25 @@ margin-top:20px;
 .gegevensblokgoededoelen {
   /*background-color: rgba(0, 0, 1, 0.1);*/
   margin-top: 30px;
-  height: 300px;
+  /*height: 300px;*/
   color: black;
-  padding: 15px;
-}
-.social img {
-  width: 48px;
+  /*padding: 15px;*/
 }
 .social {
-  list-style-type: none;
-  padding: 0;
+  float: right;
+  width: 40px;
 }
+.social img {
+height: 38px;
+  float: right;
+}
+/*.social {*/
+  /*list-style-type: none;*/
+  /*padding: 0;*/
+/*}*/
 .fbicon {
   margin-top: 5px;
 }
 .eersteicon {
-  margin-top: 38px;
+  margin-top: 27px;
 }
