@@ -50,6 +50,7 @@ var urlzoek = $scope.zoeken.replace("{search}",test)
           if ($scope.resultaatWinkels == 0 && $scope.resultaatDoelen == 0) {
             console.log("bijde result is 0");
             $scope.geenresult = true;
+              $state.go('404zoeken')
           }
 
         }, function errorCallback(response) {
