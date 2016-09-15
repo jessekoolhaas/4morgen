@@ -14,6 +14,7 @@
       <th>Goede doelen</th>
       <th>Donatie</th>
       <th>Status</th>
+      <th>fb</th>
     </tr>
   </thead>
   <tbody>
@@ -28,6 +29,7 @@
         <span ng-if="x.Status == '2'">Afgekeurd</span>
         <span ng-if="x.Status == '3'">Ontvangen</span>
       </td>
+      <td><img src="site/image/fb.svg" alt="" ng-click="post(x.ItemName, x.Charities,x.Donation )"></td>
     </tr>
   </tbody>
 </table>
