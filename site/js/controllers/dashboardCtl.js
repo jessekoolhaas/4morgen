@@ -247,6 +247,56 @@ $http({
 
   }
 
+    $scope.posts = [];
+    $scope.post = function(winkel, doel, donatie){
+        $scope.rounddonatie = parseFloat(Math.round(donatie * 100) / 100).toFixed(2);
+        // var beschrijving = "Ik doneer gratis aan "+$scope.goededoeldisplay.Name+" door online te shoppen via 4MORGEN. Doe jij ook mee?"
+        var img = 'http://4morgen.local/site/image/onbekend.png'
+        $scope.posts = [{
+
+            name            :'4MORGEN',
+            url             :'https://4morgen.org',
+            image           : 'https://4morgen.org/site/image/icons/help-een-goed-doel.png',
+            // caption         :" Dit is de caption1",
+            description     :'Mijn online aankoop bij '+ winkel + ' via 4MORGEN is goed voor een donatie van '+        $scope.rounddonatie+' aan '+doel+'. Gratis doneren via 4MORGEN, doe je ook mee?',
+            message         :"Asdmessage message message message asdasd"
+        }];
+
+        $scope.share($scope.posts);
+    };
+
+    $scope.share = function(post){
+        console.log(post);
+        console.log(post[0].title);
+        var PostToWall = post[0];
+        // console.log(url);
+
+
+        FB.ui(
+            {
+                method: 'feed',
+                name: PostToWall.name,
+                link: PostToWall.url,
+                picture: PostToWall.image,
+                caption: PostToWall.caption,
+                description: PostToWall.description,
+                message: PostToWall.message
+            });
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   $scope.favChar();
   $scope.FavShops();
   $scope.currentDonationf();

@@ -150,7 +150,8 @@ myapp.config(['$urlRouterProvider', '$stateProvider','$locationProvider','$httpP
         })
         .state('voorjebuurt', {
             url: "/voorjebuurt",
-            templateUrl: "/site/view/overig/voorjebuurt.html"
+            templateUrl: "/site/view/overig/voorjebuurt.html",
+          controller:"vjbCtl"
         })
 
 

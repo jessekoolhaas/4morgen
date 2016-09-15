@@ -31,9 +31,25 @@
       <p class="wit2 winkelmenutext">Het is nu mogelijk om via 4MORGEN gratis te doneren aan alle lopende campagnes op Voor je Buurt. Het werkt heel eenvoudig! Klik bij categorieën op Voor je Buurt en voeg de campagne van jouw keuze toe aan je lijst met goede doelen. Namens de initiatiefnemers van de campagnes willen we je alvast hartelijk bedanken voor je gratis donatie!</p>
     </div>
   </div>
-
-
   </div>
 </div>
+  <div class="container">
+    <div class="row vjbruimtetop">
+      <div class=" col-sm-4 col-md-3 col-xs-6 singelwinkel" ng-repeat = "vjb in vjbdata" >
+        <div class="singelwinkelborder  klikding">
+          <!--<div class="toevoegenfav" ng-click="ToevoegenAanFav(x.Id,x.Name)">-->
+            <!--<img src="site/image/hearthfavlef.png" alt="" />-->
+          <!--</div>-->
+          <div class="img-holder" ng-click="goto(vjb.Id)">
+            <img ng-src="{{vjb.ImageUrl}}" alt="{{x.Name}}"  />
+          </div>
+          <p class="text-center">{{vjb.Name}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
 
 <div ng-include="'site/footer.html'"></div>
