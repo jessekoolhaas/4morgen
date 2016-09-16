@@ -19,8 +19,9 @@ var myapp = angular.module('myapp',
          $rootScope.authLogin               = api + "v1/authentication/login";
          $rootScope.authLogout              = api + "v1/authentication/logoff";
          $rootScope.facebookLogin           = api + "v1/authentication/social/facebook?returnUrlSuccess={returnUrlSuccess}&returnUrlFailure={returnUrlFailure}";
-         $rootScope.fbSucces                =  "https://www.4morgen.org/dashboard/overzicht";
-         $rootScope.fbFailure               =   "https://www.4morgen.org";
+         $rootScope.fbSucces                =   "https://4morgen.org/dashboard/overzicht";
+         $rootScope.fbFailure               = "https://4morgen.org/";
+
          // Account
          $rootScope.wachtwoordReset         = api + "v1/account/password/reset";
          $rootScope.nieuwWachtwoordInstellen = api + "v1/account/password/{token}";
@@ -41,7 +42,6 @@ var myapp = angular.module('myapp',
          // dashboard
          $rootScope.donatieJaar             = api + "v1/donations/currentuser/yearly";
          $rootScope.donatieLijst            = api + "v1/donations/currentuser?skip={skip}&top={top}&orderby={orderby}&includeCount={includeCount}";
-
          $rootScope.jaarOpgave              = api + "v1/donations/report/annualstatement/{year}";
 
          // Goede doelen
