@@ -110,4 +110,10 @@ width: 200px;
     height: 47px;
     float: right;
   }
+  .fbicondonatie {
+    width: 40px;
+  }
+  .voegtoe {
+    max-width: 200px;
+  }
 }
