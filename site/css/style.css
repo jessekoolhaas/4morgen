@@ -518,6 +518,7 @@ margin-top: 17px;
   position: fixed;
   bottom: 0px;
   width: 100%;
+  z-index: 9999;
 }
 .wachtwoordvergeten {
 margin-top:20px;
@@ -567,4 +568,13 @@ margin-top:20px;
 }
 .eersteicon {
   margin-top: 38px;
+}
+.vjbruimtetop {
+  margin-top: 30px;
+}
+.fbicondonatie{
+  width: 20px;
+}
+.voegtoe {
+  max-width: 100px;
 }
