@@ -256,7 +256,7 @@ $http({
 
             name            :'4MORGEN',
             url             :'https://4morgen.org',
-            image           : 'https://4morgen.org/site/image/icons/help-een-goed-doel.png',
+            image           : 'http://i.imgur.com/PwpQfLa.png',
             // caption         :" Dit is de caption1",
             description     :'Mijn online aankoop bij '+ winkel + ' via 4MORGEN is goed voor een donatie van '+        $scope.rounddonatie+' aan '+doel+'. Gratis doneren via 4MORGEN, doe je ook mee?',
             message         :"Asdmessage message message message asdasd"

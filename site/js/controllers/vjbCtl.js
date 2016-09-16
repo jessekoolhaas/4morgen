@@ -1,11 +1,9 @@
-myapp.controller('vjbCtl', function ($scope,$http,$rootScope ){
-    console.log("asldjkj aslkdjlakjs dl");
+myapp.controller('vjbCtl', function ($scope,$http,$rootScope ,$location){
     $scope.getCategoriesUrl       = $rootScope.goededoelenItems;
-    console.log( $scope.getCategoriesUrl  );
     $scope.selectedCategoryId = "6"
 
 
-    $scope.itemsPerPage = 6;
+    $scope.itemsPerPage = 4;
     $scope.totalItems = 999;
     $scope.currentPage = 1;
     $scope.orderBy = "Name";
@@ -23,7 +21,7 @@ myapp.controller('vjbCtl', function ($scope,$http,$rootScope ){
 
     $http.get(url)
         .success(function (data, status, headers, config) {
-        console.log(data)
+
             $scope.vjbdata = data.Result;
 
         })
@@ -32,6 +30,10 @@ myapp.controller('vjbCtl', function ($scope,$http,$rootScope ){
         });
     };
 
+    $scope.goto = function(Id) {
+      $location.path("/goededoelen/" + Id)
+    };
+
+
     $scope.getItems();
 });
-
