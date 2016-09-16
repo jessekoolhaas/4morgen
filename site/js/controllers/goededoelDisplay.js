@@ -11,7 +11,6 @@ $scope.getWinkelUrl           = $rootScope.goededoelenDisplay;
 $scope.auth                   = $rootScope.auth;
 $scope.relatedGoededoelen     = $rootScope.goededoelenRelated;
 
-$scope.errorMessageWinkel = false;
 
 
   // console.log($scope.currentWinkel);
@@ -31,6 +30,11 @@ $scope.errorMessageWinkel = false;
           .success(function (data, status, headers, config) {
               $scope.goededoeldisplay = data;
               console.log(data);
+              console.log(data.Adress);
+              if (data.Address != undefined ) {
+                console.log("er zit iets in!!!!!!!");
+                $scope.ExtraInformatie = true;
+              }
 
               $scope.video = data.VideoUrl;
               console.log($scope.video);
