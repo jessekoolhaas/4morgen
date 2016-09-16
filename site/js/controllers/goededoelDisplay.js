@@ -11,7 +11,7 @@ $scope.getWinkelUrl           = $rootScope.goededoelenDisplay;
 $scope.auth                   = $rootScope.auth;
 $scope.relatedGoededoelen     = $rootScope.goededoelenRelated;
 
-
+                $scope.ExtraInformatie = false;
 
   // console.log($scope.currentWinkel);
 
