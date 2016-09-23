@@ -57,3 +57,11 @@ var myapp = angular.module('myapp',
          $rootScope.Contact                 = api + "v1/mail/contact";
 
      });
+     myapp.run(function($rootScope, $location, $window){
+         $window.ga('create', 'UA-54311801-1', 'auto');
+         console.log("create ding");
+         $rootScope.$on('$stateChangeSuccess', function (event) {
+             $window.ga('send', 'pageview', $location.path());
+
+         });
+     });
