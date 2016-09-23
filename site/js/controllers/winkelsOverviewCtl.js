@@ -171,13 +171,16 @@ myapp.controller('winkelCategorie', ['$scope', '$http','$location','$anchorScrol
           data: $scope.datatsad,
           headers: { 'Content-Type': 'application/json' }
               }).then(function successCallback(response) {
+                console.log(response.status);
 
 
 
-                  alert(charitieName+" is blij met je steun")
+                  // alert(charitieName+" is blij met je steun")
+                  $scope.succesToevoegen(charitieName);
 
 
               }, function errorCallback(response) {
+                console.log(response.status);
 
                   if (response.status === 400) {
                     alert(charitieName+ " is bij dat jullie hun al steuned");
@@ -190,6 +193,16 @@ myapp.controller('winkelCategorie', ['$scope', '$http','$location','$anchorScrol
 
               });
       }
+
+      $scope.succesToevoegen = function(charitieName){
+        $scope.winkelNaamSucces = charitieName;
+        $scope.winkelSucces = true;
+      }
+      $scope.succesToevoegenSluiten = function(charitieName){
+        $scope.winkelNaamSucces = '';
+        $scope.winkelSucces = false;
+      }
+
       $scope.eerstInloggen = function(charitieName) {
         $scope.inlogModalGoedeDoelen = true;
         $scope.vergetenError = true;
