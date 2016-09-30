@@ -138,12 +138,14 @@ myapp.controller('goededoelenCategorie', ['$scope', '$http','$location','$timeou
           headers: { 'Content-Type': 'application/json' }
               }).then(function successCallback(response) {
 
-                alert("Deze organisatie is toegevoegd aan jouw favoriete goede doelen. ")
+                  $scope.succesToevoegen(charitieName);
+
+                // alert("Deze organisatie is toegevoegd aan jouw favoriete goede doelen. ")
               }, function errorCallback(response) {
 
                 if (response.status === 400) {
 
-                  alert("Je hebt deze organisatie reeds toegevoegd aan jouw favoriete goede doelen. ");
+                  $scope.failtoevoegen(charitieName);
                 }
                 if (response.status === 401) {
                   $scope.eerstInloggen(charitieName);
@@ -153,6 +155,29 @@ myapp.controller('goededoelenCategorie', ['$scope', '$http','$location','$timeou
 
               });
       }
+
+
+      $scope.succesToevoegen = function(charitieName){
+        $scope.goededoelenNaamSucces = charitieName;
+        $scope.goededoelenSucces = true;
+      }
+      $scope.succesToevoegenSluiten = function(charitieName){
+        $scope.goededoelenNaamSucces = '';
+        $scope.goededoelenSucces = false;
+      }
+
+
+
+      $scope.failtoevoegen = function(charitieName){
+        $scope.goededoelenNaamfail = charitieName;
+        $scope.goededoelenfail = true;
+}
+      $scope.failtoevoegenSluiten = function(charitieName){
+        $scope.goededoelenNaamfail = '';
+        $scope.goededoelenfail = false;
+      }
+
+
       $scope.eerstInloggen = function(charitieName) {
         $scope.inlogModalGoedeDoelen = true;
         $scope.vergetenError = true;

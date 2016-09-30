@@ -552,9 +552,10 @@ margin-top:20px;
 .gegevensblokgoededoelen {
   /*background-color: rgba(0, 0, 1, 0.1);*/
   margin-top: 30px;
-  height: 300px;
-  color: black;
-  padding: 15px;
+  /*height: 300px;*/
+  
+  color: #000;
+  /*padding: 15px;*/
 }
 .social img {
   width: 48px;
@@ -577,4 +578,12 @@ margin-top:20px;
 }
 .voegtoe {
   max-width: 100px;
+}
+.tagz img {
+  width: 50px;
+  margin-top: 15px;
+  margin-right: 10px;
+}
+.thumpsup {
+  margin-top: 40px;
 }
