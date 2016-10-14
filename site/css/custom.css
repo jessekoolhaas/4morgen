@@ -1,0 +1,226 @@
+.orange {
+  color: #f6a868;
+}
+.spacer-5 {
+  height: 5px;
+  width: 100%;
+}
+.spacer-10 {
+  height: 10px;
+  width: 100%;
+}
+.spacer-15 {
+  height: 15px;
+  width: 100%;
+}
+.spacer-20 {
+  height: 20px;
+  width: 100%;
+}
+.spacer-25 {
+  height: 25px;
+  width: 100%;
+}
+.spacer-30 {
+  height: 30px;
+  width: 100%;
+}
+.spacer-40 {
+  height: 40px;
+  width: 100%;
+}
+.spacer-45 {
+  height: 45px;
+  width: 100%;
+}
+.spacer-50 {
+  height: 50px;
+  width: 100%;
+}
+.spacer-60 {
+  height: 60px;
+  width: 100%;
+}
+.spacer-90 {
+  height: 90px;
+  width: 100%;
+}
+.spacer-120 {
+  height: 120px;
+  width: 100%;
+}
+.goededoelendisplay .text {
+  margin-bottom: 20px;
+}
+.goededoelendisplay .btn-default {
+  color: white;
+  background-color: #70D871;
+  border-color: #5cd35d;
+  font-size: 19px;
+}
+.goededoelendisplay .btn-default:focus,
+.goededoelendisplay .btn-default.focus {
+  color: white;
+  background-color: #48cd49;
+  border-color: #258926;
+}
+.goededoelendisplay .btn-default:hover {
+  color: white;
+  background-color: #48cd49;
+  border-color: #34be35;
+}
+.goededoelendisplay .btn-default:active,
+.goededoelendisplay .btn-default.active,
+.open > .dropdown-toggle.goededoelendisplay .btn-default {
+  color: white;
+  background-color: #48cd49;
+  border-color: #34be35;
+}
+.goededoelendisplay .btn-default:active:hover,
+.goededoelendisplay .btn-default.active:hover,
+.open > .dropdown-toggle.goededoelendisplay .btn-default:hover,
+.goededoelendisplay .btn-default:active:focus,
+.goededoelendisplay .btn-default.active:focus,
+.open > .dropdown-toggle.goededoelendisplay .btn-default:focus,
+.goededoelendisplay .btn-default:active.focus,
+.goededoelendisplay .btn-default.active.focus,
+.open > .dropdown-toggle.goededoelendisplay .btn-default.focus {
+  color: white;
+  background-color: #34be35;
+  border-color: #258926;
+}
+.goededoelendisplay .btn-default:active,
+.goededoelendisplay .btn-default.active,
+.open > .dropdown-toggle.goededoelendisplay .btn-default {
+  background-image: none;
+}
+.goededoelendisplay .btn-default.disabled:hover,
+.goededoelendisplay .btn-default[disabled]:hover,
+fieldset[disabled] .goededoelendisplay .btn-default:hover,
+.goededoelendisplay .btn-default.disabled:focus,
+.goededoelendisplay .btn-default[disabled]:focus,
+fieldset[disabled] .goededoelendisplay .btn-default:focus,
+.goededoelendisplay .btn-default.disabled.focus,
+.goededoelendisplay .btn-default[disabled].focus,
+fieldset[disabled] .goededoelendisplay .btn-default.focus {
+  background-color: #70D871;
+  border-color: #5cd35d;
+}
+.goededoelendisplay .btn-default .badge {
+  color: #70D871;
+  background-color: white;
+}
+.goededoelendisplay .btn-facebook {
+  color: white;
+  background-color: #3B5998;
+  border-color: #344e86;
+  font-size: 19px;
+}
+.goededoelendisplay .btn-facebook:focus,
+.goededoelendisplay .btn-facebook.focus {
+  color: white;
+  background-color: #2d4373;
+  border-color: #10182a;
+}
+.goededoelendisplay .btn-facebook:hover {
+  color: white;
+  background-color: #2d4373;
+  border-color: #23345a;
+}
+.goededoelendisplay .btn-facebook:active,
+.goededoelendisplay .btn-facebook.active,
+.open > .dropdown-toggle.goededoelendisplay .btn-facebook {
+  color: white;
+  background-color: #2d4373;
+  border-color: #23345a;
+}
+.goededoelendisplay .btn-facebook:active:hover,
+.goededoelendisplay .btn-facebook.active:hover,
+.open > .dropdown-toggle.goededoelendisplay .btn-facebook:hover,
+.goededoelendisplay .btn-facebook:active:focus,
+.goededoelendisplay .btn-facebook.active:focus,
+.open > .dropdown-toggle.goededoelendisplay .btn-facebook:focus,
+.goededoelendisplay .btn-facebook:active.focus,
+.goededoelendisplay .btn-facebook.active.focus,
+.open > .dropdown-toggle.goededoelendisplay .btn-facebook.focus {
+  color: white;
+  background-color: #23345a;
+  border-color: #10182a;
+}
+.goededoelendisplay .btn-facebook:active,
+.goededoelendisplay .btn-facebook.active,
+.open > .dropdown-toggle.goededoelendisplay .btn-facebook {
+  background-image: none;
+}
+.goededoelendisplay .btn-facebook.disabled:hover,
+.goededoelendisplay .btn-facebook[disabled]:hover,
+fieldset[disabled] .goededoelendisplay .btn-facebook:hover,
+.goededoelendisplay .btn-facebook.disabled:focus,
+.goededoelendisplay .btn-facebook[disabled]:focus,
+fieldset[disabled] .goededoelendisplay .btn-facebook:focus,
+.goededoelendisplay .btn-facebook.disabled.focus,
+.goededoelendisplay .btn-facebook[disabled].focus,
+fieldset[disabled] .goededoelendisplay .btn-facebook.focus {
+  background-color: #3B5998;
+  border-color: #344e86;
+}
+.goededoelendisplay .btn-facebook .badge {
+  color: #3B5998;
+  background-color: white;
+}
+.goededoelendisplay p,
+.goededoelendisplay span {
+  font-size: 12px;
+}
+@media (min-width: 992px) {
+  .goededoelendisplay p,
+  .goededoelendisplay span {
+    font-size: 19px;
+  }
+}
+.goededoelendisplay h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+.goededoelendisplay h1 {
+  font-size: 30px;
+  margin-top: 20px;
+  color: #5cb85c;
+}
+@media (min-width: 768px) {
+  .goededoelendisplay h1 {
+    font-size: 46px;
+  }
+}
+.goededoelendisplay .holderimg {
+  width: 100%;
+  height: 200px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.goededoelendisplay .holderimg img {
+  height: 100%;
+  max-width: 100%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+.goededoelendisplay .holder {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0px 15px 15px 15px;
+}
+.goededoelendisplay .youtube {
+  width: 100%;
+  height: 370px;
+  background: #000;
+  margin-bottom: 10px;
+}
+.goededoelendisplay .youtube iframe {
+  height: 100%;
+  width: 100%;
+}
