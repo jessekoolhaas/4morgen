@@ -1,0 +1,103 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="bannerwinkel" ng-style="{'background-image': 'url(' + goededoeldisplay.LargeImageUrl + ')'}">
+
+
+            <div class="bannerwinkeltext">
+                <p class="text-center winkelmenutext">Wat geweldig dat niemand ook maar een moment hoeft te wachten met
+                    het <b>verbeteren van de wereld</b></p>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="container goededoelendisplay">
+  <div class="row">
+    <div class="spacer-30"></div>
+    <div class="col-xs-12">
+      <h1>{{goededoeldisplay.Name}}</h1>
+        <div class="spacer-30"></div>
+    </div>
+
+      <!-- leftrow -->
+    <div class="col-sm-5 col-md-4">
+      <div class="row">
+
+        <!-- blok1 -->
+        <div class="col-xs-12">
+          <div class="holderimg">
+            <img ng-src="{{goededoeldisplay.ImageUrl}}" alt="{{x.Name}}"/>
+          </div>
+          <div class="spacer-30"></div>
+        </div>
+
+        <!-- blok2 -->
+        <div class="col-xs-12">
+          <div class="holder">
+            <button type="button" name="button" class="btn btn-default btn-block">Support dit doel</button>
+          </div>
+          <div class="spacer-30"></div>
+        </div>
+
+        <!-- blok3 -->
+        <div class="col-xs-12">
+          <div class="holder">
+
+            <div ng-if="TrustedAdress">
+              <h3>Gegevens</h3>
+              <span style="white-space: pre-line">{{TrustedAdress}}</span><br>
+            </div>
+
+            <div ng-if="goededoeldisplay.IBAN">
+              <h3>Iban</h3>
+              <p>  {{goededoeldisplay.IBAN}}</p>
+            </div>
+            <div ng-if="goededoeldisplay.Email">
+              <h3>Email</h3>
+              <p>{{goededoeldisplay.Email}}</p>
+            </div>
+
+            <div class="row" style="margin-bottom: 5px">
+              <div class="col-xs-6"><a type="button" name="button" class="btn btn-facebook btn-block">Facebook</a></div>
+              <div class="col-xs-6"><a type="button" name="button" class="btn btn-facebook btn-block">Twitter</a></div>
+            </div>
+            <a type="button" name="button" class="btn btn-default btn-block">Jaaropgave</a>
+            <a type="button" name="button" class="btn btn-default btn-block">Webshop</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Rightrow -->
+    <div class="col-md-8 col-sm-7">
+      <div class="youtube " ng-if="currentProjectUrl">
+        <iframe ng-src="{{currentProjectUrl}}" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="text">
+      <span ng-bind-html="trustedHtml" class=""></span>
+      </div>
+      <a type="button" name="button" class="btn btn-default btn-block">Support dit doel</a>
+      <a type="button" name="button" class="btn btn-facebook btn-block">Deel deze pagina</a>
+
+      <div class="spacer-30"></div>
+      <h3 class="orange">Maak ook kennis met...</h3>
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6" ng-repeat="goededoelen in relatedGoededoelendisplay | limitTo: 4">
+            <a ng-href="/goededoelen/{{goededoelen.Id}}">
+
+                <div class="img-holder-display">
+
+                    <img ng-src="{{goededoelen.ImageUrl}}" alt="{{goededoelen.Name}}"/>
+                </div>
+                <p>{{goededoelen.Name}}</p>
+            </a>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
