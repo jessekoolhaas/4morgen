@@ -77,9 +77,14 @@ myapp.config(['$urlRouterProvider', '$stateProvider','$locationProvider','$httpP
           templateUrl:"/site/view/goededoelen/goededoelen.html",
           controller:"goededoelenCategorie"
         })
+        // .state ('goededoelen-display', {
+        //   url: "/goededoelen/:goededoel",
+        //   templateUrl:"/site/view/goededoelen/goededoel-display.html",
+        //   controller:"goededoelenDisplay"
+        // })
         .state ('goededoelen-display', {
           url: "/goededoelen/:goededoel",
-          templateUrl:"/site/view/goededoelen/goededoel-display.html",
+          templateUrl:"/site/view/goededoelen/goededoel-display2.html",
           controller:"goededoelenDisplay"
         })
         .state ('faq', {
