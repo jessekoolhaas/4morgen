@@ -10,8 +10,24 @@ var myapp = angular.module('myapp',
      ]
      );
 
-     myapp.run(function ($rootScope) {
-       var api = "https://api-test.4morgen.org/"; //todo: make this configurable regardless of version control (or auto-detecting?)
+     myapp.run(function ($rootScope,$location) {
+
+         $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState, fromParams) {
+           window.scrollTo(0, 0);
+        });
+        var host = $location.host();
+
+
+        if(host == '4morgen.local'){
+          console.log("local die handel");
+           var api = "https://api-test.4morgen.org/";
+        }
+        if(host == 'test.4morgen.org'){
+          console.log("test die handel");
+           var api = "https://api-test.4morgen.org/";
+        }
+
+       //todo: make this configurable regardless of version control (or auto-detecting?)
 
          // Inlog
          $rootScope.auth                    = api + "v1/authentication";
@@ -57,6 +73,8 @@ var myapp = angular.module('myapp',
          $rootScope.Contact                 = api + "v1/mail/contact";
 
      });
+
+
      myapp.run(function($rootScope, $location, $window){
          $window.ga('create', 'UA-54311801-1', 'auto');
          console.log("create ding");
@@ -65,3 +83,10 @@ var myapp = angular.module('myapp',
 
          });
      });
+     myapp.filter('cmdate', [
+         '$filter', function($filter) {
+             return function(input, format) {
+                 return $filter('date')(new Date(input), format);
+             };
+         }
+     ]);
