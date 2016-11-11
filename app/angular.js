@@ -10,12 +10,24 @@ var myapp = angular.module('myapp',
      ]
      );
 
-     myapp.run(function ($rootScope) {
+     myapp.run(function ($rootScope,$location) {
 
          $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState, fromParams) {
            window.scrollTo(0, 0);
         });
-       var api = "https://api-test.4morgen.org/"; //todo: make this configurable regardless of version control (or auto-detecting?)
+        var host = $location.host();
+
+
+        if(host == '4morgen.local'){
+          console.log("local die handel");
+           var api = "https://api-test.4morgen.org/";
+        }
+        if(host == 'test.4morgen.org'){
+          console.log("test die handel");
+           var api = "https://api-test.4morgen.org/";
+        }
+
+       //todo: make this configurable regardless of version control (or auto-detecting?)
 
          // Inlog
          $rootScope.auth                    = api + "v1/authentication";
