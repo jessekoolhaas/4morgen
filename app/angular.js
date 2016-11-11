@@ -26,6 +26,14 @@ var myapp = angular.module('myapp',
           console.log("test die handel");
            var api = "https://api-test.4morgen.org/";
         }
+        if(host == 'qa.4morgen.org'){
+          console.log("test die handel");
+           var api = "https://api.4morgen.org/";
+        }
+        if(host == '4morgen.org'){
+          console.log("test die handel");
+           var api = "https://api.4morgen.org/";
+        }
 
        //todo: make this configurable regardless of version control (or auto-detecting?)
 
