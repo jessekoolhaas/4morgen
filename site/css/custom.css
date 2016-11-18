@@ -5,7 +5,7 @@
   height: 5px;
   width: 100%;
 }
-.spacer-10 {
+ + .spacer-10 {
   height: 10px;
   width: 100%;
 }
@@ -53,28 +53,28 @@
   margin-bottom: 20px;
 }
 .goededoelendisplay .btn-default {
-  color: white;
+  font-size: 19px;
+  color: #fff;
   background-color: #70D871;
   border-color: #5cd35d;
-  font-size: 19px;
 }
 .goededoelendisplay .btn-default:focus,
 .goededoelendisplay .btn-default.focus {
-  color: white;
+  color: #fff;
   background-color: #48cd49;
-  border-color: #258926;
+  border-color: #258a26;
 }
 .goededoelendisplay .btn-default:hover {
-  color: white;
+  color: #fff;
   background-color: #48cd49;
-  border-color: #34be35;
+  border-color: #33be35;
 }
 .goededoelendisplay .btn-default:active,
 .goededoelendisplay .btn-default.active,
 .open > .dropdown-toggle.goededoelendisplay .btn-default {
-  color: white;
+  color: #fff;
   background-color: #48cd49;
-  border-color: #34be35;
+  border-color: #33be35;
 }
 .goededoelendisplay .btn-default:active:hover,
 .goededoelendisplay .btn-default.active:hover,
@@ -85,9 +85,9 @@
 .goededoelendisplay .btn-default:active.focus,
 .goededoelendisplay .btn-default.active.focus,
 .open > .dropdown-toggle.goededoelendisplay .btn-default.focus {
-  color: white;
+  color: #fff;
   background-color: #34be35;
-  border-color: #258926;
+  border-color: #258a26;
 }
 .goededoelendisplay .btn-default:active,
 .goededoelendisplay .btn-default.active,
@@ -108,29 +108,42 @@ fieldset[disabled] .goededoelendisplay .btn-default.focus {
 }
 .goededoelendisplay .btn-default .badge {
   color: #70D871;
+  background-color: #fff;
+}
+.goededoelendisplay .btn-default .badge {
+  color: #70D871;
   background-color: white;
 }
+.goededoelendisplay .btn-default.raised {
+  box-shadow: 0 3px 0 0 #333;
+}
+.goededoelendisplay .btn-default.raised:active,
+.goededoelendisplay .btn-default.raised .btn-default.raised.active {
+  box-shadow: none;
+  margin-bottom: -3px;
+  margin-top: 8px;
+}
 .goededoelendisplay .btn-facebook {
-  color: white;
+  font-size: 19px;
+  color: #fff;
   background-color: #3B5998;
   border-color: #344e86;
-  font-size: 19px;
 }
 .goededoelendisplay .btn-facebook:focus,
 .goededoelendisplay .btn-facebook.focus {
-  color: white;
+  color: #fff;
   background-color: #2d4373;
-  border-color: #10182a;
+  border-color: #10192a;
 }
 .goededoelendisplay .btn-facebook:hover {
-  color: white;
+  color: #fff;
   background-color: #2d4373;
   border-color: #23345a;
 }
 .goededoelendisplay .btn-facebook:active,
 .goededoelendisplay .btn-facebook.active,
 .open > .dropdown-toggle.goededoelendisplay .btn-facebook {
-  color: white;
+  color: #fff;
   background-color: #2d4373;
   border-color: #23345a;
 }
@@ -143,9 +156,9 @@ fieldset[disabled] .goededoelendisplay .btn-default.focus {
 .goededoelendisplay .btn-facebook:active.focus,
 .goededoelendisplay .btn-facebook.active.focus,
 .open > .dropdown-toggle.goededoelendisplay .btn-facebook.focus {
-  color: white;
+  color: #fff;
   background-color: #23345a;
-  border-color: #10182a;
+  border-color: #10192a;
 }
 .goededoelendisplay .btn-facebook:active,
 .goededoelendisplay .btn-facebook.active,
@@ -163,6 +176,10 @@ fieldset[disabled] .goededoelendisplay .btn-facebook:focus,
 fieldset[disabled] .goededoelendisplay .btn-facebook.focus {
   background-color: #3B5998;
   border-color: #344e86;
+}
+.goededoelendisplay .btn-facebook .badge {
+  color: #3B5998;
+  background-color: #fff;
 }
 .goededoelendisplay .btn-facebook .badge {
   color: #3B5998;
@@ -223,4 +240,7 @@ fieldset[disabled] .goededoelendisplay .btn-facebook.focus {
 .goededoelendisplay .youtube iframe {
   height: 100%;
   width: 100%;
+}
+.form-horizontal .has-feedback .form-control-feedback {
+  top: 33px;
 }

@@ -22,17 +22,18 @@ var dataFactory = {};
     });
   };
 
-  dataFactory.GetFavoriteCharitie = function () {
+  dataFactory.authlogin = function (data) {
     return $http({
-        url: $rootScope.goededoelenToevoegenFav,
-        method: 'GET',
+        url: $rootScope.authLogin,
+        method: 'POST',
+        data: data,
         headers: {'Content-type': 'application/json'}
     });
   };
 
-  dataFactory.GetFavoriteShop = function () {
+  dataFactory.GetFavoriteCharitie = function () {
     return $http({
-        url: $rootScope.winkelToevoegenFav,
+        url: $rootScope.goededoelenToevoegenFav,
         method: 'GET',
         headers: {'Content-type': 'application/json'}
     });
@@ -63,6 +64,31 @@ var dataFactory = {};
         headers: {'Content-type': 'application/json'}
     });
   };
+
+  dataFactory.PutFavoriteCharitie = function (data) {
+    return $http({
+        url: $rootScope.goededoelenToevoegenFav,
+        method: 'PUT',
+        data: data,
+        headers: {'Content-type': 'application/json'}
+    });
+  };
+
+  dataFactory.PutFavoriteShop = function (data) {
+    return $http({
+        url: $rootScope.winkelToevoegenFav,
+        method: 'PUT',
+        data: data,
+        headers: {'Content-type': 'application/json'}
+    });
+  };
+
+
+  dataFactory.GetGoededoelendisplay = function (data) {
+    var url = $rootScope.goededoelenDisplay.replace("{charityId}", data)
+  return $http.get(url);
+  };
+
 
   dataFactory.Logout = function () {
     return $http({

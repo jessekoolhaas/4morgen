@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="bannerwinkel" ng-style="{'background-image': 'url(' + goededoeldisplay.LargeImageUrl + ')'}">
+        <div class="bannerwinkel" ng-style="{'background-image': 'url(' + vm.LargeImageUrl + ')'}">
 
 
             <div class="bannerwinkeltext">
@@ -16,7 +16,7 @@
   <div class="row">
     <div class="spacer-30"></div>
     <div class="col-xs-12">
-      <h1>{{goededoeldisplay.Name}}</h1>
+      <h1>{{vm.Name}} {{ inlogModal}}</h1>
         <div class="spacer-30"></div>
     </div>
 
@@ -27,7 +27,7 @@
         <!-- blok1 -->
         <div class="col-xs-12">
           <div class="holderimg">
-            <img ng-src="{{goededoeldisplay.ImageUrl}}" alt="{{x.Name}}"/>
+            <img ng-src="{{vm.SmallImageUrl}}" alt="{{x.Name}}"/>
           </div>
           <div class="spacer-30"></div>
         </div>
@@ -56,7 +56,7 @@
               </div>
             </div>
 
-            <button type="button" name="button" class="btn btn-default btn-block">Support dit doel</button>
+            <button type="button" name="button" class="btn btn-default btn-block" ng-click="ToevoegenAanFav(vm.Id)">Support dit doel</button>
           </div>
           <div class="spacer-30"></div>
         </div>
@@ -70,13 +70,13 @@
               <span style="white-space: pre-line">{{TrustedAdress}}</span><br>
             </div>
 
-            <div ng-if="goededoeldisplay.IBAN">
+            <div ng-if="vm.IBAN">
               <h3>Iban</h3>
-              <p>  {{goededoeldisplay.IBAN}}</p>
+              <p>  {{vm.IBAN}}</p>
             </div>
-            <div ng-if="goededoeldisplay.Email">
+            <div ng-if="vm.Email">
               <h3>Email</h3>
-              <p>{{goededoeldisplay.Email}}</p>
+              <p>{{vm.Email}}</p>
             </div>
 
             <div class="row" style="margin-bottom: 5px">
@@ -122,3 +122,5 @@
 
   </div>
 </div>
+
+<div ng-include="'site/view/modal/login_modal.html'"></div>
