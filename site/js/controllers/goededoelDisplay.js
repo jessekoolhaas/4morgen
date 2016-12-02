@@ -1,26 +1,8 @@
 myapp.controller('goededoelenDisplay', function ( $scope,$stateParams,$http,$location,$window,$sce,$rootScope,dataFactory ){
 
+$scope.currentWinkel = $stateParams.goededoel;
 
-
-$scope.currentWinkel        = $stateParams.goededoel;
-$scope.apiLogin             = $rootScope.authLogin;
-$scope.Toevoegen            = $rootScope.goededoelenToevoegenFav;
-$scope.verwijderen          = $rootScope.goededoelenToevoegenFav;
-
-$scope.getWinkelUrl           = $rootScope.goededoelenDisplay;
-$scope.auth                   = $rootScope.auth;
-$scope.relatedGoededoelen     = $rootScope.goededoelenRelated;
-
-
-  // console.log($scope.currentWinkel);
-
-
-  $scope.verwijderenFavwinkel = function(charitieId){
-
-  }
-
-
-var urlrelated = $scope.relatedGoededoelen.replace("{charityId}", $scope.currentWinkel);
+var urlrelated = $rootScope.goededoelenRelated.replace("{charityId}", $scope.currentWinkel);
 $http.get(urlrelated)
   .success(function (data, status, headers, config) {
       $scope.relatedGoededoelendisplay = data;
@@ -38,9 +20,8 @@ dataFactory.GetGoededoelendisplay($scope.currentWinkel)
     $scope.CommissionUnit = data.CommissionUnit;
     $scope.Address = data.Address;
     $scope.TrustedAdress = $sce.trustAsHtml($scope.Address);
-    // $scope.post();
+
     }, function errorCallback(response) {
-      console.log("error 404");
       $scope.errorMessageWinkel = true;
 });
 
