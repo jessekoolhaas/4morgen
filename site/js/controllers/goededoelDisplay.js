@@ -12,6 +12,7 @@ $http.get(urlrelated)
 dataFactory.GetGoededoelendisplay($scope.currentWinkel)
   .then(function successCallback(response) {
     var data = response.data
+    console.log(data);
     $scope.vm = data;
     $scope.video = data.VideoUrl;
     $scope.currentProjectUrl = $sce.trustAsResourceUrl($scope.video);
@@ -20,7 +21,6 @@ dataFactory.GetGoededoelendisplay($scope.currentWinkel)
     $scope.CommissionUnit = data.CommissionUnit;
     $scope.Address = data.Address;
     $scope.TrustedAdress = $sce.trustAsHtml($scope.Address);
-
     }, function errorCallback(response) {
       $scope.errorMessageWinkel = true;
 });
@@ -49,12 +49,10 @@ $scope.ToevoegenAanFav = function(charitieId,charitieName){
           }
         });
 };
-
 $scope.closeModal = function(){
     $scope.inlogModal = false;
     $scope.vergetenError = true;
 }
-
 $scope.loginSubmit2 = function(charitieId,voornaam,wachtwoord){
   var Objectprofiel = new Object();
   Objectprofiel.UserName = voornaam;

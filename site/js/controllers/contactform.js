@@ -11,7 +11,7 @@ $scope.submitformDonatie = function() {
   var bericht =
       " opdernummer:" + $scope.donatie.Ordernummer +
       " aankoopbedrag: " + $scope.donatie.Aankoopbedrag +
-      " aankoopdatum: " + $scope.donatie.datum +
+      " aankoopdatum: " + $scope.donatie.Aankoopdatum +
       " aanmerking: " + $scope.donatie.bericht;
 
     var postObjectgemistedonatie = new Object();

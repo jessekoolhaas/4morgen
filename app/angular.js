@@ -34,6 +34,7 @@ var myapp = angular.module('myapp',
           console.log("test die handel");
            var api = "https://api.4morgen.org/";
         }
+        $rootScope.api = api;
 
        //todo: make this configurable regardless of version control (or auto-detecting?)
 

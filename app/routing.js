@@ -67,6 +67,13 @@ myapp.config(['$urlRouterProvider', '$stateProvider','$locationProvider','$httpP
           templateUrl:"/site/view/account/regiaandoel.html",
           controller:"regiaandoelCtl"
         })
+        .state ('registratiefriend', {
+          url: "/registratie-vriend/:token",
+          templateUrl:"/site/view/account/registratie.html",
+          controller:"registratieFriendCtl"
+        })
+
+
         .state ('zoeken', {
           url: "/zoek/:zoek",
           templateUrl:"/site/view/overig/zoeken.html",

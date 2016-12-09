@@ -1,4 +1,20 @@
 myapp.controller('dashboardCtl', ['$scope', '$http','$location','$window','$state','$rootScope', 'dataFactory',function ($scope, $http, $location,$window,$state,$rootScope,dataFactory) {
+
+  $http({
+    method: 'GET',
+url:  $rootScope.accountProfiel
+  }).then(function successCallback(response) {
+        $scope.url = response.data.ReferralCode;
+        $scope.url = $location.host()+"/registratie-vriend/"+$scope.url;
+        $scope.supTot = response.data.ReferredSupporterTotalCount;
+        $scope.supSale = response.data.ReferredSupporterWithSalesCount;
+        console.log($scope.url)
+        console.log($scope.supTot)
+        console.log($scope.supSale)
+
+
+  },  function errorCallback(response) {
+});
 $scope.skip = 0;
 $scope.topj = 50;
 $scope.order = "Date";
@@ -105,7 +121,7 @@ $scope.jaaropgavedownloaden = function(jaar){
             name            :'4MORGEN',
             url             :'https://4morgen.org',
             image           : 'http://i.imgur.com/PwpQfLa.png',
-            // caption         :" Dit is de caption1",
+            caption         :" Dit is de caption1",
             description     :'Mijn online aankoop bij '+ winkel + ' via 4MORGEN is goed voor een donatie van '+        $scope.rounddonatie+' aan '+doel+'. Gratis doneren via 4MORGEN, doe je ook mee?',
             message         :"Asdmessage message message message asdasd"
         }];
@@ -132,6 +148,23 @@ $scope.share = function(post){
             });
     };
 // ---------
+
+$scope.postsFriend = [];
+$scope.postFriend = function(winkel, doel, donatie){
+    $scope.rounddonatie = parseFloat(Math.round(donatie * 100) / 100).toFixed(2);
+    // var beschrijving = "Ik doneer gratis aan "+$scope.goededoeldisplay.Name+" door online te shoppen via 4MORGEN. Doe jij ook mee?"
+    var img = 'http://4morgen.local/site/image/onbekend.png'
+    $scope.posts = [{
+        name            :'4MORGEN',
+        url             :$scope.url,
+        image           : 'http://i.imgur.com/PwpQfLa.png',
+        // caption         :" Dit is de caption1",
+        description     :'Help mee de wereld mooier te maken! Bij uitnodigen van 10 vrienden doneert 4morgen 5 euro aan uw goede doel!',
+        message         :"Asdmessage message message message asdasd"
+    }];
+    $scope.share($scope.posts);
+};
+
 
 $scope.hoverIn = function(){
     $scope.hoverEdit = true;
