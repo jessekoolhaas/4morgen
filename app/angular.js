@@ -1,11 +1,13 @@
 var myapp = angular.module('myapp',
      [
+       "ngclipboard",
        "ui.router",
        "angularUtils.directives.dirPagination",
        "ngCookies",
        "UserValidation",
        "updateMeta",
        "ui.bootstrap"
+
 
      ]
      );
@@ -80,6 +82,9 @@ var myapp = angular.module('myapp',
 
          // contact
          $rootScope.Contact                 = api + "v1/mail/contact";
+
+         // overig
+         $rootScope.donaties                = api + "v1/donations";
 
      });
 

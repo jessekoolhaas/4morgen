@@ -8,7 +8,8 @@ myapp.config(['$urlRouterProvider', '$stateProvider','$locationProvider','$httpP
 
   .state('home', {
       url: "/",
-      templateUrl: "/site/frontpage.html"
+      templateUrl: "/site/frontpage.html",
+      controller: "homeCtl"
   })
   .state('over', {
       url: "/overons",

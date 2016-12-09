@@ -35,6 +35,7 @@ dataFactory.auth()
       $scope.$on('inlogEvent', function(e) {
         $scope.$parent.userlog = ( $scope.getrekt())
       });
+      $state('/s')
     });
 $scope.favChar = function(){
   dataFactory.GetFavoriteCharitie()
@@ -102,7 +103,7 @@ $scope.TotaalDonaties = function(){
             $scope.totaalstand = $scope.totaalstand.replace(".", ",");
             $scope.ditjaar = parseFloat(Math.round($scope.ditjaar * 100) / 100).toFixed(2);
             $scope.ditjaar = $scope.ditjaar.replace(".", ",");
-          }, function errorCallback(response) {alert()});
+          }, function errorCallback(response) {});
         }; <!-- //end totaldonaties -->
 $scope.gotochromestore = function() {
         window.location = "https://chrome.google.com/webstore/detail/4morgen/doncbpppgoadlamedckeclamjckbcegd?hl=nl","_blank";

@@ -98,6 +98,14 @@ var dataFactory = {};
     });
   };
 
+  dataFactory.Donaties = function(){
+    return $http({
+        url: $rootScope.donaties,
+        method: 'GET',
+        headers: {'Content-type': 'application/json'}
+    });
+  }
+
 
 
 return dataFactory;

@@ -5,6 +5,7 @@ $scope.iscookie = true;
 var cookieAccept = $cookies.cookieAccept;
 var adBlok = $cookies.adBlok;
 
+
 if (cookieAccept == undefined) {
   $cookies.cookieAccept = "2";
   $scope.iscookie = false;
