@@ -160,7 +160,7 @@ $scope.postFriend = function(winkel, doel, donatie){
         url             :$scope.url,
         image           : 'http://i.imgur.com/PwpQfLa.png',
         // caption         :" Dit is de caption1",
-        description     :'Help mee de wereld mooier te maken! Bij uitnodigen van 10 vrienden doneert 4morgen 5 euro aan uw goede doel!',
+        description     :'Ik nodig Jou uit!',
         message         :"Asdmessage message message message asdasd"
     }];
     $scope.share($scope.posts);
