@@ -8,9 +8,8 @@ url:  $rootScope.accountProfiel
         $scope.url = $location.host()+"/registratie-vriend/"+$scope.url;
         $scope.supTot = response.data.ReferredSupporterTotalCount;
         $scope.supSale = response.data.ReferredSupporterWithSalesCount;
-        console.log($scope.url)
-        console.log($scope.supTot)
-        console.log($scope.supSale)
+        console.log($scope.supTot + " Totaal aantal vrienden")
+        console.log($scope.supSale + " totaal aantal gedoneerde vriende")
 
 
   },  function errorCallback(response) {
@@ -37,20 +36,22 @@ dataFactory.auth()
       });
       $state('/s')
     });
+
 $scope.favChar = function(){
   dataFactory.GetFavoriteCharitie()
-      .then(function(response) {
-          $scope.myWelcome = response.data;
-          $scope.MijnFavCharities = $scope.myWelcome.Result;
-      });
+    .then(function(response) {
+      $scope.MijnFavCharities = response.data.Result;
+    });
 }
+
 $scope.FavShops = function(){
-        dataFactory.GetFavoriteShop()
-            .then(function(response) {
-                $scope.myWelcome = response.data;
-                $scope.MijnFavShops = $scope.myWelcome.Result;
-            });
+  dataFactory.GetFavoriteShop()
+    .then(function(response) {
+          $scope.MijnFavShops = response.data.Result;
+    });
 }
+
+
 $scope.verwijderenFav = function(charitieId){
   dataFactory.DeleteFavoriteCharitie(charitieId)
     .then(function successCallback(response) {
@@ -94,24 +95,29 @@ $scope.TotaalDonaties = function(){
                   }
                 }
                 var year = $scope.datum;
+                if(yearArray.indexOf(year) === -1){
+                      yearArray.push(year);
+                    }
               $scope.donatiebedrag = $scope.donatiebedrag + Math.round($scope.bedrag * 100) / 100;
                 if ($scope.data.Status == 1 || $scope.data.Status == 3) {
                   $scope.totaalstand = $scope.totaalstand + Math.round($scope.bedrag * 100) / 100;
                 }
               }
+              $scope.jaren = yearArray;
             $scope.totaalstand = parseFloat(Math.round($scope.totaalstand * 100) / 100).toFixed(2);
             $scope.totaalstand = $scope.totaalstand.replace(".", ",");
             $scope.ditjaar = parseFloat(Math.round($scope.ditjaar * 100) / 100).toFixed(2);
             $scope.ditjaar = $scope.ditjaar.replace(".", ",");
           }, function errorCallback(response) {});
-        }; <!-- //end totaldonaties -->
+        };
+        <!-- //end totaldonaties -->
 $scope.gotochromestore = function() {
-        window.location = "https://chrome.google.com/webstore/detail/4morgen/doncbpppgoadlamedckeclamjckbcegd?hl=nl","_blank";
-      }
+  window.location = "https://chrome.google.com/webstore/detail/4morgen/doncbpppgoadlamedckeclamjckbcegd?hl=nl","_blank";
+}
 $scope.jaaropgavedownloaden = function(jaar){
-        var jaaropgaveurl = $rootScope.jaaropgave.replace("{year}", jaar);
-          $window.location = jaaropgaveurl, "_blank";
-      }
+  var jaaropgaveurl = $rootScope.jaaropgave.replace("{year}", jaar);
+  $window.location = jaaropgaveurl, "_blank";
+}
 // ---------
     $scope.posts = [];
     $scope.post = function(winkel, doel, donatie){

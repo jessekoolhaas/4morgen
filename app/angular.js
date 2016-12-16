@@ -21,19 +21,15 @@ var myapp = angular.module('myapp',
 
 
         if(host == '4morgen.local'){
-          console.log("local die handel");
            var api = "https://api-test.4morgen.org/";
         }
         if(host == 'test.4morgen.org'){
-          console.log("test die handel");
            var api = "https://api-test.4morgen.org/";
         }
         if(host == 'qa.4morgen.org'){
-          console.log("test die handel");
            var api = "https://api.4morgen.org/";
         }
         if(host == '4morgen.org'){
-          console.log("test die handel");
            var api = "https://api.4morgen.org/";
         }
         $rootScope.api = api;
@@ -91,7 +87,7 @@ var myapp = angular.module('myapp',
 
      myapp.run(function($rootScope, $location, $window){
          $window.ga('create', 'UA-54311801-1', 'auto');
-         console.log("create ding");
+        //  console.log("create ding");
          $rootScope.$on('$stateChangeSuccess', function (event) {
              $window.ga('send', 'pageview', $location.path());
 
