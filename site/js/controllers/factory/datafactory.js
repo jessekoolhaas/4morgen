@@ -98,7 +98,7 @@ var dataFactory = {};
     });
   };
 
-  dataFactory.Donaties = function(){
+  dataFactory.getDonaties = function(){
     return $http({
         url: $rootScope.donaties,
         method: 'GET',

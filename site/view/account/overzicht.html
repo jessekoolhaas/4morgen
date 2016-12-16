@@ -6,22 +6,22 @@
         </div>
         <div class="col-sm-7">
           <h1>Nodig een vriend uit!</h1>
-          <p class="waarom4morgentext">Nodig je vrienden, familie en collega's uit om jouw favoriete goededoel te steunen </p>
+          <p class="waarom4morgentext">Nodig je vrienden, familie en collega's uit om jouw favoriete goede doel te steunen! </p>
         </div>
 
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <h2>Uw unieke doorverwijslink</h2>
-          <p>Kopieer onderstaande link en delen met je vrienden en familie of plaatsen op uw sociale netwerken door te klikken op de juiste knop hieronder:</p>
+          <h2>Jouw unieke tell-a-friend link</h2>
+          <p>Kopieer de onderstaande link om te delen op jouw sociale netwerken door te klikken op de juiste knop hieronder:</p>
         </div>
         <div class="col-xs-12">
           <div class="form-group">
             <div class="input-group">
 
-              <input class="form-control" id="inputEmail"  type="text" value="{{ url}}">
+              <input class="form-control" id="inputUrl"  type="text" value="{{ url}}">
               <span class="input-group-btn">
-                <button class="btn btn-default" type="button" ngclipboard data-clipboard-target="#inputEmail">Button</button>
+                <button class="btn btn-default" type="button" ngclipboard data-clipboard-target="#inputUrl">Kopieer</button>
               </span>
             </div>
           </div>
@@ -30,18 +30,11 @@
           <a name="button" class="btn btn-facebook btn-block" ng-click="postFriend()">Facebook</a>
         </div>
         <div class="col-sm-6 col-xs-12 ">
-                    <a target="_blank" href="https://twitter.com/intent/tweet?text=Ik%20nodig%20jou%20uit!%20https://4morgen.org"name="button" class="btn btn-twitter btn-block">Twitter</a>
+                    <a target="_blank" href="https://twitter.com/intent/tweet?text=Ik%20nodig%20jou%20uit%20{{url}}"name="button" class="btn btn-twitter btn-block">Twitter</a>
         </div>
       </div>
   </div>
 </div>
-
-<div class="row">
-  <div class="col-xs-12">
-    <button ng-click="postFriend()"></button>
-  </div>
-</div>
-
 <div class="row">
   <div class="col-xs-12">
             <h1 class="orange waarom4morgen mijn4morgentitle"><b>Overzicht</b></h1>

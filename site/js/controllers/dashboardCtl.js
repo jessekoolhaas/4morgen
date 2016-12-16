@@ -160,8 +160,8 @@ $scope.postFriend = function(winkel, doel, donatie){
         url             :$scope.url,
         image           : 'http://i.imgur.com/PwpQfLa.png',
         // caption         :" Dit is de caption1",
-        description     :'Ik nodig Jou uit!',
-        message         :"Asdmessage message message message asdasd"
+        description     :'Help mij de wereld een beetje mooier te maken! Doneer gratis aan goede doelen, iedere keer als je online shopt',
+        // message         :"Asdmessage message message message asdasd"
     }];
     $scope.share($scope.posts);
 };
