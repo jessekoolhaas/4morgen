@@ -1,5 +1,6 @@
 var myapp = angular.module('myapp',
      [
+       "ngclipboard",
        "ui.router",
        "angularUtils.directives.dirPagination",
        "ngCookies",
@@ -7,11 +8,34 @@ var myapp = angular.module('myapp',
        "updateMeta",
        "ui.bootstrap"
 
+
      ]
      );
 
      myapp.run(function ($rootScope) {
        var api = "https://api.4morgen.org/"; //todo: make this configurable regardless of version control (or auto-detecting?)
+
+         $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState, fromParams) {
+           window.scrollTo(0, 0);
+        });
+        var host = $location.host();
+
+
+        if(host == '4morgen.local'){
+           var api = "https://api-test.4morgen.org/";
+        }
+        if(host == 'test.4morgen.org'){
+           var api = "https://api-test.4morgen.org/";
+        }
+        if(host == 'qa.4morgen.org'){
+           var api = "https://api.4morgen.org/";
+        }
+        if(host == '4morgen.org'){
+           var api = "https://api.4morgen.org/";
+        }
+        $rootScope.api = api;
+
+       //todo: make this configurable regardless of version control (or auto-detecting?)
 
          // Inlog
          $rootScope.auth                    = api + "v1/authentication";
@@ -56,10 +80,13 @@ var myapp = angular.module('myapp',
          // contact
          $rootScope.Contact                 = api + "v1/mail/contact";
 
+         // overig
+         $rootScope.donaties                = api + "v1/donations";
+
      });
      myapp.run(function($rootScope, $location, $window){
          $window.ga('create', 'UA-54311801-1', 'auto');
-         console.log("create ding");
+        //  console.log("create ding");
          $rootScope.$on('$stateChangeSuccess', function (event) {
              $window.ga('send', 'pageview', $location.path());
 

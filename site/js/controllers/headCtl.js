@@ -1,14 +1,19 @@
-myapp.controller('headCtl', ['$scope', '$http','$location','$cookies','$timeout','$rootScope', function ($scope, $http, $location,$cookies,$timeout,$rootScope) {
+myapp.controller('headCtl', ['$scope', '$http','$location','$cookies','$timeout','$rootScope', 'dataFactory',function ($scope, $http, $location,$cookies,$timeout,$rootScope,dataFactory) {
 
 $scope.feedback = true;
 $scope.iscookie = true;
 var cookieAccept = $cookies.cookieAccept;
 var adBlok = $cookies.adBlok;
 
+
 if (cookieAccept == undefined) {
   $cookies.cookieAccept = "2";
   $scope.iscookie = false;
 }
+
+
+
+console.log("dit lukt nu niet!");
 
 $scope.urlFeedback = $rootScope.Contact;
 $scope.auth = $rootScope.auth;
