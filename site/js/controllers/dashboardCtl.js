@@ -19,7 +19,7 @@ $scope.order = "Date";
 
 
 
-
+console.log("-");
 
 
 $scope.favoriteCharities        = $rootScope.goededoelenToevoegenFav;
