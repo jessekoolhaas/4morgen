@@ -12,7 +12,7 @@ var myapp = angular.module('myapp',
      ]
      );
 
-     myapp.run(function ($rootScope) {
+     myapp.run(function ($rootScope,$location) {
        var api = "https://api.4morgen.org/"; //todo: make this configurable regardless of version control (or auto-detecting?)
 
          $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState, fromParams) {

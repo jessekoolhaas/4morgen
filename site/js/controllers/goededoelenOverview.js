@@ -7,7 +7,6 @@ myapp.controller('goededoelenCategorie', ['$scope', '$http','$location','$timeou
       $scope.apiLogin               = $rootScope.authLogin
       $scope.getCategoriesUrl       = $rootScope.goededoelenCategorie;
       $scope.getItemsUrl            = $rootScope.goededoelenItems;
-      console.log($scope.Toevoegen);
 
       $scope.categoriesLoading = false;
       $scope.subCategoriesLoading = false;
@@ -135,7 +134,7 @@ $scope.goto = function(Id) {
                 if (response.status === 401) {
                   $scope.inlogModal = true;
                   $scope.vergetenError = true;
-                  
+
 
                 }
               });
