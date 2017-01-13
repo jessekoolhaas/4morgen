@@ -32,7 +32,6 @@ myapp.run(function ($rootScope,$location) {
     if(host == '4morgen.org'){
         var api = "https://api.4morgen.org/";
     }
-    var api = "https://api-test.4morgen.org/"
     $rootScope.api = api;
     console.log(api)
 
