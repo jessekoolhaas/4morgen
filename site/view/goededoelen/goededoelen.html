@@ -30,15 +30,15 @@
     <div class="col-md-9">
       <h1 class="orange waarom4morgen mijn4morgentitle"><b>Overzicht</b></h1>
       <div class="row">
-        <div class=" col-sm-4 col-md-3 col-xs-6 singelwinkel" ng-repeat = "x in items" >
+        <div class=" col-sm-4 col-md-3 col-xs-6 singelwinkel" ng-repeat = "vm in items" >
           <div class="singelwinkelborder  klikding">
-            <div class="toevoegenfav" ng-click="ToevoegenAanFav(x.Id,x.Name)">
+            <div class="toevoegenfav" ng-click="ToevoegenAanFav(vm.Id,vm.Name)">
               <img src="site/image/hearthfavlef.png" alt="" />
             </div>
-            <div class="img-holder" ng-click="goto(x.Id)">
-              <img ng-src="{{x.ImageUrl}}" alt="{{x.Name}}"  />
+            <div class="img-holder" ng-click="goto(vm.Id)">
+              <img ng-src="{{vm.ImageUrl}}" alt="{{vm.Name}}"  />
             </div>
-            <p class="text-center">{{x.Name}}</p>
+            <p class="text-center">{{vm.Name}}</p>
           </div>
         </div>
       </div>
@@ -56,7 +56,7 @@
 
 
 
-<div class="modal-backdrop" style="display: block;" ng-show="inlogModalGoedeDoelen">
+<!-- <div class="modal-backdrop" style="display: block;" ng-show="inlogModalGoedeDoelen">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -98,7 +98,6 @@
       </div>
     </div>
   </div>
-</div>
-<div ng-include="'site/view/goededoelen/toevoegensucces.html'"></div>
-<div ng-include="'site/view/goededoelen/toevoegenfail.html'"></div>
+</div> -->
+<div ng-include="'site/view/modal/login_modal.html'"></div>
 <div ng-include="'site/footer.html'"></div>

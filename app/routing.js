@@ -8,7 +8,8 @@ myapp.config(['$urlRouterProvider', '$stateProvider','$locationProvider','$httpP
 
   .state('home', {
       url: "/",
-      templateUrl: "/site/frontpage.html"
+      templateUrl: "/site/frontpage.html",
+      controller: "homeCtl"
   })
   .state('over', {
       url: "/overons",
@@ -67,6 +68,13 @@ myapp.config(['$urlRouterProvider', '$stateProvider','$locationProvider','$httpP
           templateUrl:"/site/view/account/regiaandoel.html",
           controller:"regiaandoelCtl"
         })
+        .state ('registratiefriend', {
+          url: "/registratie-vriend/:token",
+          templateUrl:"/site/view/account/registratie.html",
+          controller:"registratieFriendCtl"
+        })
+
+
         .state ('zoeken', {
           url: "/zoek/:zoek",
           templateUrl:"/site/view/overig/zoeken.html",
@@ -77,9 +85,14 @@ myapp.config(['$urlRouterProvider', '$stateProvider','$locationProvider','$httpP
           templateUrl:"/site/view/goededoelen/goededoelen.html",
           controller:"goededoelenCategorie"
         })
+        // .state ('goededoelen-display', {
+        //   url: "/goededoelen/:goededoel",
+        //   templateUrl:"/site/view/goededoelen/goededoel-display.html",
+        //   controller:"goededoelenDisplay"
+        // })
         .state ('goededoelen-display', {
           url: "/goededoelen/:goededoel",
-          templateUrl:"/site/view/goededoelen/goededoel-display.html",
+          templateUrl:"/site/view/goededoelen/goededoel-display2.html",
           controller:"goededoelenDisplay"
         })
         .state ('faq', {

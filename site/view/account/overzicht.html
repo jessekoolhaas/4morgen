@@ -1,3 +1,40 @@
+<div class="bannericons" style="background-image:url(site/image/bannericons.png)">
+    <div class="container-fluid spreadtheword spreadtheword-mijn">
+      <div class="row">
+        <div class="col-sm-4 col-sm-offset-1">
+          <img src="site/image/spread.svg" alt="">
+        </div>
+        <div class="col-sm-7">
+          <h1>Nodig een vriend uit!</h1>
+          <p class="waarom4morgentext">Nodig je vrienden, familie en collega's uit om jouw favoriete goede doel te steunen! </p>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Jouw unieke tell-a-friend link</h2>
+          <p>Kopieer de onderstaande link om te delen op jouw sociale netwerken door te klikken op de juiste knop hieronder:</p>
+        </div>
+        <div class="col-xs-12">
+          <div class="form-group">
+            <div class="input-group">
+
+              <input class="form-control" id="inputUrl"  type="text" value="{{ url}}">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button" ngclipboard data-clipboard-target="#inputUrl">Kopieer</button>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-xs-12">
+          <a name="button" class="btn btn-facebook btn-block" ng-click="postFriend()">Facebook</a>
+        </div>
+        <div class="col-sm-6 col-xs-12 ">
+                    <a target="_blank" href="https://twitter.com/intent/tweet?text=Help%20mee%20de%20wereld%20een%20beetje%20mooier%20te%20maken!%20{{url}}"name="button" class="btn btn-twitter btn-block">Twitter</a>
+        </div>
+      </div>
+  </div>
+</div>
 <div class="row">
   <div class="col-xs-12">
             <h1 class="orange waarom4morgen mijn4morgentitle"><b>Overzicht</b></h1>
@@ -7,9 +44,9 @@
     <div class="mijn4morgendonaties text-center winkelmenutext bgroen wit mijn4morgenheader">
       <p>Je hebt <br>
       <b class="mijnformorgendontatiebedrag">&euro; {{ditjaar}}</b><br>
-      opgehaald in 2016</p>
+      opgehaald in {{datumditjaar}}</p>
     </div>
-  </div> 
+  </div>
   <div class="col-md-4 col-xs-6">
     <div class="mijn4morgendonaties text-center winkelmenutext mijn4morgenheader">
       <p>Je hebt <br>

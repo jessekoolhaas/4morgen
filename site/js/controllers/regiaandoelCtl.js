@@ -2,7 +2,7 @@ myapp.controller('regiaandoelCtl', function ( $scope,$stateParams,$http,$locatio
 
 $scope.registratieSucces = false;
   $scope.currentGoededoel = $stateParams.goeddoel;
-  console.log($scope.currentGoededoel);
+  // console.log($scope.currentGoededoel);
 
   $scope.getWinkelUrl = $rootScope.goededoelenDisplay;
 

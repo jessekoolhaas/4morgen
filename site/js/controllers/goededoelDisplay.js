@@ -1,157 +1,85 @@
-myapp.controller('goededoelenDisplay', function ( $scope,$stateParams,$http,$location,$window,$sce,$rootScope ){
+myapp.controller('goededoelenDisplay', function ( $scope,$stateParams,$http,$location,$window,$sce,$rootScope,dataFactory ){
 
+$scope.currentWinkel = $stateParams.goededoel;
 
+var urlrelated = $rootScope.goededoelenRelated.replace("{charityId}", $scope.currentWinkel);
+$http.get(urlrelated)
+  .success(function (data, status, headers, config) {
+      $scope.relatedGoededoelendisplay = data;
+    })
+    .error(function (data, status, headers, config) {
+});
+dataFactory.GetGoededoelendisplay($scope.currentWinkel)
+  .then(function successCallback(response) {
+    var data = response.data
+    console.log(data);
+    $scope.vm = data;
+    $scope.video = data.VideoUrl;
+    $scope.currentProjectUrl = $sce.trustAsResourceUrl($scope.video);
+    $scope.winkeltext = data.Description;
+    $scope.trustedHtml = $sce.trustAsHtml($scope.winkeltext);
+    $scope.CommissionUnit = data.CommissionUnit;
+    $scope.Address = data.Address;
+    $scope.TrustedAdress = $sce.trustAsHtml($scope.Address);
+    }, function errorCallback(response) {
+      $scope.errorMessageWinkel = true;
+});
 
-  $scope.currentWinkel        = $stateParams.goededoel;
-  $scope.apiLogin             = $rootScope.authLogin;
-  $scope.Toevoegen            = $rootScope.goededoelenToevoegenFav;
-  $scope.verwijderen          = $rootScope.goededoelenToevoegenFav;
+$scope.gaNaarGoedDoel = function(test){
+  window.open(test,'_blank');
+};
+$scope.verwijderenFav = function(charitieId){
+  dataFactory.DeleteFavoriteCharitie(charitieId)
+  .then(function successCallback(response) {
+        }, function errorCallback(response) {
+        });
+};
 
-$scope.getWinkelUrl           = $rootScope.goededoelenDisplay;
-$scope.auth                   = $rootScope.auth;
-$scope.relatedGoededoelen     = $rootScope.goededoelenRelated;
-
-                $scope.ExtraInformatie = false;
-
-  // console.log($scope.currentWinkel);
-
-  var urlrelated = $scope.relatedGoededoelen.replace("{charityId}", $scope.currentWinkel);
-  $http.get(urlrelated)
-      .success(function (data, status, headers, config) {
-          $scope.relatedGoededoelendisplay = data;
-
-      })
-      .error(function (data, status, headers, config) {
-      });
-
-
-      var url = $scope.getWinkelUrl.replace("{charityId}", $scope.currentWinkel);
-      $http.get(url)
-          .success(function (data, status, headers, config) {
-              $scope.goededoeldisplay = data;
-              console.log(data);
-              console.log(data.Adress);
-              if (data.Address != undefined ) {
-                console.log("er zit iets in!!!!!!!");
-                $scope.ExtraInformatie = true;
-              }
-
-              $scope.video = data.VideoUrl;
-              console.log($scope.video);
-              console.log("dit is de $scope.video");
-              $scope.currentProjectUrl = $sce.trustAsResourceUrl($scope.video);
-              console.log($scope.currentProjectUrl);
-              console.log("dit is de $scope.currentProjectUrl");
-              // var url = $scope.currentProjectUrl.replace("watch?v=", "v/");
-              // console.log(url);
-              // console.log("dit is de url");
-              // var url = $scope.currentProjectUrl;
-              // console.log(url);
-              // $scope.currentProjectUrl = url.
-              // console.log($scope.currentProjectUrl);
-
-
-
-              // Winkeltext
-              $scope.winkeltext = data.Description;
-              $scope.trustedHtml = $sce.trustAsHtml($scope.winkeltext);
-              $scope.CommissionUnit = data.CommissionUnit;
-
-              // adress text
-              $scope.Address = data.Address;
-              console.log($scope.Address);
-              $scope.TrustedAdress = $sce.trustAsHtml($scope.Address);
-
-
-              $scope.post();
-
-
-
-          })
-          .error(function (data, status, headers, config) {
-            console.log("error 404");
-            $scope.errorMessageWinkel = true;
-          });
-
-          $scope.gaNaarGoedDoel = function(test){
-            window.open(test,'_blank');
-          };
-
-
-          $scope.verwijderenFav = function(charitieId){
-            $scope.datatsad = charitieId;
-            $http({
-              method: 'DELETE',
-              url: $scope.verwijderen,
-              data: $scope.datatsad,
-              headers: { 'Content-Type': 'application/json' }
-                  }).then(function successCallback(response) {
-
-                  }, function errorCallback(response) {
-                    console.log(response.status + " ERROR");
-
-                  });
-          };
-          $scope.ToevoegenAanFav = function(charitieId,charitieName){
-            $scope.datatsad = charitieId;
-            $http({
-              method: 'PUT',
-              url: $scope.Toevoegen,
-              data: $scope.datatsad,
-              headers: { 'Content-Type': 'application/json' }
-                  }).then(function successCallback(response) {
-                    alert("Deze organisatie is toegevoegd aan jouw favoriete goede doelen. ")
-                  }, function errorCallback(response) {
-                    if (response.status === 400) {
-                      alert("Je hebt deze organisatie reeds toegevoegd aan jouw favoriete goede doelen. ");
-                    }
-                    if (response.status === 401) {
-
-                      $scope.eerstInloggen(charitieName);
-
-                    }
-
-
-                  });
+$scope.ToevoegenAanFav = function(charitieId,charitieName){
+  dataFactory.PutFavoriteCharitie(charitieId)
+  .then(function successCallback(response) {
+          alert("Deze organisatie is toegevoegd aan jouw favoriete goede doelen. ")
+        }, function errorCallback(response) {
+          if (response.status === 400) {
+            alert("Je hebt deze organisatie reeds toegevoegd aan jouw favoriete goede doelen. ");
           }
-          $scope.eerstInloggen = function(charitieName) {
+          if (response.status === 401) {
             $scope.inlogModal = true;
             $scope.vergetenError = true;
-            $scope.charitieName = charitieName;
           }
+        });
+};
+$scope.closeModal = function(){
+    $scope.inlogModal = false;
+    $scope.vergetenError = true;
+}
+$scope.loginSubmit2 = function(charitieId,voornaam,wachtwoord){
+  var Objectprofiel = new Object();
+  Objectprofiel.UserName = voornaam;
+  Objectprofiel.Password = wachtwoord;
 
-          $scope.loginSubmit2 = function(charitieId){
-            var voornaam = $scope.voornaam
-            var wachtwoord = $scope.wachtwoord
-            var Objectprofiel = new Object();
-            Objectprofiel.UserName = voornaam;
-            Objectprofiel.Password = wachtwoord;
-            console.log(Objectprofiel);
-
-            $http({
-              method: 'POST',
-              url: $scope.apiLogin,
-              data: Objectprofiel,
-              headers: {'Content-Type': 'application/json'}
-                  }).then(function successCallback(response) {
-                    $scope.ToevoegenAanFav(charitieId,0);
-                    $scope.inlogModal = false;
-                    $scope.getrekt = function(){
-                            return true;
-                            }
-                            $scope.$on('inlogEvent', function(e) {
-                            $scope.$parent.userlog = ( $scope.getrekt())
-                            });
+  dataFactory.authlogin(Objectprofiel)
+  .then(function successCallback(response) {
+      $scope.ToevoegenAanFav(charitieId,0);
+      $scope.inlogModal = false;
+      $scope.getrekt = function(){
+        return true;
+      }
+      $scope.$on('inlogEvent', function(e) {
+        $scope.$parent.userlog = ( $scope.getrekt())
+      });
+  }, function errorCallback(response) {
+    $scope.loginError = true;
+    $scope.vergetenError = false;
+  });
+};
 
 
 
 
-                  }, function errorCallback(response) {
-                    $scope.loginError = true;
-                    $scope.vergetenError = false;
 
-                  });
-          };
+
+
 
 $scope.posts = [];
 $scope.post = function(){

@@ -1,4 +1,4 @@
-myapp.controller('goededoelenCategorie', ['$scope', '$http','$location','$timeout','$rootScope', function ($scope, $http,$location,$timeout,$rootScope) {
+myapp.controller('goededoelenCategorie', ['$scope', '$http','$location','$timeout','$rootScope', 'dataFactory',function ($scope, $http,$location,$timeout,$rootScope,dataFactory) {
 
 
 
@@ -7,7 +7,6 @@ myapp.controller('goededoelenCategorie', ['$scope', '$http','$location','$timeou
       $scope.apiLogin               = $rootScope.authLogin
       $scope.getCategoriesUrl       = $rootScope.goededoelenCategorie;
       $scope.getItemsUrl            = $rootScope.goededoelenItems;
-      console.log($scope.Toevoegen);
 
       $scope.categoriesLoading = false;
       $scope.subCategoriesLoading = false;
@@ -116,66 +115,55 @@ myapp.controller('goededoelenCategorie', ['$scope', '$http','$location','$timeou
 
 
       $scope.getCategories();
-      $scope.goto = function(Id) {
-        $location.path("/goededoelen/" + Id)
-      };
-
-
-
-
-
+$scope.goto = function(Id) {
+  $location.path("/goededoelen/" + Id)
+};
       $scope.ToevoegenAanFav = function(charitieId,charitieName){
-      $scope.toevoegen(charitieId,charitieName);
-      };
+        console.log(charitieId,charitieName);
+        dataFactory.PutFavoriteCharitie(charitieId)
+        .then(function successCallback(response) {
 
-      $scope.toevoegen = function(charitieId,charitieName){
-        $scope.datatsad = charitieId;
+                  // $scope.succesToevoegen(charitieName);
+                  alert("Deze organisatie is toegevoegd aan jouw favoriete goede doelen. ")
 
-        $http({
-          method: 'PUT',
-          url: $scope.Toevoegen,
-          data: $scope.datatsad,
-          headers: { 'Content-Type': 'application/json' }
-              }).then(function successCallback(response) {
-
-                  $scope.succesToevoegen(charitieName);
-
-                // alert("Deze organisatie is toegevoegd aan jouw favoriete goede doelen. ")
               }, function errorCallback(response) {
-
                 if (response.status === 400) {
-
-                  $scope.failtoevoegen(charitieName);
+                  // $scope.failtoevoegen(charitieName);
+                  alert("Je hebt deze organisatie reeds toegevoegd aan jouw favoriete goede doelen. ");
                 }
                 if (response.status === 401) {
-                  $scope.eerstInloggen(charitieName);
+                  $scope.inlogModal = true;
+                  $scope.vergetenError = true;
+
 
                 }
-
-
               });
       }
 
-
-      $scope.succesToevoegen = function(charitieName){
-        $scope.goededoelenNaamSucces = charitieName;
-        $scope.goededoelenSucces = true;
-      }
-      $scope.succesToevoegenSluiten = function(charitieName){
-        $scope.goededoelenNaamSucces = '';
-        $scope.goededoelenSucces = false;
+      $scope.closeModal = function(){
+          $scope.inlogModal = false;
+          $scope.vergetenError = true;
       }
 
+      // $scope.succesToevoegen = function(charitieName){
+      //   $scope.goededoelenNaamSucces = charitieName;
+      //   $scope.goededoelenSucces = true;
+      // }
+      // $scope.succesToevoegenSluiten = function(charitieName){
+      //   $scope.goededoelenNaamSucces = '';
+      //   $scope.goededoelenSucces = false;
+      // }
 
 
-      $scope.failtoevoegen = function(charitieName){
-        $scope.goededoelenNaamfail = charitieName;
-        $scope.goededoelenfail = true;
-}
-      $scope.failtoevoegenSluiten = function(charitieName){
-        $scope.goededoelenNaamfail = '';
-        $scope.goededoelenfail = false;
-      }
+//
+//       $scope.failtoevoegen = function(charitieName){
+//         $scope.goededoelenNaamfail = charitieName;
+//         $scope.goededoelenfail = true;
+// }
+//       $scope.failtoevoegenSluiten = function(charitieName){
+//         $scope.goededoelenNaamfail = '';
+//         $scope.goededoelenfail = false;
+//       }
 
 
       $scope.eerstInloggen = function(charitieName) {
@@ -187,40 +175,26 @@ myapp.controller('goededoelenCategorie', ['$scope', '$http','$location','$timeou
 
 
 
-      $scope.loginSubmit = function(charitieName){
-        var voornaam = $scope.voornaam
-        var wachtwoord = $scope.wachtwoord
+      $scope.loginSubmit2 = function(charitieId,voornaam,wachtwoord){
+        console.log(charitieId,voornaam,wachtwoord)
         var Objectprofiel = new Object();
         Objectprofiel.UserName = voornaam;
         Objectprofiel.Password = wachtwoord;
-        console.log(Objectprofiel);
 
-        $http({
-          method: 'POST',
-          url: $scope.apiLogin,
-          data: Objectprofiel,
-          headers: {'Content-Type': 'application/json'}
-              }).then(function successCallback(response) {
-
-                $scope.getrekt = function(){
-                        return true;
-                        }
-                        $scope.$on('inlogEvent', function(e) {
-                        $scope.$parent.userlog = ( $scope.getrekt())
-                        });
-
-                $scope.toevoegen(0,charitieName);
-                $scope.inlogModalGoedeDoelen = false;
-
-
-
-
-
-              }, function errorCallback(response) {
-                $scope.loginError = true;
-                $scope.vergetenError = false;
-
-              });
+        dataFactory.authlogin(Objectprofiel)
+        .then(function successCallback(response) {
+            $scope.ToevoegenAanFav(charitieId,0);
+            $scope.inlogModal = false;
+            $scope.getrekt = function(){
+              return true;
+            }
+            $scope.$on('inlogEvent', function(e) {
+              $scope.$parent.userlog = ( $scope.getrekt())
+            });
+        }, function errorCallback(response) {
+          $scope.loginError = true;
+          $scope.vergetenError = false;
+        });
       };
 
 
