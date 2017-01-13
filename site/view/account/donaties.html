@@ -19,7 +19,7 @@
   </thead>
   <tbody>
     <tr ng-repeat="x in donatietable">
-      <td>{{x.Date |cmdate:'dd/MM/yyyy'}}</td>
+      <td>{{x.Date |date:'dd/MM/yyyy'}}</td>
       <td>{{x.ItemName}}</td>
       <td>{{x.Charities}}</td>
       <td>&euro; {{x.Donation | number:2}}</td>

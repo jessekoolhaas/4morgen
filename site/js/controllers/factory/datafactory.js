@@ -9,6 +9,7 @@ var dataFactory = {};
         .replace("{top}", top)
         .replace("{orderby}", orderby)
         .replace("{includeCount}", include);
+
       return $http.get(urltotaal);
 
   };
