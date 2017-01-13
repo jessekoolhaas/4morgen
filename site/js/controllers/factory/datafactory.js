@@ -9,7 +9,6 @@ var dataFactory = {};
         .replace("{top}", top)
         .replace("{orderby}", orderby)
         .replace("{includeCount}", include);
-           var auth = $rootScope.auth
       return $http.get(urltotaal);
 
   };
