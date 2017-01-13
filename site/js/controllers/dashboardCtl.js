@@ -131,9 +131,9 @@ $scope.jaaropgavedownloaden = function(jaar){
             name            :'4MORGEN',
             url             :'https://4morgen.org',
             image           : 'http://i.imgur.com/PwpQfLa.png',
-            caption         :" Dit is de caption1",
+            // caption         :" Dit is de caption1",
             description     :'Mijn online aankoop bij '+ winkel + ' via 4MORGEN is goed voor een donatie van '+        $scope.rounddonatie+' aan '+doel+'. Gratis doneren via 4MORGEN, doe je ook mee?',
-            message         :"Asdmessage message message message asdasd"
+            // message         :"Asdmessage message message message asdasd"
         }];
         $scope.share($scope.posts);
     };
