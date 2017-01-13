@@ -14,6 +14,9 @@ url:  $rootScope.accountProfiel
 
   },  function errorCallback(response) {
 });
+
+  $scope.datumditjaar = new Date().getFullYear();
+  console.log($scope.datumditjaar);
 $scope.skip = 0;
 $scope.topj = 50;
 $scope.order = "Date";
