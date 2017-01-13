@@ -34,6 +34,7 @@ var myapp = angular.module('myapp',
            var api = "https://api.4morgen.org/";
         }
         $rootScope.api = api;
+        console.log(api)
 
        //todo: make this configurable regardless of version control (or auto-detecting?)
 
