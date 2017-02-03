@@ -31,11 +31,12 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
     <!-- <link rel="stylesheet" href="site/css/bootstrap.css"> -->
     <link rel="stylesheet" href="site/css/bootstrap2.css">
     <link rel="stylesheet" href="site/css/style.css">
-        <link rel="stylesheet" href="site/css/smresponsive.css">
+    <link rel="stylesheet" href="site/css/smresponsive.css">
     <link rel="stylesheet" href="site/css/mdresponsive.css">
 
-    <link rel='stylesheet' href='site/css/loading-bar.css' />
-    <link rel='stylesheet' href='site/css/custom.css' />
+
+    <link rel='stylesheet' href='site/css/loading-bar.css'/>
+    <link rel='stylesheet' href='site/css/custom.css'/>
     <link href='https://fonts.googleapis.com/css?family=Dosis:400,700' rel='stylesheet' type='text/css'>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.js"></script>
     <script src="https://cdn.rawgit.com/zenorocha/clipboard.js/master/dist/clipboard.min.js"></script>
@@ -44,10 +45,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
     <script src="site/js/controllers/headCtl.js"></script>
 
 
-
-
 </head>
-
 
 
 <body>
@@ -71,242 +69,250 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
   </script>
 
 
-
-
-
 <div id="myList" style="display:none;">This browser has an adblocker</div>
 <p class="hide">{{getrekt()}}</p>
 
 
-  <div class="container">
+<div class="container">
     <div class="row bovennavigatie">
-      <div class="col-md-4 col-xs-5 col-sm-3">
-        <a ui-sref="home">
-        <img src="site/image/4-morgen-logo.svg" alt="">
-        </a>
-      </div>
-    <div ng-controller="ZoekbalkCtl">
-      <form ng-submit="zoekbalkverzenden(zoekbalk)">
-      <div class="col-sm-4 hidden-xs hidden-md hidden-lg">
-        <div class="form-group geenruimte">
-          <div class="input-group ">
-            <input  ng-model="zoekbalk" type="text" class="form-control" placeholder="Zoek op winkel of goed doel">
-            <span class="input-group-btn" >
-              <button class="btn btn-default" type="submit" ><span class="glyphicon glyphicon-search zoekglyp"></span></button>
+        <div class="col-md-4 col-xs-5 col-sm-3">
+            <a ui-sref="home">
+                <img src="site/image/4-morgen-logo.svg" alt="">
+            </a>
+        </div>
+        <div ng-controller="ZoekbalkCtl">
+            <form ng-submit="zoekbalkverzenden(zoekbalk)">
+                <div class="col-sm-4 hidden-xs hidden-md hidden-lg">
+                    <div class="form-group geenruimte">
+                        <div class="input-group ">
+                            <input ng-model="zoekbalk" type="text" class="form-control"
+                                   placeholder="Zoek op winkel of goed doel">
+                            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit"><span
+                      class="glyphicon glyphicon-search zoekglyp"></span></button>
             </span>
-          </div>
-        </div>
-      </div>
-      </form>
+                        </div>
+                    </div>
+                </div>
+            </form>
 
-      <form ng-submit="zoekbalkverzenden(zoekbalk)">
-        <div class="col-sm-4 hidden-xs hidden-sm">
-          <div class="form-group ruimtetop">
-            <div class="input-group input-group-lg">
-              <input ng-model="zoekbalk" type="text" class="form-control" placeholder="Zoek op winkel of goed doel">
-              <span class="input-group-btn">
-                <button class="btn btn-default" type="submit" ><span class="glyphicon glyphicon-search zoekglyp"></span></button>
+            <form ng-submit="zoekbalkverzenden(zoekbalk)">
+                <div class="col-sm-4 hidden-xs hidden-sm">
+                    <div class="form-group ruimtetop">
+                        <div class="input-group input-group-lg">
+                            <input ng-model="zoekbalk" type="text" class="form-control"
+                                   placeholder="Zoek op winkel of goed doel">
+                            <span class="input-group-btn">
+                <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search zoekglyp"></span></button>
               </span>
-            </div>
-          </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
-    </form>
+        <div class="col-xs-6 col-xs-offset-1 col-sm-3 col-md-offset-0" ng-if="userlog == true">
+            <a ui-sref="dashboard.overzicht">
+                <p class="inloggen text-center">
+                    <span class="glyphicon glyphicon-lock orange"></span> Mijn 4MORGEN
+                </p>
+            </a>
+        </div>
+        <div class="col-xs-3 col-xs-offset-1 col-sm-2 col-md-offset-0" ng-if="userlog == false">
+            <a ui-sref="login">
+                <p class="inloggen text-center">
+                    <span class="glyphicon glyphicon-lock orange"></span> Inloggen
+                </p>
+            </a>
+
+        </div>
+        <div class="col-xs-3 col-sm-2" ng-if="userlog == false">
+            <a ui-sref="registratie">
+                <p class="inloggen text-center">
+                    <span class="glyphicon glyphicon-pencil orange"></span> Registreren
+                </p>
+            </a>
+        </div>
     </div>
-      <div class="col-xs-6 col-xs-offset-1 col-sm-3 col-md-offset-0" ng-if="userlog == true">
-        <a ui-sref="dashboard.overzicht" >
-          <p class="inloggen text-center">
-            <span class="glyphicon glyphicon-lock orange"></span> Mijn 4MORGEN
-          </p>
-        </a>
-      </div>
-      <div class="col-xs-3 col-xs-offset-1 col-sm-2 col-md-offset-0" ng-if="userlog == false">
-        <a ui-sref="login" >
-          <p class="inloggen text-center">
-            <span class="glyphicon glyphicon-lock orange"></span> Inloggen
-          </p>
-        </a>
-
-      </div>
-      <div class="col-xs-3 col-sm-2" ng-if="userlog == false">
-        <a ui-sref="registratie">
-          <p class="inloggen text-center">
-            <span class="glyphicon glyphicon-pencil orange"></span> Registreren
-          </p>
-        </a>
-      </div>
-    </div>
-  </div>
+</div>
 
 
-
-
-  <nav class="navbar navbar-4morgen">
+<nav class="navbar navbar-4morgen">
     <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <form class="navbar-form navbar-right visible-xs" role="search">
-      <div ng-controller="ZoekbalkCtl">
-          <div class="form-group ">
-            <div class="input-group headersearch">
-              <input ng-model="zoekbalk" type="text" class="form-control" placeholder="Zoek op winkel of goed doel">
-              <span class="input-group-btn">
-                <button ng-click="zoekbalkverzenden(zoekbalk)" class="btn btn-default" type="button"><span class="glyphicon glyphicon-search zoekglyp"></span></button>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <form class="navbar-form navbar-right visible-xs" role="search">
+                <div ng-controller="ZoekbalkCtl">
+                    <div class="form-group ">
+                        <div class="input-group headersearch">
+                            <input ng-model="zoekbalk" type="text" class="form-control"
+                                   placeholder="Zoek op winkel of goed doel">
+                            <span class="input-group-btn">
+                <button ng-click="zoekbalkverzenden(zoekbalk)" class="btn btn-default" type="button"><span
+                        class="glyphicon glyphicon-search zoekglyp"></span></button>
               </span>
-            </div>
-          </div>
-    </div>
-      </form>
-      </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
 
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navigatie">
-          <li class="streepje"><a ui-sref="winkels"><div style="width=100px">Winkels</div></a></li>
-          <li class="streepje"><a ui-sref="goededoelen">Goede doelen</a></li>
-          <li class="streepje"><a ui-sref="over">Over 4MORGEN</a></li>
-          <li class="streepje"><a ui-sref="voorjebuurt">Voor Je Buurt</a></li>
-          <li class="streepje"><a ui-sref="contact">Contact</a></li>
-          <li class=""><a ui-sref="gemistedonaties">Gemiste donaties</a></li>
-          <!-- <li class="dropdown">
-          <a ui-sref="contact" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a ui-sref="gemistedonaties">Gemistedonaties</a></li>
-          </ul>
-        </li> -->
-        </ul>
-      </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navigatie">
+                <li class="streepje"><a ui-sref="winkels">
+                    <div style="width=100px">Winkels</div>
+                </a></li>
+                <li class="streepje"><a ui-sref="goededoelen">Goede doelen</a></li>
+                <li class="streepje"><a ui-sref="over">Over 4MORGEN</a></li>
+                <li class="streepje"><a ui-sref="voorjebuurt">Voor Je Buurt</a></li>
+                <li class="streepje"><a ui-sref="contact">Contact</a></li>
+                <li class=""><a ui-sref="gemistedonaties">Gemiste donaties</a></li>
+                <!-- <li class="dropdown">
+                <a ui-sref="contact" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a ui-sref="gemistedonaties">Gemistedonaties</a></li>
+                </ul>
+              </li> -->
+            </ul>
+        </div>
     </div>
-  </nav>
+</nav>
 
-  <div class="modal-backdrop" style="display: block;" ng-show="adblokker" ng-cloak>
+<div class="modal-backdrop" style="display: block;" ng-show="adblokker" ng-cloak>
     <div class="modal-dialog modal-dialog2 winkelmenutext" style="width: 90%;">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" aria-hidden="true" ng-click="adblokker=false">&times;</button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" aria-hidden="true" ng-click="adblokker=false">&times;</button>
+            </div>
+            <div class="modal-body modal-body2">
+                <p>
+                    <b>Beste gebruiker</b><br><br>
+                    Je gebruikt een adblocker of andere software waardoor niet alle afbeeldingen goed worden
+                    weergegeven. Wil je een goede weergave van onze partners, bekijk dan de onderstaande mogelijkheden
+                    om dit mogelijk te maken.
+                </p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="img-holder">
+                            <img src="site/image/adblok/adblok1.png" alt="">
+                        </div>
+                        <p class="text-center"><b>AdBlock</b></p>
+                        <ul>
+                            <li>Klik op het adblock-icoontje in de balk rechtsboven.</li>
+                            <li>Kies vervolgens voor de optie &rsquo;Blokkeer niets op pagina&rsquo;s van dit domein&rsquo;
+                                en druk op &rsquo;Uitsluiten&rsquo;.
+                            </li>
+                            <li>Hiermee schakel je AdBlock voor deze website uit.</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="img-holder">
+                            <img src="site/image/adblok/adblok2.png" alt="">
+                        </div>
+                        <p class="text-center"><b>AdBlock plus</b></p>
+                        <ul>
+                            <li>Klik op het adblock-icoontje in de balk rechtsboven.</li>
+                            <li>Daar zie je &rsquo;Ingeschakeld op deze site&rsquo; staan.</li>
+                            <li>Wanneer je daar op klikt, schakel je AdBlock Plus voor deze website uit.</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="img-holder">
+                            <img src="site/image/adblok/adblok3.png" alt="">
+                        </div>
+                        <p class="text-center"><b>AdBlock pro</b></p>
+                        <ul>
+                            <li>Klik op het adblock-icoontje in de balk rechtsboven.</li>
+                            <li>Kies vervolgens de optie &rsquo;Uitschakelen voor deze website&rsquo;.</li>
+                            <li>Hiermee zet je AdBlock Pro voor deze website uit.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" style="float:left;" class="btn btn-danger" ng-click="adblokker=false">Annuleren
+                </button>
+            </div>
         </div>
-        <div class="modal-body modal-body2">
-          <p>
-            <b>Beste gebruiker</b><br><br>
-             Je gebruikt een adblocker of andere software waardoor niet alle afbeeldingen goed worden weergegeven. Wil je een goede weergave van onze partners, bekijk dan de onderstaande mogelijkheden om dit mogelijk te maken.
-          </p>
-          <div class="row">
-            <div class="col-md-4">
-              <div class="img-holder">
-                <img src="site/image/adblok/adblok1.png" alt="">
-              </div>
-              <p class="text-center"><b>AdBlock</b></p>
-              <ul>
-                <li>Klik op het adblock-icoontje in de balk rechtsboven.</li>
-                <li>Kies vervolgens voor de optie &rsquo;Blokkeer niets op pagina&rsquo;s van dit domein&rsquo; en druk op &rsquo;Uitsluiten&rsquo;.</li>
-                <li>Hiermee schakel je AdBlock voor deze website uit.</li>
-              </ul>
-            </div>
-            <div class="col-md-4">
-              <div class="img-holder">
-                <img src="site/image/adblok/adblok2.png" alt="">
-              </div>
-              <p class="text-center"><b>AdBlock plus</b></p>
-              <ul>
-                <li>Klik op het adblock-icoontje in de balk rechtsboven.</li>
-                <li>Daar zie je &rsquo;Ingeschakeld op deze site&rsquo; staan.</li>
-                <li>Wanneer je daar op klikt, schakel je AdBlock Plus voor deze website uit.</li>
-              </ul>
-            </div>
-            <div class="col-md-4">
-              <div class="img-holder">
-                <img src="site/image/adblok/adblok3.png" alt="">
-              </div>
-              <p class="text-center"><b>AdBlock pro</b></p>
-              <ul>
-                <li>Klik op het adblock-icoontje in de balk rechtsboven.</li>
-                <li>Kies vervolgens de optie &rsquo;Uitschakelen voor deze website&rsquo;.</li>
-                <li>Hiermee zet je AdBlock Pro voor deze website uit.</li>
-              </ul>
+    </div>
+</div>
+
+
+<!-- <div class="modal-backdrop" style="display: block;" ng-show="feedback">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" ng-click="feedback=false">&times;</button>
+        <h4 class="modal-title"><b>Jouw mening telt</b></h4>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-dismissible alert-danger" ng-show="feedbackError">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <h4>De door jouw ingevoerde gegevens zijn niet juist.</h4>
+          <p>Controleer de email die je hebt ingevuld</p>
+        </div>
+        <div class="alert alert-dismissible alert-info" ng-show="feedbackSuccess">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <h4>Bedankt voor jouw feedback</h4>
+        </div>
+<p class="waarom4morgentext">We zijn benieuwd wat je van onze website vindt. Kun je vinden wat je zoekt? Zijn er dingen die niet goed werken? Heb je suggesties of verbeterpunten? Alle feedback is welkom.</p>
+    <form class="form-horizontal">
+      <fieldset>
+        <div class="col-xs-12">
+
+          <div class="form-group">
+            <label for="textArea" class=" control-label ">Feedback</label>
+            <div>
+              <textarea class="form-control" rows="5" id="textArea" ng-model="feedbackBericht" placeholder="Feedback..."></textarea>
+
             </div>
           </div>
+          <div class="form-group">
+            <label  class="control-label">E-mail</label>
+              <input type="mail" class="form-control" placeholder="E-mail" autocomplete="off" ng-model="FeedbackMail">
+
+          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button"style="float:left;" class="btn btn-danger" ng-click="adblokker=false">Annuleren</button>
-        </div>
+      </fieldset>
+    </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button"style="float:left;" class="btn btn-danger" ng-click="feedback=false">Annuleren</button>
+        <button type="button" class="btn btn-primary" ng-click="feedbackForm()">verzenden</button>
       </div>
     </div>
   </div>
+</div> -->
+
+<div ui-view></div>
 
 
-  <!-- <div class="modal-backdrop" style="display: block;" ng-show="feedback">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" aria-hidden="true" ng-click="feedback=false">&times;</button>
-          <h4 class="modal-title"><b>Jouw mening telt</b></h4>
-        </div>
-        <div class="modal-body">
-          <div class="alert alert-dismissible alert-danger" ng-show="feedbackError">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <h4>De door jouw ingevoerde gegevens zijn niet juist.</h4>
-            <p>Controleer de email die je hebt ingevuld</p>
-          </div>
-          <div class="alert alert-dismissible alert-info" ng-show="feedbackSuccess">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <h4>Bedankt voor jouw feedback</h4>
-          </div>
-<p class="waarom4morgentext">We zijn benieuwd wat je van onze website vindt. Kun je vinden wat je zoekt? Zijn er dingen die niet goed werken? Heb je suggesties of verbeterpunten? Alle feedback is welkom.</p>
-      <form class="form-horizontal">
-        <fieldset>
-          <div class="col-xs-12">
-
-            <div class="form-group">
-              <label for="textArea" class=" control-label ">Feedback</label>
-              <div>
-                <textarea class="form-control" rows="5" id="textArea" ng-model="feedbackBericht" placeholder="Feedback..."></textarea>
-
-              </div>
-            </div>
-            <div class="form-group">
-              <label  class="control-label">E-mail</label>
-                <input type="mail" class="form-control" placeholder="E-mail" autocomplete="off" ng-model="FeedbackMail">
-
-            </div>
-          </div>
-        </fieldset>
-      </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button"style="float:left;" class="btn btn-danger" ng-click="feedback=false">Annuleren</button>
-          <button type="button" class="btn btn-primary" ng-click="feedbackForm()">verzenden</button>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-        <div ui-view></div>
-
-
-
-        <div class="cookies" ng-hide="iscookie" ng-cloak>
-        <div class="container-fluid ">
-          <div class="row text-center">
+<div class="cookies" ng-hide="iscookie" ng-cloak>
+    <div class="container-fluid ">
+        <div class="row text-center">
             <div class="col-xs-12">
-              <div class="alert alert-dismissible alert-danger">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <h4>Let op!</h4>
-                <p class="">Wanneer je doorgaat met browsen op deze website ga je akkoord met het gebruik van cookies zoals staat beschreven in onze Privacy Policy.</p>
-              </div>
+                <div class="alert alert-dismissible alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <h4>Let op!</h4>
+                    <p class="">Wanneer je doorgaat met browsen op deze website ga je akkoord met het gebruik van
+                        cookies zoals staat beschreven in onze Privacy Policy.</p>
+                </div>
             </div>
-          </div>
         </div>
-        </div>
-  <!-- Angular -->
+    </div>
+</div>
+<!-- Angular -->
 
-  <!-- UI-Router -->
+<!-- UI-Router -->
 
 
-  <!-- App Script -->
-  <script type="text/javascript" src="site/js/advertisement.js"></script>
+<!-- App Script -->
+<script type="text/javascript" src="site/js/advertisement.js"></script>
 
 <script src="app/routing.js"></script>
 <script src="site/js/controllers/factory/datafactory.js"></script>
@@ -341,10 +347,6 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 <script src="site/js/controllers/wachtwoordvergeten.js"></script>
 <script src="site/js/controllers/accountConfirmCtl.js"></script>
 <script src="site/js/controllers/vjbCtl.js"></script>
-
-
-
-
 
 
 </body>
