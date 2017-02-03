@@ -74,6 +74,10 @@ $scope.loginSubmit2 = function(charitieId,voornaam,wachtwoord){
   });
 };
 
+$scope.UrlOpenen = function (url) {
+
+
+}
 
 
 
