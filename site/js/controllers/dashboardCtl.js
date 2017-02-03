@@ -118,7 +118,7 @@ $scope.gotochromestore = function() {
   window.location = "https://chrome.google.com/webstore/detail/4morgen/doncbpppgoadlamedckeclamjckbcegd?hl=nl","_blank";
 }
 $scope.jaaropgavedownloaden = function(jaar){
-  var jaaropgaveurl = $rootScope.jaaropgave.replace("{year}", jaar);
+  var jaaropgaveurl = $rootScope.jaarOpgave.replace("{year}", jaar);
   $window.location = jaaropgaveurl, "_blank";
 }
 // ---------
