@@ -2,7 +2,6 @@ myapp.controller('winkelDisplay', function ( $scope,$stateParams,$http, $locatio
 
 $scope.currentWinkel = $stateParams.winkel;
 
-
 $scope.showModalvoordoorgaan = false;
 $scope.loginError = false;
 
