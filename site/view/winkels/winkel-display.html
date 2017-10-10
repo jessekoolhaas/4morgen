@@ -17,7 +17,7 @@
         <div class="toevoegenfav klikding" ng-click="Winkeltoevoegen(winkeldisplay.Id,winkeldisplay.Name)">
           <img src="site/image/hearthfavlef.png" alt="" />
         </div>
-        <img ng-src="{{winkeldisplay.ExternalImageUrl}}" alt="{{x.Name}}" />
+        <img ng-src="{{winkeldisplay.ExternalImageUrl}}" alt="{{x.Name}}" /> 
       </div>
       <a ng-cloak ng-show="winkelNuIngeloged" href="https://api.4morgen.org/{{ winkeldisplay.ExternalClickUrl }}" class="btn btn-success btn-lg btn-block" target="_blank">Winkel nu <span class="glyphicon glyphicon-share-alt"></span></a>
       <button ng-cloak type="button" class="btn btn-success btn-block btn-lg" ng-click="gaNaarWinkel(winkeldisplay.Id)" ng-show="winkelNuNietIngeloged"> Winkel nu <span class="glyphicon glyphicon-share-alt"></span></button>

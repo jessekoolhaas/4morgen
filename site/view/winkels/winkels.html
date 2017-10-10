@@ -10,7 +10,6 @@
 </div>
 <div class="container">
 
-
   <div class="row overzichtruimte">
     <div class="col-md-3">
       <!-- Als je op de next of previous druk wordt je naar boven gestuurd naar deze Id -->
@@ -19,9 +18,8 @@
       <h1 class="orange waarom4morgen mijn4morgentitle"><b>Categorie&euml;n</b></h1>
       <div class="list-group">
         <a
-
+        ng-class="{'active' : category.Id == selectedCategoryId}"
         ng-repeat="category in categories"
-        ng-class="{'active' : category.Id == filter_search.category}"
         heading="Mode"
         ng-click="selectCategory(category)"
         class="list-group-item winkelmenutext">

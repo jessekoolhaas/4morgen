@@ -16,7 +16,7 @@
 
     <h1 class="orange waarom4morgen mijn4morgentitle"><b>Categorie&euml;n</b></h1>
       <div class="list-group">
-        <a ng-class="{'active' : category.Id == selectedCategoryId}" ng-repeat="category in categories" heading="Mode" ng-click="selectCategory(category.Id)" class="list-group-item winkelmenutext">{{category.Name}}</a>
+        <a ng-class="{'active' : category.Id == selectedCategoryId}" ng-repeat="category in categories" heading="Mode" ng-click="selectCategory(category)" class="list-group-item winkelmenutext">{{category.Name}}</a>
       </div>
 <!--
       <ul class="nav nav-tabs" ng-class="{'nav-stacked': vertical, 'nav-justified': justified}">
